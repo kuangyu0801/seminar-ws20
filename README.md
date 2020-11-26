@@ -14,6 +14,13 @@ The proposed method, future work and challenges are discussed in brief.
 
 # 2. Data Quality Fundamentals
 
+The section introduces the basic data quality issues common to all methodologies, which represent the perspectives used in this article for comparative analysis such as:
+(1) the methodological phases and steps, 
+(2) the strategies and techniques, 
+(3) the data quality dimensions, 
+(4) the types of data
+
+
 ## Data Type
 
 The ultimate goal of a DQ methodology is the analysis of data that, in general, describe real world objects in a format that can be stored, retrieved, and processed by a software procedure, and communicated through a network. 
@@ -40,11 +47,49 @@ Typical examples of unstructured data are a questionnaire containing free text a
  ![avatar](figures/DataType.png) 
  Different representations of the same real-world object.
 
+## Data Quality Dimensions
+Framework
+ ![avatar](figures/TwoLayerStandard.png) 
+ ![avatar](figures/HierarchicalFrameWork.png) 
+ ![avatar](figures/TwoLayerStandard.png)
+
+- Accessibility
+- Timeliness
+- Authorization
+- Credibility
+- Definition/Documentation
+- MetaData
+- Accuracy
+- Consistency
+- Integrity
+- Completeness
+- Auditability
+- Fitness
+- Readability
+- Structure
 # Related Work
 
 In this section, 3~5 data quality assessment methods are introduced in brief:
-Total Data Quality Management(TDQM), 
+## Total Data Quality Management(TDQM)
+ ![avatar](figures/PhasesTDQM.png)
+
 Total Information Quality Management(TIQM), 
+
+The TIQM methodology [English 1999] has been designed to support data warehouse projects. 
+The methodology assumes the consolidation of operational data sources into a unique, integrated database, used in all types of aggre- gations performed to build the data warehouse. 
+This consolidation eliminates errors and heterogeneities of source databases. 
+TIQM focuses on the management activities that are responsible for the integration of operational data sources, by discussing the strategy that has to be followed by the organization in order to make effective technical choices. 
+Cost-benefit analyses are supported from a managerial perspective. The methodology provides a detailed classification of costs and benefits (see Section 3.4).
+
+ ![avatar](figures/PhasesTIQM.png)
+
 Data Quality Assessment(DQA), 
 Information Quality Measurement(IQM), 
 Comprehensive methodology for Data Quality management(CDQ).
+
+
+# Conclusions
+
+
+## Challenges
+可以參考The Challenges of Data Quality and Data Quality Assessment in the Big Data Era
