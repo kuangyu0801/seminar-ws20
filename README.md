@@ -73,22 +73,58 @@ In this section, 3~5 data quality assessment methods are introduced in brief:
 
 ## Total Data Quality Management(TDQM)
  ![avatar](figures/PhasesTDQM.png)
+ 
+ General description: The TDQM methodology was the first general methodology published in the data quality literature [Wang 1998]. 
+ TDQM is the outcome of academic research, but has been extensively used as a guide to organizational data reengineering initiatives. 
+ The fundamental objective of TDQM is to extend to data quality, the principles of Total Quality Management (TQM) [Oakland 1989].
+In operations management, TQM has shifted the focus of reengineering activities from efficiency to effectiveness, by offering methodological guidelines aimed at eliminating discrepancies between the output of operating processes and customers’ requirements. 
+Given requirements, reengineering must start from modeling operating processes. 
+Consistent with these tenets, TDQM proposes a language for the description of information production (IP) processes, called IP-MAP [Shankaranarayan et al. 2000]. IP-MAP has been variously extended, 
+towards UML and also to support organizational design. IP-MAP is the only language for information process modeling and represents a de facto standard. 
+Practical experiences with TDQM are reported, for example, in Kovac and Weickert [2002].
 
-Total Information Quality Management(TIQM), 
+Detailed comments. TDQM’s goal is to support the entire end-to-end quality improvement process, from requirements analysis to implementation. 
+As shown in Figure 6(a) TDQM Cycle consists of four phases that implement a continuous quality improvement process: definition, measurement, analysis, and improvement.
+The roles responsible for the different phases of the quality improvement process are also defined in TDQM. 
+Four roles are distinguished: information suppliers, which create or collect data for the IP, information manufacturers, which design, develop, or maintain data and related system infrastructure, information consumers, which use data in their work, and information process managers, which are responsible for managing the entire information production process throughout the information life cycle.
+TDQM is comprehensive also from an implementation perspective, as it provides guidelines as to how to apply the methodology. 
+In applying TDQM, an organization must: 
+(a) clearly understand the IPs; 
+(b) establish an IP team consisting of a senior executive as the TDQM champion, an IP engineer who is familiar with the TDQM methodology, and members who are information suppliers, manufacturers, consumers, and IP managers; 
+(c) teach IQ assessment and IQ management to all the IP constituen- cies; and 
+(d) institutionalize continuous IP improvement.
+
+TDQM relies on the information quality literature for IQ Criteria and IQ improvement techniques. 
+In particular, it explicitly refers to Wang and Strong [1996] for the data quality dimensions specification. 
+TDQM relates quality issues to corresponding improvement techniques. 
+However, in the recent literature no industry-specific technique is referred and no support is offered to specialize general quality improvement techniques.
+
+## Total Information Quality Management(TIQM)
 
 The TIQM methodology [English 1999] has been designed to support data warehouse projects. 
-The methodology assumes the consolidation of operational data sources into a unique, integrated database, used in all types of aggre- gations performed to build the data warehouse. 
+The methodology assumes the consolidation of operational data sources into a unique, integrated database, used in all types of aggregations performed to build the data warehouse. 
 This consolidation eliminates errors and heterogeneities of source databases. 
 TIQM focuses on the management activities that are responsible for the integration of operational data sources, by discussing the strategy that has to be followed by the organization in order to make effective technical choices. 
 Cost-benefit analyses are supported from a managerial perspective. The methodology provides a detailed classification of costs and benefits (see Section 3.4).
 
  ![avatar](figures/PhasesTIQM.png)
 
-## Data Quality Assessment(DQA), 
+## Data Quality Assessment(DQA) 
 
 ![avatar](figures/PhasesDQA.png)
 
-## Information Quality Measurement(IQM), 
+
+General description. The DQA methodology [Pipino et al. 2002] has been designed to provide the general principles guiding the definition of data quality metrics. 
+In the literature, data quality metrics are mostly defined ad hoc to solve specific problems and thus, are dependent on the considered scenario. 
+The DQA methodology is aimed at identifying the general quality measurement principles common to previous research.
+Detailed comments. The classification of metrics of the DQA methodology is summarized in Figure 12. 
+The methodology makes a distinction between subjective and objective quality metrics. 
+Subjective metrics measure the perceptions, needs, and experiences of the stakeholders. 
+Objective metrics are then classified into task-independent and task-dependent. 
+The first assess the quality of data without contextual knowledge of the application, while the second are defined for specific application contexts and include business rules, company and government regulations, and constraints provided by the database administration. 
+Both metrics are divided into three classes: simple ratio, min or max value, and weighed average.
+
+## Information Quality Measurement(IQM)
 
 ![avatar](figures/PhasesIQM.png)
 
