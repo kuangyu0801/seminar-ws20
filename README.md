@@ -74,7 +74,7 @@ In this section, 3~5 data quality assessment methods are introduced in brief:
 ## Total Data Quality Management(TDQM)
  ![avatar](figures/PhasesTDQM.png)
  
- General description: The TDQM methodology was the first general methodology published in the data quality literature [Wang 1998]. 
+- General description: The TDQM methodology was the first general methodology published in the data quality literature [Wang 1998]. 
  TDQM is the outcome of academic research, but has been extensively used as a guide to organizational data reengineering initiatives. 
  The fundamental objective of TDQM is to extend to data quality, the principles of Total Quality Management (TQM) [Oakland 1989].
 In operations management, TQM has shifted the focus of reengineering activities from efficiency to effectiveness, by offering methodological guidelines aimed at eliminating discrepancies between the output of operating processes and customers’ requirements. 
@@ -83,7 +83,7 @@ Consistent with these tenets, TDQM proposes a language for the description of in
 towards UML and also to support organizational design. IP-MAP is the only language for information process modeling and represents a de facto standard. 
 Practical experiences with TDQM are reported, for example, in Kovac and Weickert [2002].
 
-Detailed comments. TDQM’s goal is to support the entire end-to-end quality improvement process, from requirements analysis to implementation. 
+- Detailed comments. TDQM’s goal is to support the entire end-to-end quality improvement process, from requirements analysis to implementation. 
 As shown in Figure 6(a) TDQM Cycle consists of four phases that implement a continuous quality improvement process: definition, measurement, analysis, and improvement.
 The roles responsible for the different phases of the quality improvement process are also defined in TDQM. 
 Four roles are distinguished: information suppliers, which create or collect data for the IP, information manufacturers, which design, develop, or maintain data and related system infrastructure, information consumers, which use data in their work, and information process managers, which are responsible for managing the entire information production process throughout the information life cycle.
@@ -101,23 +101,31 @@ However, in the recent literature no industry-specific technique is referred and
 
 ## Total Information Quality Management(TIQM)
 
-The TIQM methodology [English 1999] has been designed to support data warehouse projects. 
+ ![avatar](figures/PhasesTIQM.png)
+
+- General description: The TIQM methodology [English 1999] has been designed to support data warehouse projects. 
 The methodology assumes the consolidation of operational data sources into a unique, integrated database, used in all types of aggregations performed to build the data warehouse. 
 This consolidation eliminates errors and heterogeneities of source databases. 
 TIQM focuses on the management activities that are responsible for the integration of operational data sources, by discussing the strategy that has to be followed by the organization in order to make effective technical choices. 
 Cost-benefit analyses are supported from a managerial perspective. The methodology provides a detailed classification of costs and benefits (see Section 3.4).
 
- ![avatar](figures/PhasesTIQM.png)
+- Detailed comments. Figure 8 shows the phases of the TIQM methodology. 
+From the TIQM’s managerial perspective, there are three main phases: assessment, improvement, and improvement management and monitoring. 
+One of the valuable contributions of the methodology is the definition of this last phase, which provides guidelines to manage changes in the organization’s structure according to data quality management requirements. 
+Furthermore, the economics approach introduces cost benefit evaluation to justify data quality interventions. 
+The goal is not only the achievement of higher data quality level, but to undertake improvement actions only if they are feasible; thus only if benefits are greater than costs.
+
 
 ## Data Quality Assessment(DQA) 
 
 ![avatar](figures/PhasesDQA.png)
 
 
-General description. The DQA methodology [Pipino et al. 2002] has been designed to provide the general principles guiding the definition of data quality metrics. 
+- General description. The DQA methodology [Pipino et al. 2002] has been designed to provide the general principles guiding the definition of data quality metrics. 
 In the literature, data quality metrics are mostly defined ad hoc to solve specific problems and thus, are dependent on the considered scenario. 
 The DQA methodology is aimed at identifying the general quality measurement principles common to previous research.
-Detailed comments. The classification of metrics of the DQA methodology is summarized in Figure 12. 
+
+- Detailed comments. The classification of metrics of the DQA methodology is summarized in Figure 12. 
 The methodology makes a distinction between subjective and objective quality metrics. 
 Subjective metrics measure the perceptions, needs, and experiences of the stakeholders. 
 Objective metrics are then classified into task-independent and task-dependent. 
@@ -128,9 +136,10 @@ Both metrics are divided into three classes: simple ratio, min or max value, and
 
 ![avatar](figures/PhasesIQM.png)
 
-General description. The fundamental objective of the IQM methodology [Eppler and Mu ̈nzenmaier 2002] is to provide an information quality framework tailored to Web data. 
+- General description. The fundamental objective of the IQM methodology [Eppler and Mu ̈nzenmaier 2002] is to provide an information quality framework tailored to Web data. 
 In particular, IQM helps the quality-based selection and personalization of the tools that support Webmasters in creating, managing, and maintaining Web sites.
-Detailed comments. The IQM methodology provides guidelines to ensure that software tools evaluate all the fundamental information quality dimensions. 
+
+- Detailed comments. The IQM methodology provides guidelines to ensure that software tools evaluate all the fundamental information quality dimensions. 
 The methodology provides two sets of guidelines: the information quality framework defining quality criteria, and the action plan explaining how to perform quality measurements.
 The main phases of IQM methodology are reported in Figure 13. The first phase de- fines the measurement plan. 
 The information quality framework is defined as a list of relevant information quality criteria identified by interviewing the information stake- holders. 
@@ -141,7 +150,7 @@ Some criteria require multiple measurement methods. The IQM methodology coordina
 
  ![avatar](figures/PhasesCDQ.png)
  
-General description. The CDQ methodology [Batini and Scannapieco 2006; Batini et al. 2008] is conceived to be at the same time complete, flexible, and simple to apply. 
+- General description. The CDQ methodology [Batini and Scannapieco 2006; Batini et al. 2008] is conceived to be at the same time complete, flexible, and simple to apply. 
 Completeness is achieved by considering existing techniques and tools and integrating them in a framework that can work in both intra- and inter-organizational contexts, and can be applied to all types of data, structured, semistructured and unstructured. 
 The methodology is flexible since it supports the user in the selection of the most suitable techniques and tools within each phase and in any context. 
 Finally, CDQ is simple since it is organized in phases and each phase is characterized by a specific goal and set of techniques to apply.
@@ -151,7 +160,7 @@ Second, it emphasizes the initial requirements elicitation phase. In fact, the o
 The focus is on how to reach total data quality without providing indications as to how to use contextual knowledge. 
 A goal of CDQ is instead to obtain a quantitative assessment of the extent to which business processes are affected by bad information.
 
-Detailed comments. Three main phases characterize the methodology: state reconstruction, assessment, and choice of the optimal improvement process (see Figure 20). 
+- Detailed comments. Three main phases characterize the methodology: state reconstruction, assessment, and choice of the optimal improvement process (see Figure 20). 
 In the first phase of the methodology, the relationships among organizational units, processes, services, and data are reconstructed. 
 These relationships are modelled by using matrixes that describe which organizational units use data and their roles in the different business processes. 
 Furthermore, in this phase, processes are described along with their contribution in the production of goods/services and the legal and organizational rules that discipline workflows. 
