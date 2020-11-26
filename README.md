@@ -20,6 +20,29 @@ The section introduces the basic data quality issues common to all methodologies
 (3) the data quality dimensions, 
 (4) the types of data
 
+- 2.1. Common Phases and Steps
+
+In the most general case, the sequence of activities of a data quality methodology is composed of three phases:
+(1) State reconstruction, which is aimed at collecting contextual information on orga- nizational processes and services, data collections and related management proce- dures, quality issues and corresponding costs; this phase can be skipped if contextual information is available from previous analyses.
+(2) Assessment/measurement, which measures the quality of data collections along rel- evant quality dimensions; the term measurement is used to address the issue of measuring the value of a set of data quality dimensions. The term assessment is used when such measurements are compared to reference values, in order to enable a diagnosis of quality. The term assessment is adopted in this article, consistent with the majority of methodologies, which stress the importance of the causes of poor data quality.
+(3) Improvement concerns the selection of the steps, strategies, and techniques for reaching new data quality targets.
+# TODO 這邊可以製圖
+The steps of the assessment phase are:
+—data analysis, which examines data schemas and performs interviews to reach a
+complete understanding of data and related architectural and management rules;
+—DQ requirements analysis, which surveys the opinion of data users and administra- tors to identify quality issues and set new quality targets;
+—identification of critical areas, which selects the most relevant databases and data flows to be assessed quantitatively;
+—process modeling, which provides a model of the processes producing or updating data;
+—measurement of quality, which selects the quality dimensions affected by the quality issues identified in the DQ requirements analysis step and defines corresponding metrics; measurement can be objective when it is based on quantitative metrics, or subjective, when it is based on qualitative evaluations by data administrators and users.
+
+
+Note that in all the steps of the assessment phase, a relevant role is played by meta- data that store complementary information on data for a variety of purposes, including data quality. Metadata often provide the information necessary to understand data and/or evaluate them.
+
+- 2.2. Strategies and Techniques
+- 2.3. Dimensions
+- 2.4. Costs
+- 2.5. Types of Data
+- 2.6. Types of Information Systems
 
 ## Data Type
 
@@ -67,6 +90,25 @@ Framework
 - Fitness
 - Readability
 - Structure
+
+## Data Quality Problems
+ ![avatar](figures/2DataQualityProblem.png)
+ As the paper is aiming at classifying DQ assessment methods in the context of relational databases, this
+ research focuses on the data perspective problems for both context dependent and independent categories and uses the classification of DQ problems identified in [5] (see Table 1). Hence, we provide a brief definition for each DQ problem in the context of our research in the following. In the context independent category, spelling errors, missing data, and incorrect values are self-explanatory DQ problems. Duplicate data problems occur when rows are duplicated or when schemas contain redundancies (that is, specify duplicate attributes in multiple databases). Data format problems occur when two or more semantically equivalent data values have different representations (this includes inconsistent and text formatting DQ problems). Syntax violation problems occur when a pre-specified format has been assigned to an attribute and a data value for this attribute does not adhere to this format (this includes the incomplete data format DQ problem in Table 1). Problems with violations of integrity constraints arise when data values do not adhere to pre-specified database integrity constraints; we also therefore include unique value violations, rather than have these as a separate problem, because unique value violations are one type of database integrity constraint. Note that, despite its position in Table 1, we treat outdated data to be a user perspective problem because whether data is out of date depends on the purpose it is used for.
+ For the context dependent category, the problem of violation of domain constraints is when an attribute value must be in a pre-specified context-dependent domain of values. Violation of organizational business rules is when any set of values do not adhere to a pre-specified rules assigned by the organization. Violation of company and governmental regulations is when any set of values do not adhere to a pre- specified rules assigned imposed on the organization by legislating bodies. Similarly, violation of constraints provided by the database administrator is when any set of values do not adhere to a pre- specified rules assigned by the database administrator.
+ 
+ ## Techniques
+ 
+ - Column analysis: Number of (unique) values and the number of instances per value as percentage from the total number of instances in that column
+ - Cross-domain analysis
+ - Data validation
+ - Domain analysis
+ - Lexical analysis
+ - Matching algorithms: identify duplicates
+ - Primary key and foreign key analysis (PK/FK analysis) : are good candidates for a PK/FK
+ - Schema matching: two attributes are semantically equivalent
+ - Semantic profiling
+ 
 # Literature Review
 
 In this section, 3~5 data quality assessment methods are introduced in brief:
@@ -171,6 +213,17 @@ New target quality levels are set by considering costs and benefits. Different i
 The methodology recommends the identifica- tion of all the data-driven and process-driven improvement techniques for the different databases affected by poor quality. 
 A set of mutually consistent improvement tech- niques constitutes an improvement process. 
 Finally, the most suitable improvement process is selected by performing a cost-benefit analysis.
+
+# Evaluation
+
+![avatar](figures/4ClassificationOfMethodologies.png)
+
+— complete methodologies, which provide support to both the assessment and improvement phases, and address both technical and economic issues;
+— audit methodologies, which focus on the assessment phase and provide limited sup-
+port to the improvement phase;
+— operational methodologies, which focus on the technical issues of both the assessment and improvement phases, but do not address economic issues.
+— economic methodologies, which focus on the evaluation of costs.
+
 
 # Conclusions
 
