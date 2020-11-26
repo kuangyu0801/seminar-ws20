@@ -67,9 +67,10 @@ Framework
 - Fitness
 - Readability
 - Structure
-# Related Work
+# Literature Review
 
 In this section, 3~5 data quality assessment methods are introduced in brief:
+
 ## Total Data Quality Management(TDQM)
  ![avatar](figures/PhasesTDQM.png)
 
@@ -83,10 +84,48 @@ Cost-benefit analyses are supported from a managerial perspective. The methodolo
 
  ![avatar](figures/PhasesTIQM.png)
 
-Data Quality Assessment(DQA), 
-Information Quality Measurement(IQM), 
-Comprehensive methodology for Data Quality management(CDQ).
+## Data Quality Assessment(DQA), 
 
+![avatar](figures/PhasesDQA.png)
+
+## Information Quality Measurement(IQM), 
+
+![avatar](figures/PhasesIQM.png)
+
+General description. The fundamental objective of the IQM methodology [Eppler and Mu ̈nzenmaier 2002] is to provide an information quality framework tailored to Web data. 
+In particular, IQM helps the quality-based selection and personalization of the tools that support Webmasters in creating, managing, and maintaining Web sites.
+Detailed comments. The IQM methodology provides guidelines to ensure that software tools evaluate all the fundamental information quality dimensions. 
+The methodology provides two sets of guidelines: the information quality framework defining quality criteria, and the action plan explaining how to perform quality measurements.
+The main phases of IQM methodology are reported in Figure 13. The first phase de- fines the measurement plan. 
+The information quality framework is defined as a list of relevant information quality criteria identified by interviewing the information stake- holders. 
+The framework is the input for an information quality audit that associates the information quality criteria with the methods and tools that will be used in the measurement process. 
+Some criteria require multiple measurement methods. The IQM methodology coordinates the application of multiple measurement methods.
+
+## Comprehensive methodology for Data Quality management(CDQ).
+
+ ![avatar](figures/PhasesCDQ.png)
+ 
+General description. The CDQ methodology [Batini and Scannapieco 2006; Batini et al. 2008] is conceived to be at the same time complete, flexible, and simple to apply. 
+Completeness is achieved by considering existing techniques and tools and integrating them in a framework that can work in both intra- and inter-organizational contexts, and can be applied to all types of data, structured, semistructured and unstructured. 
+The methodology is flexible since it supports the user in the selection of the most suitable techniques and tools within each phase and in any context. 
+Finally, CDQ is simple since it is organized in phases and each phase is characterized by a specific goal and set of techniques to apply.
+
+The CDQ methodology is innovative since it provides support to select the optimal quality improvement process that maximizes benefits within given budget limits. 
+Second, it emphasizes the initial requirements elicitation phase. In fact, the other methodologies implicitly assume that contextual knowledge has been previously gathered and modelled. 
+The focus is on how to reach total data quality without providing indications as to how to use contextual knowledge. 
+A goal of CDQ is instead to obtain a quantitative assessment of the extent to which business processes are affected by bad information.
+
+Detailed comments. Three main phases characterize the methodology: state reconstruction, assessment, and choice of the optimal improvement process (see Figure 20). 
+In the first phase of the methodology, the relationships among organizational units, processes, services, and data are reconstructed. 
+These relationships are modelled by using matrixes that describe which organizational units use data and their roles in the different business processes. 
+Furthermore, in this phase, processes are described along with their contribution in the production of goods/services and the legal and organizational rules that discipline workflows. 
+The second phase sets new target quality levels that are needed to improve process qualities, and evaluates corresponding costs and benefits. 
+This phase locates the critical variables affected by poor quality. Since improvement activities are complex and costly, it is advisable to focus on the parts of the databases and data flows that raise major problems. 
+Finally, the third phase consists of five steps and is aimed at the identification of the optimal improvement process: the sequence of activities that has the highest cost/effectiveness ratio. 
+New target quality levels are set by considering costs and benefits. Different improvement activities can be performed to reach new quality targets. 
+The methodology recommends the identifica- tion of all the data-driven and process-driven improvement techniques for the different databases affected by poor quality. 
+A set of mutually consistent improvement tech- niques constitutes an improvement process. 
+Finally, the most suitable improvement process is selected by performing a cost-benefit analysis.
 
 # Conclusions
 
