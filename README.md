@@ -4,6 +4,8 @@ LaTeX-Template for seminar papers
 # TODO
 - 重新製圖
 
+ - [2.2.1-Strategie](#2.2.1-strategies)
+ - [1. Introduction](#1.-introduction)
 # 1. Introduction
 
 The rest of the paper is structured as follows: Data Quality Fundamentals, Related Works, Evaluation and Conclusion.
