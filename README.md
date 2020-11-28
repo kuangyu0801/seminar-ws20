@@ -349,10 +349,31 @@ The relationship between organizational units and processes has also been modele
 
 ## 4.3. Dimensions
 ![avatar](figures/TableVIII.png)
+![avatar](figures/TableIX.png)
+![avatar](figures/TableX.png)
 
 Table VIII shows the quality dimensions considered by the methodologies surveyed in this article. 
 In Table VIII, a dimension is associated with a methodology, if the methodology provides a corresponding definition. 
 For each methodology’s dimensions, we address the corresponding references (see Table III).
+
+Notice the large variety of dimensions defined in the methodologies, which confirms the complexity of the data quality concept. This is not surprising, since nowadays a large number of phenomena can be described in terms of data. Multiple classifications of quality dimensions are proposed by the methodologies. TIQM classifies dimensions as inherent and pragmatic.
+CDQ proposes schema and data dimensions.
+
+Table IX shows the metrics provided for quality dimensions by different methodologies. 
+We do not include metrics for semantic accuracy because the methodology addressing it, CDQ, do not provide specific measurement methods. 
+In general, multiple metrics are defined for each dimension, and each dimension accordingly has multiple entries in the table. 
+Note that subjective metrics such as user surveys have been defined for almost all quality dimensions. 
+Different metrics for the same dimension are identified by acronyms, which are used in Table X to associate them with the methodologies in which they are used and/or defined.
+
+The last column of Table X provides for each dimension and each metric associated with the dimension, (1) the number of methodologies that use the metrics, and (2) the total number of methodologies that mention the corresponding dimension. 
+The ratio between these values measures the degree of consensus on dimension metrics among methodologies. 
+Such consensus is high for accuracy, completeness, and consistency, while it is significantly lower for two of the time-related dimensions, timeliness and currency, and almost all other dimensions.
+
+The majority of metrics with only one occurrence in methodologies are mentioned in IQM, which analyzes the quality of Web information. 
+Such metrics are defined by considering the measurement tools that are available in the specific Web context. 
+For example, using a site analyzer, it is possible to assess dimensions such as accessibility, consistency, timeliness, conciseness, and maintainability. 
+Traffic analyzers can be used to assess applicability and convenience, while port scanners are useful to assess security. 
+The high number of measurement tools in the Web context results in a high number of metrics specific to IQM.
 
 ## 4.4. Costs
 The cost dimension is considered only in TIQM, COLDQ, and CDQ. 
@@ -379,7 +400,9 @@ In CDQ the minimization of the cost of the data quality program is the main crit
 process is selected.
 ## 4.5. Types of Data
 ![avatar](figures/TableXII.png)
-Table XII associates the types of data classified in Section 2.5 and DQ methodologies. Most methodologies address structured data, while only a few also address semistructured data. In Table XII we have imputed implicitely considered when the methodology does not explicitely mention the type of data, but phases and steps can be applied to it.
+Table XII associates the types of data classified in Section 2.5 and DQ methodologies. 
+Most methodologies address structured data, while only a few also address semistructured data. 
+In Table XII we have imputed implicitely considered when the methodology does not explicitely mention the type of data, but phases and steps can be applied to it.
 
 ## 4.7. Summary Comparison of Methodologies
 
@@ -402,6 +425,7 @@ processes. The methodology suggests that different improvement processes can ide
 (這段講到經驗可以跳過)
 Experiences of use of early TDQM versions are reported in several U.S.A. Depart- ment of Defence (DoD) documents (see US Department of Defense [1994]). Specifically, the use of DQ tools developed over SQL scripts and programming approaches to check data quality are supported. 
 In Batini and Scannapieco [2006], a large-scale experience of the application of CDQ is reported, referring to the reorganization of Government to Business (G2B) relation- ships in Italy. The interactions with government are needed for several business events, such as starting a new business and evolving a business, which includes variations in legal status, board composition, senior management, and number of employees.
+
 # 5 Conclusions
 
 
