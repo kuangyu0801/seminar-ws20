@@ -29,14 +29,16 @@ In the most general case, the sequence of activities of a data quality methodolo
 (1) State reconstruction, which is aimed at collecting contextual information on orga- nizational processes and services, data collections and related management proce- dures, quality issues and corresponding costs; this phase can be skipped if contextual information is available from previous analyses.
 (2) Assessment/measurement, which measures the quality of data collections along rel- evant quality dimensions; the term measurement is used to address the issue of measuring the value of a set of data quality dimensions. The term assessment is used when such measurements are compared to reference values, in order to enable a diagnosis of quality. The term assessment is adopted in this article, consistent with the majority of methodologies, which stress the importance of the causes of poor data quality.
 (3) Improvement concerns the selection of the steps, strategies, and techniques for reaching new data quality targets.
+
 **_（把phases跟steps製圖）_**
+
 The steps of the assessment phase are:
-—data analysis, which examines data schemas and performs interviews to reach a
+— data analysis, which examines data schemas and performs interviews to reach a
 complete understanding of data and related architectural and management rules;
-—DQ requirements analysis, which surveys the opinion of data users and administra- tors to identify quality issues and set new quality targets;
-—identification of critical areas, which selects the most relevant databases and data flows to be assessed quantitatively;
-—process modeling, which provides a model of the processes producing or updating data;
-—measurement of quality, which selects the quality dimensions affected by the quality issues identified in the DQ requirements analysis step and defines corresponding metrics; measurement can be objective when it is based on quantitative metrics, or subjective, when it is based on qualitative evaluations by data administrators and users.
+— DQ requirements analysis, which surveys the opinion of data users and administra- tors to identify quality issues and set new quality targets;
+— identification of critical areas, which selects the most relevant databases and data flows to be assessed quantitatively;
+— process modeling, which provides a model of the processes producing or updating data;
+— measurement of quality, which selects the quality dimensions affected by the quality issues identified in the DQ requirements analysis step and defines corresponding metrics; measurement can be objective when it is based on quantitative metrics, or subjective, when it is based on qualitative evaluations by data administrators and users.
 
 
 Note that in all the steps of the assessment phase, a relevant role is played by meta- data that store complementary information on data for a variety of purposes, including data quality. Metadata often provide the information necessary to understand data and/or evaluate them.
