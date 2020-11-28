@@ -284,15 +284,15 @@ Finally, the most suitable improvement process is selected by performing a cost-
 
 (這邊要加上一段)
 
-# 4.1. Methodologies, Phases, and Steps
+## 4.1. Methodologies, Phases, and Steps
 ![avatar](figures/TableIII&IV.png)
 ![avatar](figures/TableV&VI.png)
-## 4.1.1. The Assessment Phase.
+### 4.1.1. The Assessment Phase.
 
 The most commonly addressed steps of the assessment phase are data analysis and measurement of quality. However, they are performed according to different approaches.
 For example, the measurement of quality step is performed with questionnaires in AIMQ, with a combination of subjective and objective metrics in DQA
 Different measurement approaches meet the specific requirements of different organizational contexts, processes, users or services. Only a few methodolo- gies consider the DQ requirements analysis step, identifying DQ issues and collecting new target quality levels from users. This step is particularly relevant for evaluat- ing and solving conflicts in target DQ levels from different stakeholders. 
-## 4.1.2. The Improvement Phase.
+### 4.1.2. The Improvement Phase.
 The identification of the causes of errors is the most widely addressed improvement step. 
 DQA emphasizes the importance of the identification of the causes of errors step, but it does not discuss its execution.
 The last column of Table IV specifies whether the methodology allows extensibility to dimensions (and metrics) other than those explicitly dealt with in the methodology. 
@@ -311,22 +311,60 @@ CDQ discusses a set of matrices to represent the relationship among processes, o
 ### 4.2. Strategies and Techniques
 ![avatar](figures/TableVII.png)
 
+Table VII shows the strategies and techniques adopted by different methodologies. A methodology is associated with a strategy if it provides guidelines to select and design corresponding techniques.
+Notice that the column labelled Process-driven in Table VII provides the same in- formation as columns, Process control and Process redesign of Table VI. The column labelled Data-driven explicitly mentions the data-driven techniques implicitly consid- ered in Tables V and VI.
+Table VII shows that five DQ methodologies adopt mixed strategies, variously com- bining data-driven and process-driven techniques. The methodology applying the wider range of data- and process-driven techniques is TIQM. Conversely, TDQM provides guidelines to apply process-driven strategies by using the Information Manufacturing Analysis Matrix [Ballou et al. 1998], which suggests when and how to improve data.
+Normalization, record linkage, data and schema integration, represent the data- driven techniques most widely adopted in DQ methodologies, while process redesign, as discussed in previous section, is most relevant in process-driven methodologies. We now discuss specific contributions related to the data- and process-driven techniques considered in Section 2.2.
 ### 4.2.1. Data-Driven Techniques
-## 4.2.2. Process-Driven Techniques.
-### 4.3. Dimensions
+Normalization techniques have been proposed in sev- eral domains, including census and territorial data domains. 
+CDQ provide normalization techniques improving DQ by comparing data with look-up ta- bles and defining a common metaschema. 
+Record linkage has been investigated in the database research since the ’50s and has been applied in many contexts such as healthcare, administrative, and census applications. 
+In such contexts, it is crucial to produce efficient computer-assisted matching procedures that can reduce the use of clerical resources, and at the same time, minimize matching errors. 
+CDQ discusses three types of record linkage techniques:
+
+(1) Probabilistic techniques, based on the broad set of methods developed over the past two centuries within statistics and probability theory, ranging from Bayesian net- works to data mining.
+(2) Empirical techniques that make use of algorithmic techniques such as sorting, tree analysis, neighbor comparison, and pruning.
+(3) Knowledge-based techniques, extracting knowledge from files and applying reason- ing strategies.
+Criteria for choosing among these three types of techniques are discussed within the CDQ methodology. 
+
+CDQ follows an approach similar to ISTAT, with more emphasis on the autonomy of organizations in the cooperative system. 
+In fact, the resolution of heterogeneities in the case studies, proposed as best practices, is performed through record linkage on a very thin layer of data, namely the identifiers. 
+All other data are reconcilied only in case of autonomous decisions of the agencies involved.
+
+
+### 4.2.2. Process-Driven Techniques.
+
+![avatar](figures/ExampleIPMAP.png)
+Methodologies addressing the process redesign step tend to borrow corresponding techniques from the literature on business process reengineering (BPR) [Muthu et al. 1999; Hammer 1990]. 
+TDQM represents an exception in this respect, as it proposes an original process redesign control approach that is referred to as an “information manufacturing system for the Information Product” [Ballou et al. 1998]. 
+This methodology proposes the Information Production Map (IP-MAP) model [Shankaranarayan et al. 2000] that is used to model the information products managed by the manufacturing processes. 
+An information production map is a graphical model designed to help analysts to visualize the information production process, identify the ownership of process phases, understand information and organizational boundaries, and estimate the time and quality metrics associated with the current production process. 
+The description of processes is a mandatory activity, consistent with the general orientation of process-driven strategies. 
+After modelling and assessing the information production process, new process control activities are identified and/or process redesign decisions are taken.
+
+Complex solutions such as IP-MAP cannot always be adopted due to their high costs and, in some cases, the practical unfeasibility of a thorough process modeling step. 
+For this reason, other methodologies adopt less formal, but more feasible solutions. 
+For example, CDQ is based on a set of matrices that describe the main relationships among data, information flows, processes, and organizational units. 
+The relationship between organizational units and processes has also been modeled in extensions of IP-MAP proposed in the literature [Scannapieco et al. 2002].
+
+## 4.3. Dimensions
 ![avatar](figures/TableVIII.png)
 
-### 4.4. Costs
+Table VIII shows the quality dimensions considered by the methodologies surveyed in this article. 
+In Table VIII, a dimension is associated with a methodology, if the methodology provides a corresponding definition. 
+For each methodology’s dimensions, we address the corresponding references (see Table III).
+
+## 4.4. Costs
 The cost dimension is considered only in TIQM, COLDQ, and CDQ. 
 In this section we analyze costs from two different points of view: (1) cost classifications, and (2) criteria provided for cost quantification.
-3.4.1. Cost Classifications.
+### 4.4.1. Cost Classifications.
 Both TIQM [English 1999] and COLDQ [Loshin 2004] pro- vide detailed classifications for costs.
 Table XI compares the TIQM and COLDQ classifications. In TIQM, data quality costs correspond to the costs of business processes and data management processes due to poor data quality. Costs for information quality assessment or inspection measure data quality dimensions to verify that processes are performing properly. Finally, process improvement and defect prevention costs involve activities to improve the quality of data, with the goal of eliminating, or reducing, the costs of poor data quality. Costs due to poor data quality are analyzed in depth in the TIQM approach, and are subdivided into three categories:
 (1) Process failure costs are incurred when poor quality data causes a process not to per- form properly. As an example, inaccurate mailing addresses cause correspondence to be misdelivered.
 (2) Information scrap and rework. When data is of poor quality, they involve several types of defect management activities, such as reworking, cleaning, or rejecting.
 (3) Loss and missed opportunity costs correspond to the revenues and profits lost be- cause of poor data quality. For example, due to low accuracy of customer e-mail addresses, a percentage of customers already acquired cannot be reached by peri- odic advertising campaigns, resulting in lower revenues, roughly proportional to the decrease of the accuracy of addresses.
 
-3.4.2. Criteria for Cost Quantification.
+### 4.4.2. Criteria for Cost Quantification.
 
 The assessment of the total cost of data qual- ity supports the selection of the types of data quality activities to be performed (see Section 2.2) and their prioritization. TIQM, COLDQ, and CDQ are the only method- ologies providing criteria for this activity. In TIQM, selection and prioritization are achieved with the following steps:
 —identify current users and uses of data;
@@ -339,11 +377,11 @@ Each type of error occurs with a given frequency and involves a cost. Note that 
 
 In CDQ the minimization of the cost of the data quality program is the main criterion for choosing among alternative improvement processes. First, different improvement processes are identified as paths of data- and process-driven techniques applied to the data bases, data flows, and document bases involved in the improvement. Then, the costs of the different processes are evaluated and compared, and the minimum-cost
 process is selected.
-### 4.5. Types of Data
+## 4.5. Types of Data
 ![avatar](figures/TableXII.png)
 Table XII associates the types of data classified in Section 2.5 and DQ methodologies. Most methodologies address structured data, while only a few also address semistructured data. In Table XII we have imputed implicitely considered when the methodology does not explicitely mention the type of data, but phases and steps can be applied to it.
 
-### 4.7. Summary Comparison of Methodologies
+## 4.7. Summary Comparison of Methodologies
 
 ![avatar](figures/4ClassificationOfMethodologies.png)
 
