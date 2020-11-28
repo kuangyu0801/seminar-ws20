@@ -23,40 +23,75 @@ The section introduces the basic data quality issues common to all methodologies
 (3) the data quality dimensions, 
 (4) the types of data
 
-- 2.1. Common Phases and Steps
+## 2.1. Common Phases and Steps
 
 In the most general case, the sequence of activities of a data quality methodology is composed of three phases:
-(1) State reconstruction, which is aimed at collecting contextual information on orga- nizational processes and services, data collections and related management proce- dures, quality issues and corresponding costs; this phase can be skipped if contextual information is available from previous analyses.
-(2) Assessment/measurement, which measures the quality of data collections along rel- evant quality dimensions; the term measurement is used to address the issue of measuring the value of a set of data quality dimensions. The term assessment is used when such measurements are compared to reference values, in order to enable a diagnosis of quality. The term assessment is adopted in this article, consistent with the majority of methodologies, which stress the importance of the causes of poor data quality.
-(3) Improvement concerns the selection of the steps, strategies, and techniques for reaching new data quality targets.
+- (1) State reconstruction, which is aimed at collecting contextual information on orga- nizational processes and services, data collections and related management proce- dures, quality issues and corresponding costs; this phase can be skipped if contextual information is available from previous analyses.
+- (2) Assessment/measurement, which measures the quality of data collections along rel- evant quality dimensions; the term measurement is used to address the issue of measuring the value of a set of data quality dimensions. The term assessment is used when such measurements are compared to reference values, in order to enable a diagnosis of quality. The term assessment is adopted in this article, consistent with the majority of methodologies, which stress the importance of the causes of poor data quality.
+- (3) Improvement concerns the selection of the steps, strategies, and techniques for reaching new data quality targets.
 
 **_（把phases跟steps製圖）_**
 
 The steps of the assessment phase are:
-— data analysis, which examines data schemas and performs interviews to reach a
-complete understanding of data and related architectural and management rules;
-— DQ requirements analysis, which surveys the opinion of data users and administra- tors to identify quality issues and set new quality targets;
-— identification of critical areas, which selects the most relevant databases and data flows to be assessed quantitatively;
-— process modeling, which provides a model of the processes producing or updating data;
-— measurement of quality, which selects the quality dimensions affected by the quality issues identified in the DQ requirements analysis step and defines corresponding metrics; measurement can be objective when it is based on quantitative metrics, or subjective, when it is based on qualitative evaluations by data administrators and users.
+
+- data analysis, which examines data schemas and performs interviews to reach a complete understanding of data and related architectural and management rules;
+- DQ requirements analysis, which surveys the opinion of data users and administrators to identify quality issues and set new quality targets;
+- identification of critical areas, which selects the most relevant databases and data flows to be assessed quantitatively;
+- process modeling, which provides a model of the processes producing or updating data;
+- measurement of quality, which selects the quality dimensions affected by the quality issues identified in the DQ requirements analysis step and defines corresponding metrics; measurement can be objective when it is based on quantitative metrics, or subjective, when it is based on qualitative evaluations by data administrators and users.
 
 
-Note that in all the steps of the assessment phase, a relevant role is played by meta- data that store complementary information on data for a variety of purposes, including data quality. Metadata often provide the information necessary to understand data and/or evaluate them.
+The steps of the improvement phase are:
+- evaluation of costs, which estimates the direct and indirect costs of data quality;
+- assignment of process responsibilities, which identifies the process owners and defines their responsibilities on data production and management activities;
+- assignment of data responsibilities, which identifies the data owners and defines their data management responsibilities;
+- identification of the causes of errors, which identifies the causes of quality problems;
+- selection of strategies and techniques, which identifies all the data improvement strategies and corresponding techniques, that comply with contextual knowledge, quality objectives, and budget constraints;
+- design of data improvement solutions, which selects the most effective and efficient strategy and related set of techniques and tools to improve data quality;
+- process control, which defines check points in the data production processes, to mon- itor quality during process execution;
+- process redesign, which defines the process improvement actions that can deliver corresponding DQ improvements;
+- improvement management, which defines new organizational rules for data quality;
+- improvement monitoring, which establishes periodic monitoring activities that pro- vide feedback on the results of the improvement process and enables its dynamic tuning.
 
-- 2.2. Strategies and Techniques
-- 2.3. Dimensions
-- 2.4. Costs
-- 2.5. Types of Data
-- 2.6. Types of Information Systems
+Note that in all the steps of the assessment phase, a relevant role is played by metadata that store complementary information on data for a variety of purposes, including data quality. Metadata often provide the information necessary to understand data and/or evaluate them.
 
 
 ## 2.2 Strategies and Techniques
 
-### 2.2.2 Strategies
 
-### 2.2.1 Techniques
+### 2.2.1 Strategies
+data-driven strategies: 
+- (1) acquisition of new data, which improves data by acquiring higher-quality data to replace the values that raise quality problems;
+- (2) standardization (or normalization), which replaces or complements nonstandard data values with corresponding values that comply with the standard. For example, nicknames are replaced with corresponding names, for example, Bob with Robert, and abbreviations are replaced with corresponding full names, for example, Channel Str. with Channel Street.
+- (3) Record linkage, which identifies that data representations in two (or multiple) tables that might refer to the same real-world object;
+- (4) data and schema integration, which define a unified view of the data provided by heterogeneous data sources. Integration has the main purpose of allowing a user to access the data stored by heterogeneous data sources through a unified view of these data. In distributed, cooperative, and P2P information systems (see Section 2.6), data sources are characterized by various kinds of heterogeneities that can be generally classified into (1) technological heterogeneities, (2) schema het- erogeneities, and (3) instance-level heterogeneities. Technological heterogeneities are due to the use of products by different vendors, employed at various lay- ers of an information and communication infrastructure. Schema heterogeneities are primarily caused by the use of (1) different data models, as in the case of a source that adopts the relational data model and a different source that adopts the XML data model, and (2) different representations for the same object, such as two relational sources that represent an object as a table and an attribute. Instance-level heterogeneities are caused by different, conflicting data values pro- vided by distinct sources for the same objects. For instance, this type of hetero- geneity can be caused by independent and poorly coordinated processes that feed the different data sources. Data integration must face all the types of these listed heterogeneities.
+- (5) Source trustworthiness, which selects data sources on the basis of the quality of their data;
+- (6) error localization and correction, which identify and eliminate data quality errors by detecting the records that do not satisfy a given set of quality rules. These tech- niques are mainly studied in the statistical domain. Compared to elementary data, aggregate statistical data, such as average, sum, max, and so forth are less sensitive to possibly erroneous probabilistic localization and correction of values. Techniques for error localization and correction have been proposed for inconsistencies, incom- plete data, and outliers [Dasu and Johnson 2003]; [Batini and Scannapieco 2006].
+- (7) Cost optimization, defines quality improvement actions along a set of dimensions by minimizing costs.
+process-driven strategies:
 
-## Data Type
+- Process control inserts checks and control procedures in the data production process when: (1) new data are created, (2) data sets are updated, or (3) new data sets are accessed by the process. In this way, a reactive strategy is applied to data modification events, thus avoiding data degradation and error propagation.
+- Process redesign redesigns processes in order to remove the causes of poor quality and introduces new activities that produce data of higher quality. If process redesign is radical, this technique is referred to as business process reengineering [Hammer and Champy 2001]; [Stoica et al. 2003].
+
+. The comparison focuses on: 
+- (1) acquisition of new data, 
+- (2) record linkage, 
+- (3) error localization and correction, 
+- (4) process control, and (5) process redesign techniques.
+
+### 2.2.2 Techniques
+ 
+ - Column analysis: Number of (unique) values and the number of instances per value as percentage from the total number of instances in that column
+ - Cross-domain analysis
+ - Data validation
+ - Domain analysis
+ - Lexical analysis
+ - Matching algorithms: identify duplicates
+ - Primary key and foreign key analysis (PK/FK analysis) : are good candidates for a PK/FK
+ - Schema matching: two attributes are semantically equivalent
+ - Semantic profiling
+
+## 2.3 Data Type
 
 The ultimate goal of a DQ methodology is the analysis of data that, in general, describe real world objects in a format that can be stored, retrieved, and processed by a software procedure, and communicated through a network. 
 In the field of data quality, most authors either implicitly or explicitly distinguish three types of data:
@@ -70,7 +105,7 @@ Typical examples of unstructured data are a questionnaire containing free text a
 
 - Semistructured data, is data that have a structure which has some degree of flex- ibility. Semistructured data are also referred to as schemaless or self-describing. 
  XML is the markup language commonly used to represent semistructured data. 
- Some common charac- teristics are: 
+ Some common characteristics are: 
  (1) data can contain fields not known at design time; for instance, an XML file does not have an associated XML schema file; 
  (2) the same kind of data may be represented in multiple ways; for example, a date might be represented by one field or by multiple fields, even within a single data set; and 
  (3) among the fields known at design time, many fields will not have values.
@@ -82,7 +117,7 @@ Typical examples of unstructured data are a questionnaire containing free text a
  ![avatar](figures/DataType.png) 
  Different representations of the same real-world object.
 
-## Data Quality Dimensions
+## 2.4 Data Quality Dimensions
 Framework
  ![avatar](figures/TwoLayerStandard.png) 
  ![avatar](figures/HierarchicalFrameWork.png) 
@@ -103,23 +138,15 @@ Framework
 - Readability
 - Structure
 
-## Data Quality Problems
+## 2.5 Data Quality Problems
  ![avatar](figures/2DataQualityProblem.png)
  As the paper is aiming at classifying DQ assessment methods in the context of relational databases, this
  research focuses on the data perspective problems for both context dependent and independent categories and uses the classification of DQ problems identified in [5] (see Table 1). Hence, we provide a brief definition for each DQ problem in the context of our research in the following. In the context independent category, spelling errors, missing data, and incorrect values are self-explanatory DQ problems. Duplicate data problems occur when rows are duplicated or when schemas contain redundancies (that is, specify duplicate attributes in multiple databases). Data format problems occur when two or more semantically equivalent data values have different representations (this includes inconsistent and text formatting DQ problems). Syntax violation problems occur when a pre-specified format has been assigned to an attribute and a data value for this attribute does not adhere to this format (this includes the incomplete data format DQ problem in Table 1). Problems with violations of integrity constraints arise when data values do not adhere to pre-specified database integrity constraints; we also therefore include unique value violations, rather than have these as a separate problem, because unique value violations are one type of database integrity constraint. Note that, despite its position in Table 1, we treat outdated data to be a user perspective problem because whether data is out of date depends on the purpose it is used for.
  For the context dependent category, the problem of violation of domain constraints is when an attribute value must be in a pre-specified context-dependent domain of values. Violation of organizational business rules is when any set of values do not adhere to a pre-specified rules assigned by the organization. Violation of company and governmental regulations is when any set of values do not adhere to a pre- specified rules assigned imposed on the organization by legislating bodies. Similarly, violation of constraints provided by the database administrator is when any set of values do not adhere to a pre- specified rules assigned by the database administrator.
  
- ## Techniques
+
  
- - Column analysis: Number of (unique) values and the number of instances per value as percentage from the total number of instances in that column
- - Cross-domain analysis
- - Data validation
- - Domain analysis
- - Lexical analysis
- - Matching algorithms: identify duplicates
- - Primary key and foreign key analysis (PK/FK analysis) : are good candidates for a PK/FK
- - Schema matching: two attributes are semantically equivalent
- - Semantic profiling
+ # 2.6 Cost
  
 # Literature Review
 
