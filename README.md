@@ -47,6 +47,33 @@ The section introduces the basic data quality issues common to all methodologies
 (3) the data quality dimensions, 
 (4) the types of data
 
+## 2.3 Data Type
+
+The ultimate goal of a DQ methodology is the analysis of data that, in general, describe real world objects in a format that can be stored, retrieved, and processed by a software procedure, and communicated through a network. 
+In the field of data quality, most authors either implicitly or explicitly distinguish three types of data:
+
+- Structured data, is aggregations or generalizations of items described by elementary attributes defined within a domain. 
+Domains represent the range of values that can be assigned to attributes and usually correspond to elementary data types of programming languages, such as numeric values or text strings. 
+Relational tables and statistical data represent the most common type of structured data.
+
+- Unstructured data, is a generic sequence of symbols, typically coded in natural language. 
+Typical examples of unstructured data are a questionnaire containing free text answering open questions or the body of an e-mail.
+
+- Semistructured data, is data that have a structure which has some degree of flex- ibility. Semistructured data are also referred to as schemaless or self-describing. 
+ XML is the markup language commonly used to represent semistructured data. 
+ Some common characteristics are: 
+ (1) data can contain fields not known at design time; for instance, an XML file does not have an associated XML schema file; 
+ (2) the same kind of data may be represented in multiple ways; for example, a date might be represented by one field or by multiple fields, even within a single data set; and 
+ (3) among the fields known at design time, many fields will not have values.
+ 
+ 
+ Data quality techniques become increasingly complex as data lose structure. For ex- ample, let us consider a registry describing personal information such as Name, Surname, Region, and StateOfBirth. Figure 2 shows the representation of Mr. Patrick Metzisi, born in the Masai Mara region in Kenya, by using a structured (Figure 2(a)), unstruc- tured (Figure 2(b)), and semistructured (Figure 2(c)) type of data. The same quality dimension will have different metrics according to the type of data. For instance, syn- tactic accuracy is measured as described in Section 2.3 in the case of structured data. With semistructured data, the distance function should consider a global distance re- lated to the shape of the XML tree in addition to the local distance of fields.
+ The large majority of research contributions in the data quality literature focuses on structured and semistructured data. For this reason, although we acknowledge the relevance of unstructured data, this article focuses on structured and semistructured data.
+ 
+ ![avatar](figures/DataType.png) 
+ Different representations of the same real-world object.
+
+
 ## 2.1 Common Phases and Steps
 
 In the most general case, the sequence of activities of a data quality methodology is composed of three phases:
@@ -115,31 +142,7 @@ process-driven strategies:
  - Schema matching: two attributes are semantically equivalent
  - Semantic profiling
 
-## 2.3 Data Type
 
-The ultimate goal of a DQ methodology is the analysis of data that, in general, describe real world objects in a format that can be stored, retrieved, and processed by a software procedure, and communicated through a network. 
-In the field of data quality, most authors either implicitly or explicitly distinguish three types of data:
-
-- Structured data, is aggregations or generalizations of items described by elementary attributes defined within a domain. 
-Domains represent the range of values that can be assigned to attributes and usually correspond to elementary data types of programming languages, such as numeric values or text strings. 
-Relational tables and statistical data represent the most common type of structured data.
-
-- Unstructured data, is a generic sequence of symbols, typically coded in natural language. 
-Typical examples of unstructured data are a questionnaire containing free text answering open questions or the body of an e-mail.
-
-- Semistructured data, is data that have a structure which has some degree of flex- ibility. Semistructured data are also referred to as schemaless or self-describing. 
- XML is the markup language commonly used to represent semistructured data. 
- Some common characteristics are: 
- (1) data can contain fields not known at design time; for instance, an XML file does not have an associated XML schema file; 
- (2) the same kind of data may be represented in multiple ways; for example, a date might be represented by one field or by multiple fields, even within a single data set; and 
- (3) among the fields known at design time, many fields will not have values.
- 
- 
- Data quality techniques become increasingly complex as data lose structure. For ex- ample, let us consider a registry describing personal information such as Name, Surname, Region, and StateOfBirth. Figure 2 shows the representation of Mr. Patrick Metzisi, born in the Masai Mara region in Kenya, by using a structured (Figure 2(a)), unstruc- tured (Figure 2(b)), and semistructured (Figure 2(c)) type of data. The same quality dimension will have different metrics according to the type of data. For instance, syn- tactic accuracy is measured as described in Section 2.3 in the case of structured data. With semistructured data, the distance function should consider a global distance re- lated to the shape of the XML tree in addition to the local distance of fields.
- The large majority of research contributions in the data quality literature focuses on structured and semistructured data. For this reason, although we acknowledge the relevance of unstructured data, this article focuses on structured and semistructured data.
- 
- ![avatar](figures/DataType.png) 
- Different representations of the same real-world object.
 
 ## 2.4 Data Quality Dimensions
 Framework
@@ -165,8 +168,18 @@ Framework
 ## 2.5 Data Quality Problems
  ![avatar](figures/2DataQualityProblem.png)
  As the paper is aiming at classifying DQ assessment methods in the context of relational databases, this
- research focuses on the data perspective problems for both context dependent and independent categories and uses the classification of DQ problems identified in [5] (see Table 1). Hence, we provide a brief definition for each DQ problem in the context of our research in the following. In the context independent category, spelling errors, missing data, and incorrect values are self-explanatory DQ problems. Duplicate data problems occur when rows are duplicated or when schemas contain redundancies (that is, specify duplicate attributes in multiple databases). Data format problems occur when two or more semantically equivalent data values have different representations (this includes inconsistent and text formatting DQ problems). Syntax violation problems occur when a pre-specified format has been assigned to an attribute and a data value for this attribute does not adhere to this format (this includes the incomplete data format DQ problem in Table 1). Problems with violations of integrity constraints arise when data values do not adhere to pre-specified database integrity constraints; we also therefore include unique value violations, rather than have these as a separate problem, because unique value violations are one type of database integrity constraint. Note that, despite its position in Table 1, we treat outdated data to be a user perspective problem because whether data is out of date depends on the purpose it is used for.
- For the context dependent category, the problem of violation of domain constraints is when an attribute value must be in a pre-specified context-dependent domain of values. Violation of organizational business rules is when any set of values do not adhere to a pre-specified rules assigned by the organization. Violation of company and governmental regulations is when any set of values do not adhere to a pre- specified rules assigned imposed on the organization by legislating bodies. Similarly, violation of constraints provided by the database administrator is when any set of values do not adhere to a pre- specified rules assigned by the database administrator.
+ research focuses on the data perspective problems for both context dependent and independent categories and uses the classification of DQ problems identified in [5] (see Table 1). 
+ Hence, we provide a brief definition for each DQ problem in the context of our research in the following. 
+ In the context independent category, spelling errors, missing data, and incorrect values are self-explanatory DQ problems. 
+ Duplicate data problems occur when rows are duplicated or when schemas contain redundancies (that is, specify duplicate attributes in multiple databases). 
+ Data format problems occur when two or more semantically equivalent data values have different representations (this includes inconsistent and text formatting DQ problems). 
+ Syntax violation problems occur when a pre-specified format has been assigned to an attribute and a data value for this attribute does not adhere to this format (this includes the incomplete data format DQ problem in Table 1). 
+ Problems with violations of integrity constraints arise when data values do not adhere to pre-specified database integrity constraints; we also therefore include unique value violations, rather than have these as a separate problem, because unique value violations are one type of database integrity constraint. 
+ Note that, despite its position in Table 1, we treat outdated data to be a user perspective problem because whether data is out of date depends on the purpose it is used for.
+ For the context dependent category, the problem of violation of domain constraints is when an attribute value must be in a pre-specified context-dependent domain of values. 
+ Violation of organizational business rules is when any set of values do not adhere to a pre-specified rules assigned by the organization. 
+ Violation of company and governmental regulations is when any set of values do not adhere to a prespecified rules assigned imposed on the organization by legislating bodies. 
+ Similarly, violation of constraints provided by the database administrator is when any set of values do not adhere to a pre-specified rules assigned by the database administrator.
  
  # 2.6 Cost
  The cost of a data quality program can be considered a preventive cost that is in- curred by organizations to reduce data errors. This cost category includes the cost of all phases and steps that compose a data quality assessment and improvement process (see Section 2.1).
@@ -254,7 +267,7 @@ The information quality framework is defined as a list of relevant information q
 The framework is the input for an information quality audit that associates the information quality criteria with the methods and tools that will be used in the measurement process. 
 Some criteria require multiple measurement methods. The IQM methodology coordinates the application of multiple measurement methods.
 
-## Comprehensive methodology for Data Quality management(CDQ).
+## Comprehensive methodology for Data Quality management(CDQ)
 
  ![avatar](figures/PhasesCDQ.png)
  
@@ -423,7 +436,7 @@ Economic methodologies complement other methodologies and can be easily posi- ti
 In CDQ, the overall evaluation of the cost of poor quality is further developed to take into account the fact that the same quality improvement can be obtained with different priorities and paths and the minimization of the cost of the data quality program is the main criterion to choose among alternative improvement
 processes. The methodology suggests that different improvement processes can iden- tified as paths of data- and process-driven techniques applied to the data bases, data flows and document bases involved in the improvement. Then, the costs of the different processes should be evaluated and compared, to select the minimum-cost process.
 (這段講到經驗可以跳過)
-Experiences of use of early TDQM versions are reported in several U.S.A. Depart- ment of Defence (DoD) documents (see US Department of Defense [1994]). Specifically, the use of DQ tools developed over SQL scripts and programming approaches to check data quality are supported. 
+Experiences of use of early TDQM versions are reported in several U.S.A. Department of Defence (DoD) documents (see US Department of Defense [1994]). Specifically, the use of DQ tools developed over SQL scripts and programming approaches to check data quality are supported. 
 In Batini and Scannapieco [2006], a large-scale experience of the application of CDQ is reported, referring to the reorganization of Government to Business (G2B) relation- ships in Italy. The interactions with government are needed for several business events, such as starting a new business and evolving a business, which includes variations in legal status, board composition, senior management, and number of employees.
 
 # 5 Conclusions
