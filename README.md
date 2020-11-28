@@ -3,9 +3,31 @@ LaTeX-Template for seminar papers
 
 # TODO
 - 重新製圖
+- leave out the type of information system since we only focuses of data quality and thus make it general
 
- - [2.2.1-Strategie](#2.2.1-strategies)
- - [1. Introduction](#1.-introduction)
+# Table of Content
+
+ 1. Introduction
+ 2. Data Quality Fundamentals
+    * 2.1 Common Phases and Steps
+    * 2.2 Strategies and Techniques
+        * 2.2.1-Strategies
+        * 2.2.2-Techniques
+    * 2.3 Data Type
+    * 2.4 Data Quality Dimensions
+    * 2.5 Data Quality Problems
+    * 2.6 Cost
+ 3. Literature Review
+    * 3.1 Total Data Quality Management(TDQM)
+    * 3.2 Total Information Quality Management(TIQM)
+    * 3.3 Data Quality Assessment(DQA) 
+    * 3.4 Information Quality Measurement(IQM)
+    * 3.5 Comprehensive methodology for Data Quality management(CDQ).
+4. Evaluation
+    * 3.1 Common Phases and Steps
+    * 3.1.1. The Assessment Phase
+    * 3.1.2. The Improvement Phase.
+5. Conclusions
 # 1. Introduction
 
 The rest of the paper is structured as follows: Data Quality Fundamentals, Related Works, Evaluation and Conclusion.
@@ -25,7 +47,7 @@ The section introduces the basic data quality issues common to all methodologies
 (3) the data quality dimensions, 
 (4) the types of data
 
-## 2.1. Common Phases and Steps
+## 2.1 Common Phases and Steps
 
 In the most general case, the sequence of activities of a data quality methodology is composed of three phases:
 - (1) State reconstruction, which is aimed at collecting contextual information on orga- nizational processes and services, data collections and related management proce- dures, quality issues and corresponding costs; this phase can be skipped if contextual information is available from previous analyses.
@@ -146,9 +168,12 @@ Framework
  research focuses on the data perspective problems for both context dependent and independent categories and uses the classification of DQ problems identified in [5] (see Table 1). Hence, we provide a brief definition for each DQ problem in the context of our research in the following. In the context independent category, spelling errors, missing data, and incorrect values are self-explanatory DQ problems. Duplicate data problems occur when rows are duplicated or when schemas contain redundancies (that is, specify duplicate attributes in multiple databases). Data format problems occur when two or more semantically equivalent data values have different representations (this includes inconsistent and text formatting DQ problems). Syntax violation problems occur when a pre-specified format has been assigned to an attribute and a data value for this attribute does not adhere to this format (this includes the incomplete data format DQ problem in Table 1). Problems with violations of integrity constraints arise when data values do not adhere to pre-specified database integrity constraints; we also therefore include unique value violations, rather than have these as a separate problem, because unique value violations are one type of database integrity constraint. Note that, despite its position in Table 1, we treat outdated data to be a user perspective problem because whether data is out of date depends on the purpose it is used for.
  For the context dependent category, the problem of violation of domain constraints is when an attribute value must be in a pre-specified context-dependent domain of values. Violation of organizational business rules is when any set of values do not adhere to a pre-specified rules assigned by the organization. Violation of company and governmental regulations is when any set of values do not adhere to a pre- specified rules assigned imposed on the organization by legislating bodies. Similarly, violation of constraints provided by the database administrator is when any set of values do not adhere to a pre- specified rules assigned by the database administrator.
  
-
- 
  # 2.6 Cost
+ The cost of a data quality program can be considered a preventive cost that is in- curred by organizations to reduce data errors. This cost category includes the cost of all phases and steps that compose a data quality assessment and improvement process (see Section 2.1).
+ The costs of poor quality can be classified as follows [English 1999]:
+ (1) process costs, such as the costs associated with the re-execution of the whole process due to data errors;
+ (2) opportunity costs due to lost and missed revenues.
+ The cost of poor data quality is strongly context-dependent as opposed to the cost of a data quality program. This makes its evaluation particularly difficult, as the same data value and corresponding level of quality has a different impact depending on the recipient. For example, an active trader receiving obsolete information on a stock may incur considerable economic losses as a consequence of wrong investment decisions. In contrast, a newspaper receiving the same obsolete information to publish monthly trading reports may not experience any economic loss.
  
 # Literature Review
 
@@ -255,7 +280,60 @@ The methodology recommends the identifica- tion of all the data-driven and proce
 A set of mutually consistent improvement tech- niques constitutes an improvement process. 
 Finally, the most suitable improvement process is selected by performing a cost-benefit analysis.
 
-# Evaluation
+# 4. Evaluation
+
+
+
+# 4.1. Methodologies, Phases, and Steps
+![avatar](figures/TableIII&IV.png)
+![avatar](figures/TableV&VI.png)
+## 4.1.1. The Assessment Phase.
+
+The most commonly addressed steps of the assessment phase are data analysis and measurement of quality. However, they are performed according to different approaches.
+For example, the measurement of quality step is performed with questionnaires in AIMQ, with a combination of subjective and objective metrics in DQA
+Different measurement approaches meet the specific requirements of different organizational contexts, processes, users or services. Only a few methodolo- gies consider the DQ requirements analysis step, identifying DQ issues and collecting new target quality levels from users. This step is particularly relevant for evaluat- ing and solving conflicts in target DQ levels from different stakeholders. 
+## 4.1.2. The Improvement Phase.
+The identification of the causes of errors is the most widely addressed improvement step. DQA emphasizes the importance of the identification of the causes of errors step, but it does not discuss its execution.
+The last column of Table IV specifies whether the methodology allows extensibility to dimensions (and metrics) other than those explicitly dealt with in the methodology. For example, CDQ explicitly mentions dimensions among those that will be described in Section 3.3, but the approach can be easily generalized to other dimensions.
+
+
+In contrast, the management of the improvement solution step is explicitly performed only by TDQM. Other methodologies refer to the broad range of management techniques and best practices available from the change management field [Kettinger and Grover 1995]. Furthermore, it is possible to repeat the assessment phase of the methodology in order to evaluate the results of the improvement phase. As an example, DQA explicitly recommends the application of previous methodological steps to evaluate the effectiveness of improvement.
+Finally, the relationship among data quality, process, and organization is considered by TIQM, TDQM, and CDQ. These methodologies thoroughly discuss the assignment
+of responsibilities on processes and data. These steps are supported by the results of the state reconstruction phase. CDQ discusses a set of matrices to represent the re- lationship among processes, organizational units, and databases, which are produced during the state reconstruction phase and are subsequently used in the assignment of responsibilities steps.
+### 4.2. Strategies and Techniques
+![avatar](figures/TableVII.png)
+
+### 4.3. Dimensions
+
+
+### 4.4. Costs
+The cost dimension is considered only in TIQM, COLDQ, and CDQ. 
+In this section we analyze costs from two different points of view: (1) cost classifications, and (2) criteria provided for cost quantification.
+3.4.1. Cost Classifications.
+Both TIQM [English 1999] and COLDQ [Loshin 2004] pro- vide detailed classifications for costs.
+Table XI compares the TIQM and COLDQ classifications. In TIQM, data quality costs correspond to the costs of business processes and data management processes due to poor data quality. Costs for information quality assessment or inspection measure data quality dimensions to verify that processes are performing properly. Finally, process improvement and defect prevention costs involve activities to improve the quality of data, with the goal of eliminating, or reducing, the costs of poor data quality. Costs due to poor data quality are analyzed in depth in the TIQM approach, and are subdivided into three categories:
+(1) Process failure costs are incurred when poor quality data causes a process not to per- form properly. As an example, inaccurate mailing addresses cause correspondence to be misdelivered.
+(2) Information scrap and rework. When data is of poor quality, they involve several types of defect management activities, such as reworking, cleaning, or rejecting.
+(3) Loss and missed opportunity costs correspond to the revenues and profits lost be- cause of poor data quality. For example, due to low accuracy of customer e-mail addresses, a percentage of customers already acquired cannot be reached by peri- odic advertising campaigns, resulting in lower revenues, roughly proportional to the decrease of the accuracy of addresses.
+
+3.4.2. Criteria for Cost Quantification.
+
+The assessment of the total cost of data qual- ity supports the selection of the types of data quality activities to be performed (see Section 2.2) and their prioritization. TIQM, COLDQ, and CDQ are the only method- ologies providing criteria for this activity. In TIQM, selection and prioritization are achieved with the following steps:
+—identify current users and uses of data;
+—list the errors that negatively affect data quality;
+—identify the business units most often impacted by poor quality data;
+—estimate the direct cost of the current data quality program;
+—estimate the costs of data errors for all users and uses of data, grouped by business unit;
+—use costs to justify and prioritize data quality initiatives, including the institution- alization of a continuous quality improvement program.
+Each type of error occurs with a given frequency and involves a cost. Note that the cost of different error categories is a contingent value that varies with the process that makes use of the data. Models for process representation allow the identification of the activities affected by data errors. Since activities are typically associated with a total organizational cost, the cost of rework can provide quantitative and objective estimates.
+
+In CDQ the minimization of the cost of the data quality program is the main criterion for choosing among alternative improvement processes. First, different improvement processes are identified as paths of data- and process-driven techniques applied to the data bases, data flows, and document bases involved in the improvement. Then, the costs of the different processes are evaluated and compared, and the minimum-cost
+process is selected.
+### 4.5. Types of Data
+![avatar](figures/TableXII.png)
+Table XII associates the types of data classified in Section 2.5 and DQ methodologies. Most methodologies address structured data, while only a few also address semistructured data. In Table XII we have imputed implicitely considered when the methodology does not explicitely mention the type of data, but phases and steps can be applied to it.
+
+### 4.7. Summary Comparison of Methodologies
 
 ![avatar](figures/4ClassificationOfMethodologies.png)
 
@@ -265,8 +343,18 @@ port to the improvement phase;
 — operational methodologies, which focus on the technical issues of both the assessment and improvement phases, but do not address economic issues.
 — economic methodologies, which focus on the evaluation of costs.
 
+From a historical perspective, there exists a correlation between quality dimensions and the evolution of ICT technologies.
+The evolution of information systems from monolithic to network-based has caused a growth of the number of data sources in both size and scope and, consequently has signif- icantly increased the complexity of data quality management. DQ methodologies have started to focus on new quality dimensions, such as the completeness of the data source, the currency of data, and the consistency of the new data sources compared to the enter- prise database. With the advent of the Web, data sources have become difficult to assess and control over time. At the same time, searching and navigating through the Web is potentially unlimited. As a consequence of this fast evolution, methodologies have started to address new quality dimensions, such as accessibility and reputation. Acces- sibility measures the ability of users to access data, given their culture, physical status and available technologies, and is important in cooperative and network-based informa- tion systems. Reputation (or trustworthiness) is a property of data sources measuring
 
-# Conclusions
+Operational methodologies focus DQ assessment on identifying the issues for which their improvement approach works best. One of the main contributions is the identifica- tion of a set of relevant dimensions to improve and the description of a few straightfor- ward methods to assess them. For example, TDQM is a general-purpose methodology and suggests a complete set of relevant dimensions and improvement methods that can be applied in different contexts. 
+Complete methodologies are extremely helpful in providing a comprehensive frame- work to guide large DQ programs in organizations that process critical data and at- tribute to DQ a high strategic priority, such as banks and insurance companies. On the other hand, they show the classical tradeoff between the applicability of the method- ology and the lack of personalization to specific application domains or technological contexts. Being high-level and rather context independent, complete methodologies are only marginally affected by the evolution of ICT technologies and, over time have been revised to encompass the variety of data types, sources, and flows that are part of modern information systems. For example, the IP-MAP model of TDQM has evolved to IP-UML in order to manage the growing complexity of systems in terms of processes and actors. However, its role and use within the overall framework of TDQM has not changed significantly.
+Economic methodologies complement other methodologies and can be easily posi- tioned within the overall framework provided by any complete methodology. Most audit and improvement methodologies have a cost evaluation step (see Table XI). However, they mostly focus on the cost of DQ initiatives, while a complete cost-benefit analysis should also consider the cost of doing nothing—the cost of poor data quality, which is typically of an organizational nature. Economic methodologies focus on both aspects.
+In CDQ, the overall evaluation of the cost of poor quality is further developed to take into account the fact that the same quality improvement can be obtained with different priorities and paths and the minimization of the cost of the data quality program is the main criterion to choose among alternative improvement
+processes. The methodology suggests that different improvement processes can iden- tified as paths of data- and process-driven techniques applied to the data bases, data flows and document bases involved in the improvement. Then, the costs of the different processes should be evaluated and compared, to select the minimum-cost process.
+(這段講到經驗可以跳過)
+Experiences of use of early TDQM versions are reported in several U.S.A. Depart- ment of Defence (DoD) documents (see US Department of Defense [1994]). Specifically, the use of DQ tools developed over SQL scripts and programming approaches to check data quality are supported. 
+In Batini and Scannapieco [2006], a large-scale experience of the application of CDQ is reported, referring to the reorganization of Government to Business (G2B) relation- ships in Italy. The interactions with government are needed for several business events, such as starting a new business and evolving a business, which includes variations in legal status, board composition, senior management, and number of employees.
+# 5 Conclusions
 
 
 ## Challenges
