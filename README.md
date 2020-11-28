@@ -282,7 +282,7 @@ Finally, the most suitable improvement process is selected by performing a cost-
 
 # 4. Evaluation
 
-
+(這邊要加上一段)
 
 # 4.1. Methodologies, Phases, and Steps
 ![avatar](figures/TableIII&IV.png)
@@ -293,18 +293,28 @@ The most commonly addressed steps of the assessment phase are data analysis and 
 For example, the measurement of quality step is performed with questionnaires in AIMQ, with a combination of subjective and objective metrics in DQA
 Different measurement approaches meet the specific requirements of different organizational contexts, processes, users or services. Only a few methodolo- gies consider the DQ requirements analysis step, identifying DQ issues and collecting new target quality levels from users. This step is particularly relevant for evaluat- ing and solving conflicts in target DQ levels from different stakeholders. 
 ## 4.1.2. The Improvement Phase.
-The identification of the causes of errors is the most widely addressed improvement step. DQA emphasizes the importance of the identification of the causes of errors step, but it does not discuss its execution.
-The last column of Table IV specifies whether the methodology allows extensibility to dimensions (and metrics) other than those explicitly dealt with in the methodology. For example, CDQ explicitly mentions dimensions among those that will be described in Section 3.3, but the approach can be easily generalized to other dimensions.
+The identification of the causes of errors is the most widely addressed improvement step. 
+DQA emphasizes the importance of the identification of the causes of errors step, but it does not discuss its execution.
+The last column of Table IV specifies whether the methodology allows extensibility to dimensions (and metrics) other than those explicitly dealt with in the methodology. 
+For example, CDQ explicitly mentions dimensions among those that will be described in Section 3.3, but the approach can be easily generalized to other dimensions.
 
 
-In contrast, the management of the improvement solution step is explicitly performed only by TDQM. Other methodologies refer to the broad range of management techniques and best practices available from the change management field [Kettinger and Grover 1995]. Furthermore, it is possible to repeat the assessment phase of the methodology in order to evaluate the results of the improvement phase. As an example, DQA explicitly recommends the application of previous methodological steps to evaluate the effectiveness of improvement.
-Finally, the relationship among data quality, process, and organization is considered by TIQM, TDQM, and CDQ. These methodologies thoroughly discuss the assignment
-of responsibilities on processes and data. These steps are supported by the results of the state reconstruction phase. CDQ discusses a set of matrices to represent the re- lationship among processes, organizational units, and databases, which are produced during the state reconstruction phase and are subsequently used in the assignment of responsibilities steps.
+In contrast, the management of the improvement solution step is explicitly performed only by TDQM. 
+Other methodologies refer to the broad range of management techniques and best practices available from the change management field [Kettinger and Grover 1995]. 
+Furthermore, it is possible to repeat the assessment phase of the methodology in order to evaluate the results of the improvement phase. 
+As an example, DQA explicitly recommends the application of previous methodological steps to evaluate the effectiveness of improvement.
+Finally, the relationship among data quality, process, and organization is considered by TIQM, TDQM, and CDQ. 
+These methodologies thoroughly discuss the assignment of responsibilities on processes and data. 
+These steps are supported by the results of the state reconstruction phase. 
+CDQ discusses a set of matrices to represent the relationship among processes, organizational units, and databases, which are produced during the state reconstruction phase and are subsequently used in the assignment of responsibilities steps.
+
 ### 4.2. Strategies and Techniques
 ![avatar](figures/TableVII.png)
 
+### 4.2.1. Data-Driven Techniques
+## 4.2.2. Process-Driven Techniques.
 ### 4.3. Dimensions
-
+![avatar](figures/TableVIII.png)
 
 ### 4.4. Costs
 The cost dimension is considered only in TIQM, COLDQ, and CDQ. 
