@@ -9,11 +9,13 @@ LaTeX-Template for seminar papers
 
  1. Introduction
  2. Data Quality Fundamentals
-    * 2.1 Common Phases and Steps
+    * 2.1 Data Type
+    * 2.2 Data Quality Dimensions
+    * 2.3 Common Phases and Steps
     * 2.2 Strategies and Techniques
         * 2.2.1-Strategies
         * 2.2.2-Techniques
-    * 2.3 Data Type
+    
     * 2.4 Data Quality Dimensions
     * 2.5 Data Quality Problems
     * 2.6 Cost
@@ -77,8 +79,8 @@ Typical examples of unstructured data are a questionnaire containing free text a
 ## 2.1 Common Phases and Steps
 
 In the most general case, the sequence of activities of a data quality methodology is composed of three phases:
-- (1) State reconstruction, which is aimed at collecting contextual information on orga- nizational processes and services, data collections and related management proce- dures, quality issues and corresponding costs; this phase can be skipped if contextual information is available from previous analyses.
-- (2) Assessment/measurement, which measures the quality of data collections along rel- evant quality dimensions; the term measurement is used to address the issue of measuring the value of a set of data quality dimensions. The term assessment is used when such measurements are compared to reference values, in order to enable a diagnosis of quality. The term assessment is adopted in this article, consistent with the majority of methodologies, which stress the importance of the causes of poor data quality.
+- (1) State reconstruction, which is aimed at collecting contextual information on organizational processes and services, data collections and related management proce- dures, quality issues and corresponding costs; this phase can be skipped if contextual information is available from previous analyses.
+- (2) Assessment/measurement, which measures the quality of data collections along relevant quality dimensions; the term measurement is used to address the issue of measuring the value of a set of data quality dimensions. The term assessment is used when such measurements are compared to reference values, in order to enable a diagnosis of quality. The term assessment is adopted in this article, consistent with the majority of methodologies, which stress the importance of the causes of poor data quality.
 - (3) Improvement concerns the selection of the steps, strategies, and techniques for reaching new data quality targets.
 
 **_（把phases跟steps製圖）_**
@@ -305,6 +307,7 @@ Finally, the most suitable improvement process is selected by performing a cost-
 The most commonly addressed steps of the assessment phase are data analysis and measurement of quality. However, they are performed according to different approaches.
 For example, the measurement of quality step is performed with questionnaires in AIMQ, with a combination of subjective and objective metrics in DQA
 Different measurement approaches meet the specific requirements of different organizational contexts, processes, users or services. Only a few methodolo- gies consider the DQ requirements analysis step, identifying DQ issues and collecting new target quality levels from users. This step is particularly relevant for evaluat- ing and solving conflicts in target DQ levels from different stakeholders. 
+
 ### 4.1.2. The Improvement Phase.
 The identification of the causes of errors is the most widely addressed improvement step. 
 DQA emphasizes the importance of the identification of the causes of errors step, but it does not discuss its execution.
@@ -432,7 +435,7 @@ The evolution of information systems from monolithic to network-based has caused
 
 Operational methodologies focus DQ assessment on identifying the issues for which their improvement approach works best. One of the main contributions is the identifica- tion of a set of relevant dimensions to improve and the description of a few straightfor- ward methods to assess them. For example, TDQM is a general-purpose methodology and suggests a complete set of relevant dimensions and improvement methods that can be applied in different contexts. 
 Complete methodologies are extremely helpful in providing a comprehensive frame- work to guide large DQ programs in organizations that process critical data and at- tribute to DQ a high strategic priority, such as banks and insurance companies. On the other hand, they show the classical tradeoff between the applicability of the method- ology and the lack of personalization to specific application domains or technological contexts. Being high-level and rather context independent, complete methodologies are only marginally affected by the evolution of ICT technologies and, over time have been revised to encompass the variety of data types, sources, and flows that are part of modern information systems. For example, the IP-MAP model of TDQM has evolved to IP-UML in order to manage the growing complexity of systems in terms of processes and actors. However, its role and use within the overall framework of TDQM has not changed significantly.
-Economic methodologies complement other methodologies and can be easily posi- tioned within the overall framework provided by any complete methodology. Most audit and improvement methodologies have a cost evaluation step (see Table XI). However, they mostly focus on the cost of DQ initiatives, while a complete cost-benefit analysis should also consider the cost of doing nothing—the cost of poor data quality, which is typically of an organizational nature. Economic methodologies focus on both aspects.
+Economic methodologies complement other methodologies and can be easily positioned within the overall framework provided by any complete methodology. Most audit and improvement methodologies have a cost evaluation step (see Table XI). However, they mostly focus on the cost of DQ initiatives, while a complete cost-benefit analysis should also consider the cost of doing nothing—the cost of poor data quality, which is typically of an organizational nature. Economic methodologies focus on both aspects.
 In CDQ, the overall evaluation of the cost of poor quality is further developed to take into account the fact that the same quality improvement can be obtained with different priorities and paths and the minimization of the cost of the data quality program is the main criterion to choose among alternative improvement
 processes. The methodology suggests that different improvement processes can iden- tified as paths of data- and process-driven techniques applied to the data bases, data flows and document bases involved in the improvement. Then, the costs of the different processes should be evaluated and compared, to select the minimum-cost process.
 (這段講到經驗可以跳過)
