@@ -1,6 +1,6 @@
 # Seminar Template
 LaTeX-Template for seminar papers
-
+// https://www.tablesgenerator.com/
 # TODO
 - 重新製圖
 - leave out the type of information system since we only focuses of data quality and thus make it general
@@ -164,15 +164,22 @@ process-driven strategies:
 
 
 ## 2.4 Data Quality Dimensions
+
+We chose data quality dimensions commonly accepted and widely used as big data quality standards and redefined their basic concepts based on actual business needs. 
+At the same time, each dimension was divided into many typical elements associated with it, and each element has its own corresponding quality indicators. 
+In this way, hierarchical quality standards for big data were used for evaluation. 
+Figure 2 shows a universal two-layer data quality standard. Some detailed data quality indicators are given in Table 1.
+
+
 Framework
  ![avatar](figures/TwoLayerStandard.png) 
  ![avatar](figures/HierarchicalFrameWork.png) 
  ![avatar](figures/TwoLayerStandard.png)
 
-- Accessibility
-- Timeliness
-- Authorization
-- Credibility
+- Accessibility: Accessibility refers to the difficulty level for users to obtain data. Accessibility is closely linked with data openness, the higher the data openness degree, the more data types obtained, and the higher the degree of accessibility.
+- Timeliness: Timeliness is defined as the time delay from data generation and acquisition to utilization (McGivray, 2010). Data should be available within this delay to allow for meaningful analysis. In the age of big data, data content changes quickly so timeliness is very important.
+- Authorization: Authorization refers to whether an individual or organization has the right to use the data.
+- Credibility: Credibility is used to evaluate non-numeric data. It refers to the objective and subjective compo- nents of the believability of a source or message. Credibility of data has three key factors: reliability of data sources, data normalization, and the time when the data are produced.
 - Definition/Documentation
 - MetaData
 - Accuracy
