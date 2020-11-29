@@ -49,7 +49,7 @@ The section introduces the basic data quality issues common to all methodologies
 (3) the data quality dimensions, 
 (4) the types of data
 
-## 2.3 Data Type
+## 2.1 Data Type
 
 The ultimate goal of a DQ methodology is the analysis of data that, in general, describe real world objects in a format that can be stored, retrieved, and processed by a software procedure, and communicated through a network. 
 In the field of data quality, most authors either implicitly or explicitly distinguish three types of data:
@@ -75,8 +75,25 @@ Typical examples of unstructured data are a questionnaire containing free text a
  ![avatar](figures/DataType.png) 
  Different representations of the same real-world object.
 
+## 2.2 Data Quality Problems
+ ![avatar](figures/2DataQualityProblem.png)
+ As the paper is aiming at classifying DQ assessment methods in the context of relational databases, this
+ research focuses on the data perspective problems for both context dependent and independent categories and uses the classification of DQ problems identified in [5] (see Table 1). 
+ Hence, we provide a brief definition for each DQ problem in the context of our research in the following. 
+ In the context independent category, spelling errors, missing data, and incorrect values are self-explanatory DQ problems. 
+ Duplicate data problems occur when rows are duplicated or when schemas contain redundancies (that is, specify duplicate attributes in multiple databases). 
+ Data format problems occur when two or more semantically equivalent data values have different representations (this includes inconsistent and text formatting DQ problems). 
+ Syntax violation problems occur when a pre-specified format has been assigned to an attribute and a data value for this attribute does not adhere to this format (this includes the incomplete data format DQ problem in Table 1). 
+ Problems with violations of integrity constraints arise when data values do not adhere to pre-specified database integrity constraints; we also therefore include unique value violations, rather than have these as a separate problem, because unique value violations are one type of database integrity constraint. 
+ Note that, despite its position in Table 1, we treat outdated data to be a user perspective problem because whether data is out of date depends on the purpose it is used for.
+ For the context dependent category, the problem of violation of domain constraints is when an attribute value must be in a pre-specified context-dependent domain of values. 
+ Violation of organizational business rules is when any set of values do not adhere to a pre-specified rules assigned by the organization. 
+ Violation of company and governmental regulations is when any set of values do not adhere to a prespecified rules assigned imposed on the organization by legislating bodies. 
+ Similarly, violation of constraints provided by the database administrator is when any set of values do not adhere to a pre-specified rules assigned by the database administrator.
+ 
 
-## 2.1 Common Phases and Steps
+
+## 2.3 Common Phases and Steps
 
 In the most general case, the sequence of activities of a data quality methodology is composed of three phases:
 - (1) State reconstruction, which is aimed at collecting contextual information on organizational processes and services, data collections and related management proce- dures, quality issues and corresponding costs; this phase can be skipped if contextual information is available from previous analyses.
@@ -167,22 +184,7 @@ Framework
 - Readability
 - Structure
 
-## 2.5 Data Quality Problems
- ![avatar](figures/2DataQualityProblem.png)
- As the paper is aiming at classifying DQ assessment methods in the context of relational databases, this
- research focuses on the data perspective problems for both context dependent and independent categories and uses the classification of DQ problems identified in [5] (see Table 1). 
- Hence, we provide a brief definition for each DQ problem in the context of our research in the following. 
- In the context independent category, spelling errors, missing data, and incorrect values are self-explanatory DQ problems. 
- Duplicate data problems occur when rows are duplicated or when schemas contain redundancies (that is, specify duplicate attributes in multiple databases). 
- Data format problems occur when two or more semantically equivalent data values have different representations (this includes inconsistent and text formatting DQ problems). 
- Syntax violation problems occur when a pre-specified format has been assigned to an attribute and a data value for this attribute does not adhere to this format (this includes the incomplete data format DQ problem in Table 1). 
- Problems with violations of integrity constraints arise when data values do not adhere to pre-specified database integrity constraints; we also therefore include unique value violations, rather than have these as a separate problem, because unique value violations are one type of database integrity constraint. 
- Note that, despite its position in Table 1, we treat outdated data to be a user perspective problem because whether data is out of date depends on the purpose it is used for.
- For the context dependent category, the problem of violation of domain constraints is when an attribute value must be in a pre-specified context-dependent domain of values. 
- Violation of organizational business rules is when any set of values do not adhere to a pre-specified rules assigned by the organization. 
- Violation of company and governmental regulations is when any set of values do not adhere to a prespecified rules assigned imposed on the organization by legislating bodies. 
- Similarly, violation of constraints provided by the database administrator is when any set of values do not adhere to a pre-specified rules assigned by the database administrator.
- 
+
  # 2.6 Cost
  The cost of a data quality program can be considered a preventive cost that is in- curred by organizations to reduce data errors. This cost category includes the cost of all phases and steps that compose a data quality assessment and improvement process (see Section 2.1).
  The costs of poor quality can be classified as follows [English 1999]:
