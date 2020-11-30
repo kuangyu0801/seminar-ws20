@@ -5,7 +5,9 @@ LaTeX-Template for seminar papers
 - https://www.trustradius.com/data-quality?f=0
 # TODO
 - Tue: Review 2 Section, add Conclusion
-- Wed
+- Wed: add Application
+- Thur: 排版, 檢查reference
+- Fri: 上傳第一版
 - 重新製圖
 - leave out the type of information system since we only focuses of data quality and thus make it general
 - 可以把介紹的圖片改成表格文字敘述, 再補上comment
