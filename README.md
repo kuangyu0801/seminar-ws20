@@ -1,45 +1,70 @@
 # Seminar Template
 LaTeX-Template for seminar papers
 // https://www.tablesgenerator.com/
+- https://www.datamation.com/big-data/10-top-data-quality-tools.html
+- https://www.trustradius.com/data-quality?f=0
 # TODO
+- Tue: Review 2 Section, add Conclusion
+- Wed
 - 重新製圖
 - leave out the type of information system since we only focuses of data quality and thus make it general
-
+- 可以把介紹的圖片改成表格文字敘述, 再補上comment
+- technique要增加更多
 # Table of Content
 
  1. Introduction
+ 
  2. Data Quality Fundamentals
     * 2.1 Data Type
-    * 2.2 Data Quality Dimensions
-    * 2.3 Common Phases and Steps
+    * 2.2 Data Quality Problems
+    * 2.3 Phases and Steps
     * 2.2 Strategies and Techniques
-        * 2.2.1-Strategies
-        * 2.2.2-Techniques
-    
-    * 2.4 Data Quality Dimensions
-    * 2.5 Data Quality Problems
+        * 2.2.1-Strategies (篇幅太多要大修)
+        * 2.2.2-Techniques (篇幅太少要大修)
+    * 2.4 Data Quality Dimensions （這邊篇幅排版要改）
     * 2.6 Cost
  3. Literature Review
-    * 3.1 Total Data Quality Management(TDQM)
-    * 3.2 Total Information Quality Management(TIQM)
-    * 3.3 Data Quality Assessment(DQA) 
-    * 3.4 Information Quality Measurement(IQM)
-    * 3.5 Comprehensive methodology for Data Quality management(CDQ).
+    - 3.1 Total Data Quality Management(TDQM)
+    - 3.2 Total Information Quality Management(TIQM)
+    - 3.3 Data Quality Assessment(DQA) 
+    - 3.4 Information Quality Measurement(IQM)
+    - 3.5 Comprehensive methodology for Data Quality management(CDQ).
 4. Evaluation
-    * 3.1 Common Phases and Steps
-    * 3.1.1. The Assessment Phase
-    * 3.1.2. The Improvement Phase.
+    * 4.1 Common Phases and Steps
+        * 3.1.1. The Assessment Phase
+        * 3.1.2. The Improvement Phase.
+    - 4.5 Cost
+    - 4.6 Summary of Methodologies
 5. Conclusions
+    - 5.1 Application
+    - 5.2 Challenges
+Context:
+Having access to a data set for research is an important step, but being aware of its quality and potential caveats is even more crucial
+Goal:
+• Give an overview of methods to assess data quality
+• What properties can be analyzed, which cannot?
+• Are there ways to improve the quality of a data set?
+• Application of the assessment methods to an existing data set
+
 # 1. Introduction
 
-The rest of the paper is structured as follows: Data Quality Fundamentals, Related Works, Evaluation and Conclusion.
-
-For the first section, the fundamental of data quality are introduced, which include
-an overview of data quality and their attributes and classification of data quality assessment methods.   
-In second section, literature review of five data quality assessment are presented and important concept from different paper are explained in brief. 
-In the third part, evaluation on these five methods is performed in terms of steps, process, strategies, techniques, cost and performance.
+With the Machine Learning, Deep Learning and Artificial Intelligence on the rise, the demand of data analysis has never been higher.
+Both academy and industry sectors are eager to explore more opportunity by employing these techniques. 
+However, another issue quickly arises: How does one acquire high-quality data? Or, more preciosity, how to defines the quality of a set of data?
+There is a famous saying in the field Machine Learning: "Garbage input equals garbage output!". 
+That is, only with systematic method to assess data set, are ML application feasible for different domain.
+Traditionally, data labeling and assessment are done in either primitive or laborious manner, which becomes almost impossible in the big data era.
+The goal of this paper is to give an overview of methods to assess data quality and review the most popular data properties that can be analyzed.
+Moreover, this paper reviews several proposed data quality improvement methods after data quality is assessed.
+The application of the assessment methods are also presented.
+The rest of the paper is structured as follows: Data Quality Fundamentals, Literature Review, Evaluation and Conclusion.
+For the first section, the overview of data quality and classification of assessment methods are presented,
+which includes data type, data problem, phases and steps, strategies and techniques, dimensions and cost.
+In second section, literature review of five data quality assessment method, phases and concepts are introduced in brief. 
+In the third part, evaluation on these five methods is performed in terms of data quality fundamental attributes of previous section .
 In the end of paper, a conclusion is made based on evaluation result in the context of CI/CD application in software engineering. 
 The proposed method, future work and challenges are discussed in brief.
+This paper is requested and written under the subtopic of seminar, Advanced Software Engineering:Non-Functional Aspects in Software Engineering.
 
 # 2. Data Quality Fundamentals
 
@@ -453,6 +478,27 @@ In Batini and Scannapieco [2006], a large-scale experience of the application of
 
 # 5 Conclusions
 
+## Application
+- Informatica Data Quality
+- SAP Data Services
+- Oracle Data Quality
+- SAP Data Quality Management
+- V12 Data
+- IBM InfoSphere QualityStage
+- SAS DataFlux
+- Ataccama ONE
+- Trillium DQ for Big Data
 
+This paper has evaluated and analyzed fives DQ assessment methods in term of different aspects. 
+Of all the surveyed methods, CDQ is considered to be the most complete methods. 
+Experience suggests a “one size fits all” set of metrics is not a solution. 
+Rather, assessing data quality is an on-going effort that requires awareness of the fundamental principles underlying the development and context of application.
+There are some aspects left to be investigate such as assessment method customized for information system and application.
+
+The CDQ methodology [Batini and Scannapieco 2006; Batini et al. 2008] is conceived to be at the same time complete, flexible, and simple to apply. Com- pleteness is achieved by considering existing techniques and tools and integrating them in a framework that can work in both intra- and inter-organizational con- texts, and can be applied to all types of data, structured, semistructured and unstructured. The methodology is flexible since it supports the user in the se- lection of the most suitable techniques and tools within each phase and in any context. Finally, CDQ is simple since it is organized in phases and each phase is characterized by a specific goal and set of techniques to apply.
+
+Open Issues:
+From Data Quality to Information Quality
+Optimization on Information System
 ## Challenges
 可以參考The Challenges of Data Quality and Data Quality Assessment in the Big Data Era
