@@ -17,13 +17,15 @@ LaTeX-Template for seminar papers
  1. Introduction
  
  2. Data Quality Fundamentals
-    * 2.1 Data Type
-    * 2.2 Data Quality Problems
-    * 2.3 Phases and Steps
-    * 2.2 Strategies and Techniques
-        * 2.2.1-Strategies (篇幅太多要大修)
-        * 2.2.2-Techniques (篇幅太少要大修)
-    * 2.4 Data Quality Dimensions （這邊篇幅排版要改）
+    - 2.1 Data Type
+    - 2.2 Data Quality Problems
+    - 2.3 Phases and Steps
+        - 2.3.1 Assessment Steps
+        - 2.3.2 Improvement Steps
+    * 2.4 Strategies and Techniques
+        - 2.4.1-Strategies (篇幅太多要大修)
+        * 2.4.2-Techniques (篇幅太少要大修)
+    - 2.4 Data Quality Dimensions （這邊篇幅排版要改）
     * 2.6 Cost
  3. Literature Review
     - 3.1 Total Data Quality Management(TDQM)

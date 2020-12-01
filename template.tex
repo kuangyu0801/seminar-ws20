@@ -133,11 +133,9 @@ Main references are base on following paper and journal: \citet{Cai2005Challnege
 
 
 \section{Data Quality Fundamentals}
-In this section, fundamentals and concept of data quality will first be reviewed and discussed.
-The topics included are definition, classification, attributed, dimensions of data.
-Secondly, the process and pipelines for analysing methodologies of DQ are introduced.
-This topics regarding these methodologies includes strategies, techniques, dimensions,
-costs, data types.
+In this section, fundamentals of data and classifications of assessment methods are introduced.
+First, in data fundamentals, concepts ans definition of the data type, data quality problem and data quality dimensions are presented. Secondly, in classifications assessment methods, the paper discussed the most common process, pipelines for analysing DQ are introduced.
+This topics regarding these methodologies includes steps and phases, strategies and techniques, dimensions, costs.
 
 \subsection{Data Types}
 The ultimate goal of a DQ methodology is the analysis of data.
@@ -152,100 +150,118 @@ Relational tables and statistical data represent the most common type of structu
 Typical examples of unstructured data are a questionnaire containing free text answering open questions or the body of an e-mail.
 
 - Semistructured data, is data that have a structure which has some degree of flexibility. Semistructured data are also referred to as schemaless or self-describing.
+For example, XML, a the markup language commonly used to represent semistructured data, is semistructured.
+\begin{comment}
+Some common characteristics are:
+(1) data can contain fields not known at design time; for instance, an XML file does not have an associated XML schema file;
+(2) the same kind of data may be represented in multiple ways; for example, a date might be represented by one field or by multiple fields, even within a single data set; and
+(3) among the fields known at design time, many fields will not have values.
+\end{comment}
+
   \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Paper/figures/DataType.png}
     \caption{Data Type.}
     \label{fig:datatype}
   \end{figure}
- XML is the markup language commonly used to represent semistructured data.
- Some common characteristics are:
- (1) data can contain fields not known at design time; for instance, an XML file does not have an associated XML schema file;
- (2) the same kind of data may be represented in multiple ways; for example, a date might be represented by one field or by multiple fields, even within a single data set; and
- (3) among the fields known at design time, many fields will not have values.
 
- Data quality techniques become increasingly complex as data lose structure. For example, let us consider a registry describing personal information such as Name, Surname, Region, and StateOfBirth. Figure \ref{fig:datatype} shows the representation of Mr. Patrick Metzisi, born in the Masai Mara region in Kenya, by using a structured Figure \ref{fig:datatype}(a), unstructured (Figure \ref{fig:datatype}(b)), and semistructured (Figure \ref{fig:datatype}(c)) type of data. The same quality dimension will have different metrics according to the type of data. For instance, syntactic accuracy is measured as described in Section 2.3 in the case of structured data. With semistructured data, the distance function should consider a global distance related to the shape of the XML tree in addition to the local distance of fields.
+ Data quality techniques become increasingly complex as data lose structure. For example, let us consider a registry describing personal information such as Name, Surname, Region, and StateOfBirth. Figure \ref{fig:datatype} shows the representation of Mr. Patrick Metzisi, born in the Masai Mara region in Kenya, by using a structured Figure \ref{fig:datatype}(a), unstructured (Figure \ref{fig:datatype}(b)), and semistructured (Figure \ref{fig:datatype}(c)) type of data.
+ The same quality dimension will have different metrics according to the type of data. This would be explained in later subsection.
  The large majority of research contributions in the data quality literature focuses on structured and semistructured data. For this reason, this report focuses on structured and semistructured data.
 
-\subsection{Data Quality Problems}
+\subsection{Data Quality Problems}\label{sec:DataQualityProblems}
+The data quality problem could be classified into four categories depending on two factor: context-independence and role perspective.
+ Table \ref{table:DataQualityProblem} provides a brief definition for each DQ problem.
+ In the context independent category, spelling errors, missing data, and incorrect values are self-explanatory DQ problems.
+ Duplicate data problems occur when rows are duplicated or when schemas contain redundancies.
+ Data format problems occur when two or more semantically equivalent data values have different representations, including inconsistent and text formatting.
+ Syntax violation problems occur when a pre-specified format has been assigned to an attribute and a data value for this attribute does not adhere to this format, including incomplete data format.
+ Problems with violations of integrity constraints arise when data values do not adhere to pre-specified database integrity constraints; we also therefore include unique value violations, rather than have these as a separate problem, because unique value violations are one type of database integrity constraint.
+ Note that, despite its position in Table we treat outdated data to be a user perspective problem because whether data is out of date depends on the purpose it is used for.
 
-% Please add the following required packages to your document preamble:
+ For the context dependent category, the problem of violation of domain constraints is when an attribute value must be in a pre-specified context-dependent domain of values.
+ Violation of organizational business rules is when any set of values do not adhere to a pre-specified rules assigned by the organization.
+ Violation of company and governmental regulations is when any set of values do not adhere to a prespecified rules assigned imposed on the organization by legislating bodies.
+ Similarly, violation of constraints provided by the database administrator is when any set of values do not adhere to a pre-specified rules assigned by the database administrator. In \ref{sec:DataQualityDimensions}, the problems are define in different dimensions with specific indicators.
+
+ % Please add the following required packages to your document preamble:
 % \usepackage[normalem]{ulem}
 % \useunder{\uline}{\ul}{}
 \begin{table}[]
 \begin{tabular}{l|l|l|}
 \cline{2-3}
                                                                                      & Data Perspective                                                                                                                                                                                                                                                             & User Perspective                                                                                                                                                                                                                                                                                                                                                                \\ \hline
-\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Context-\\ independent\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Spelling error\\ Missing data\\ Duplicate data\\ Incorrect value\\ Inconsistent data format\\ Outdated data\\ Incomplete data format\\ Syntax violation\\ Unique value violation \\ Violation of \\ integrity constraints \\ Text formatting\end{tabular} & \begin{tabular}[c]{@{}l@{}}The information is inaccessible\\ The information is insecure\\ The information is hardly retrievable \\ The information is difficult to aggregate\\ Errors in the information transformation\end{tabular}                                                                                                                                           \\ \hline
-\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Context-\\ dependent\end{tabular}}   & \begin{tabular}[c]{@{}l@{}}Violation of domain constraints \\ Violation of organization\’s \\ business rules\\ Violation of company \\ and government regulations \\ Violation of constraints provided by\\  the database administrator\end{tabular}                                & \begin{tabular}[c]{@{}l@{}}The information is not based on fact \\ The information is of doubtful credibility\\ The information presents an impartial view\\ The information is irrelevant to the work\\ The information is incomplete\\ The information is compactly represented\\ The information is hard to manipulate \\ The information is hard to understand\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Context-\\ independent\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Spelling error\\ Missing data\\ Duplicate data\\ Incorrect value\\ Inconsistent data format Outdated data\\ Incomplete data format\\ Syntax violation\\ Unique value violation Violation of \\ integrity constraints Text formatting\end{tabular} & \begin{tabular}[c]{@{}l@{}}The information is inaccessible\\ The information is insecure\\ The information is hardly retrievable \\ The information is difficult to aggregate\\ Errors in the information transformation\end{tabular}                                                                                                                                           \\ \hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Context-\\ dependent\end{tabular}}   & \begin{tabular}[c]{@{}l@{}}Violation of domain constraints \\ Violation of organization’s business rules\\ Violation of company and government\\ regulations \\ Violation of constraints provided by\\  the database administrator\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}The information is not based on fact \\ The information is of doubtful credibility\\ The information presents an impartial view\\ The information is irrelevant to the work\\ The information is incomplete\\ The information is compactly represented\\ The information is hard to manipulate \\ The information is hard to understand\end{tabular} \\ \hline
 \end{tabular}
-\caption{A Classification of DQ Problems.}
-\label{table:classificationdataqualityproblem}
+\caption{Types of Data Quality Problem}
+\label{table:DataQualityProblem}
 \end{table}
-
-
-As the paper is aiming at classifying DQ assessment methods in the context of relational databases, this
- research focuses on the data perspective problems for both context dependent and independent categories and uses the classification of DQ problems identified in [5] (see Table \ref{table:classificationdataqualityproblem}).
- Hence, we provide a brief definition for each DQ problem in the context of our research in the following.
- In the context independent category, spelling errors, missing data, and incorrect values are self-explanatory DQ problems.
- Duplicate data problems occur when rows are duplicated or when schemas contain redundancies (that is, specify duplicate attributes in multiple databases).
- Data format problems occur when two or more semantically equivalent data values have different representations (this includes inconsistent and text formatting DQ problems).
- Syntax violation problems occur when a pre-specified format has been assigned to an attribute and a data value for this attribute does not adhere to this format (this includes the incomplete data format DQ problem in Table \ref{table:classificationdataqualityproblem}).
- Problems with violations of integrity constraints arise when data values do not adhere to pre-specified database integrity constraints; we also therefore include unique value violations, rather than have these as a separate problem, because unique value violations are one type of database integrity constraint.
- Note that, despite its position in Table \ref{table:classificationdataqualityproblem}, we treat outdated data to be a user perspective problem because whether data is out of date depends on the purpose it is used for.
- For the context dependent category, the problem of violation of domain constraints is when an attribute value must be in a pre-specified context-dependent domain of values.
- Violation of organizational business rules is when any set of values do not adhere to a pre-specified rules assigned by the organization.
- Violation of company and governmental regulations is when any set of values do not adhere to a prespecified rules assigned imposed on the organization by legislating bodies.
- Similarly, violation of constraints provided by the database administrator is when any set of values do not adhere to a pre-specified rules assigned by the database administrator.
 
 \subsection{Phases and Steps}
 In the most general case, the sequence of activities of a data quality methodology is composed of three phases:
 (1) State reconstruction, which is aimed at collecting contextual information on organizational processes and services, data collections and related management procedures, quality issues and corresponding costs; this phase can be skipped if contextual information is available from previous analyses.
-(2) Assessment/measurement, which measures the quality of data collections along relevant quality dimensions; the term measurement is used to address the issue of measuring the value of a set of data quality dimensions. The term assessment is used when such measurements are compared to reference values, in order to enable a diagnosis of quality. The term assessment is adopted in this article, consistent with the majority of methodologies, which stress the importance of the causes of poor data quality.
+(2) Assessment, which measures the quality of data collections along relevant quality dimensions; the term measurement is used to address the issue of measuring the value of a set of data quality dimensions.
+\begin{comment}
+The term assessment is used when such measurements are compared to reference values, in order to enable a diagnosis of quality. The term assessment is adopted in this article, consistent with the majority of methodologies, which stress the importance of the causes of poor data quality.
+\end{comment}
 (3) Improvement concerns the selection of the steps, strategies, and techniques for reaching new data quality targets.
 
-\subsubsection{Steps of Assessment Phases}
-\\
-- data analysis, which examines data schemas and performs interviews to reach a complete understanding of data and related architectural and management rules;
-- DQ requirements analysis, which surveys the opinion of data users and administrators to identify quality issues and set new quality targets;
-- identification of critical areas, which selects the most relevant databases and data flows to be assessed quantitatively;
-- process modeling, which provides a model of the processes producing or updating data;
-- measurement of quality, which selects the quality dimensions affected by the quality issues identified in the DQ requirements analysis step and defines corresponding metrics; measurement can be objective when it is based on quantitative metrics, or subjective, when it is based on qualitative evaluations by data administrators and users.
-\subsubsection{Steps of Improvement Phases}
-The steps of the improvement phase are:
-- evaluation of costs, which estimates the direct and indirect costs of data quality;
-- assignment of process responsibilities, which identifies the process owners and defines their responsibilities on data production and management activities;
-- assignment of data responsibilities, which identifies the data owners and defines their data management responsibilities;
-- identification of the causes of errors, which identifies the causes of quality problems;
-- selection of strategies and techniques, which identifies all the data improvement strategies and corresponding techniques, that comply with contextual knowledge, quality objectives, and budget constraints;
-- design of data improvement solutions, which selects the most effective and efficient strategy and related set of techniques and tools to improve data quality;
-- process control, which defines check points in the data production processes, to monitor quality during process execution;
-- process redesign, which defines the process improvement actions that can deliver corresponding DQ improvements;
-- improvement management, which defines new organizational rules for data quality;
-- improvement monitoring, which establishes periodic monitoring activities that provide feedback on the results of the improvement process and enables its dynamic tuning.
+\subsubsection{Assessment Steps}
+includes:
+(1) Data Analysis, which examines data schemas and performs interviews to reach a complete understanding of data and related architectural and management rules;
+(2) DQ Requirements Analysis, which surveys the opinion of data users and administrators to identify quality issues and set new quality targets;
+(3) Identification of Critical Areas, which selects the most relevant databases and data flows to be assessed quantitatively;
+(4) Process Modeling, which provides a model of the processes producing or updating data;
+(5) Measurement of Quality, which selects the quality dimensions affected by the quality issues identified in the DQ requirements analysis step and defines corresponding metrics.
+\begin{comment}
+measurement can be objective when it is based on quantitative metrics, or subjective, when it is based on qualitative evaluations by data administrators and users.
+\end{comment}
 
+\subsubsection{Improvement Steps}
+includes:
+(1) Evaluation of Costs, which estimates the direct and indirect costs of data quality;
+(2) Assignment of Process responsibilities, which identifies the process owners and defines their responsibilities on data production and management activities;
+(3) Assignment of Data Responsibilities, which identifies the data owners and defines their data management responsibilities;
+(4) Identification of the Causes of Errors, which identifies the causes of quality problems;
+(5) Selection of Strategies and Techniques, which identifies all the data improvement strategies and corresponding techniques, that comply with contextual knowledge, quality objectives, and budget constraints;
+(6) Design of Data Improvement Solutions;
+(7) Process Control;
+(8) Process Redesign;
+(9) Improvement Management;
+(10) Improvement Monitoring;
+
+\begin{comment}
+(6) Design of Data Improvement Solutions, which selects the most effective and efficient strategy and related set of techniques and tools to improve data quality;
+(7) Process Control, which defines check points in the data production processes, to monitor quality during process execution;
+(8) Process Redesign, which defines the process improvement actions that can deliver corresponding DQ improvements;
+(9) Improvement Management, which defines new organizational rules for data quality;
+(10) Improvement Monitoring, which establishes periodic monitoring activities that provide feedback on the results of the improvement process and enables its dynamic tuning.
+\end{comment}
 Note that in all the steps of the assessment phase, a relevant role is played by metadata that store complementary information on data for a variety of purposes, including data quality. Metadata often provide the information necessary to understand data and/or evaluate them.
 
 \subsection{Strategies and Techniques}
-\subsubsection{Strategies}
-\subsubsubsection{Data-Driven Strategies}
-- (1) acquisition of new data, which improves data by acquiring higher-quality data to replace the values that raise quality problems;
-- (2) standardization (or normalization), which replaces or complements nonstandard data values with corresponding values that comply with the standard. For example, nicknames are replaced with corresponding names, for example, Bob with Robert, and abbreviations are replaced with corresponding full names, for example, Channel Str. with Channel Street.
-- (3) Record linkage, which identifies that data representations in two (or multiple) tables that might refer to the same real-world object;
-- (4) data and schema integration, which define a unified view of the data provided by heterogeneous data sources. Integration has the main purpose of allowing a user to access the data stored by heterogeneous data sources through a unified view of these data. In distributed, cooperative, and P2P information systems (see Section 2.6), data sources are characterized by various kinds of heterogeneities that can be generally classified into (1) technological heterogeneities, (2) schema heterogeneities, and (3) instance-level heterogeneities. Technological heterogeneities are due to the use of products by different vendors, employed at various layers of an information and communication infrastructure. Schema heterogeneities are primarily caused by the use of (1) different data models, as in the case of a source that adopts the relational data model and a different source that adopts the XML data model, and (2) different representations for the same object, such as two relational sources that represent an object as a table and an attribute. Instance-level heterogeneities are caused by different, conflicting data values provided by distinct sources for the same objects. For instance, this type of heterogeneity can be caused by independent and poorly coordinated processes that feed the different data sources. Data integration must face all the types of these listed heterogeneities.
-- (5) Source trustworthiness, which selects data sources on the basis of the quality of their data;
-- (6) error localization and correction, which identify and eliminate data quality errors by detecting the records that do not satisfy a given set of quality rules. These techniques are mainly studied in the statistical domain. Compared to elementary data, aggregate statistical data, such as average, sum, max, and so forth are less sensitive to possibly erroneous probabilistic localization and correction of values. Techniques for error localization and correction have been proposed for inconsistencies, incomplete data, and outliers [Dasu and Johnson 2003]; [Batini and Scannapieco 2006].
-- (7) Cost optimization, defines quality improvement actions along a set of dimensions by minimizing costs.
+There are two types of strategies: data-driven and process-driven. Data-driven strategies improve the quality of data by directly modifying the value of data and Process-driven strategies improve quality by redesigning the processes that create or modify data.
 
-\subsubsubsection{Process-Driven Strategies}
+\subsubsection{Data-Driven Techniques}
+includes
+(1) Acquisition of New Data, which improves data by acquiring higher-quality data to replace the values that raise quality problems;
+(2) Standardization (or Normalization), which replaces or complements nonstandard data values with corresponding values that comply with the standard. For example, nicknames are replaced with corresponding names, for example, Bob with Robert, and abbreviations are replaced with corresponding full names, for example, Channel Str. with Channel Street.
+(3) Record Linkage, which identifies that data representations in two (or multiple) tables that might refer to the same real-world object;
+(4) Data and Schema Integration, which define a unified view of the data provided by heterogeneous data sources. Integration has the main purpose of allowing a user to access the data stored by heterogeneous data sources through a unified view of these data. Heterogeneities can be classified into technological heterogeneities, schema heterogeneities,and instance-level heterogeneities.
+\begin{comment}
+In distributed, cooperative, and P2P information systems (see Section 2.6), data sources are characterized by various kinds of heterogeneities that can be generally classified into (1) technological heterogeneities, (2) schema heterogeneities, and (3) instance-level heterogeneities.
+Technological heterogeneities are due to the use of products by different vendors, employed at various layers of an information and communication infrastructure.
+Schema heterogeneities are primarily caused by the use of (1) different data models, as in the case of a source that adopts the relational data model and a different source that adopts the XML data model, and (2) different representations for the same object, such as two relational sources that represent an object as a table and an attribute. Instance-level heterogeneities are caused by different, conflicting data values provided by distinct sources for the same objects. For instance, this type of heterogeneity can be caused by independent and poorly coordinated processes that feed the different data sources.
+Data integration must face all the types of these listed heterogeneities.
+\end{comment}
+(5) Source Trustworthiness, which selects data sources on the basis of the quality of their data;
+(6) Error Localization and Correction, which identify and eliminate data quality errors by detecting the records that do not satisfy a given set of quality rules. These techniques are mainly in the statistical domain.
+(7) Cost optimization, defines quality improvement actions along a set of dimensions by minimizing costs.
+
+\subsubsection{Process-Driven Techniques}
 - Process control inserts checks and control procedures in the data production process when: (1) new data are created, (2) data sets are updated, or (3) new data sets are accessed by the process. In this way, a reactive strategy is applied to data modification events, thus avoiding data degradation and error propagation.
-- Process redesign redesigns processes in order to remove the causes of poor quality and introduces new activities that produce data of higher quality. If process redesign is radical, this technique is referred to as business process reengineering [Hammer and Champy 2001]; [Stoica et al. 2003].
-
-. The comparison focuses on:
-- (1) acquisition of new data,
-- (2) record linkage,
-- (3) error localization and correction,
-- (4) process control, and (5) process redesign techniques.
+- Process redesign redesigns processes in order to remove the causes of poor quality and introduces new activities that produce data of higher quality.
 
 \subsubsection{Techniques}
  - Column analysis: Number of (unique) values and the number of instances per value as percentage from the total number of instances in that column
@@ -258,10 +274,11 @@ Note that in all the steps of the assessment phase, a relevant role is played by
  - Schema matching: two attributes are semantically equivalent
  - Semantic profiling
 
-\subsection{Data Quality Dimensions}
+\subsection{Data Quality Dimensions}\label{sec:DataQualityDimensions}
 
+To deifne data quality dimension, a data quality is proposed, as shown in Figure \ref{fig:twolayerstandard}. With each dimension, there is underlying data qulity elements and indicators.
 In \citet{Cai2005ChallnegesOfDataQuality}, they chose data quality dimensions commonly accepted and widely used as big data quality standards and redefined their basic concepts based on actual business needs.
-At the same time, each dimension was divided into many typical elements associated with it, and each element has its own corresponding quality indicators: Accessibility
+Each dimension was divided into many typical elements associated with it, and each element has its own corresponding quality indicators: Accessibility
 , Timeliness
 , Authorization
 , Credibility
@@ -276,11 +293,11 @@ At the same time, each dimension was divided into many typical elements associat
 , Readability
 ,and Structure.
 In this way, hierarchical quality standards for big data were used for evaluation.
-Figure \ref{fig:twolayerstandard} shows a universal two-layer data quality standard. Some detailed data quality indicators are given in Figure \ref{fig:hierachicalframwork}.
+Figure \ref{fig:twolayerstandard} shows a universal two-layer data quality standard. Detailed correspondence dimension, element and indicators are shown in Figure \ref{fig:hierachicalframwork}.
 
   \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{Paper/figures/DataQualityFramework..png}
+    \includegraphics[width=0.25\textwidth]{Paper/figures/DataQualityFramework.png}
     \caption{Data quality framework.}
     \label{fig:dataqualityframework}
   \end{figure}
@@ -299,6 +316,7 @@ Figure \ref{fig:twolayerstandard} shows a universal two-layer data quality stand
     \label{fig:hierachicalframwork}
  \end{figure}
 
+ For instance, syntactic accuracy is measured as described in Section 2.3 in the case of structured data. With semistructured data, the distance function should consider a global distance related to the shape of the XML tree in addition to the local distance of fields.
 
 
 \subsection{Cost}
@@ -307,7 +325,6 @@ The cost of a data quality program can be considered a preventive cost that is i
  (1) process costs, such as the costs associated with the re-execution of the whole process due to data errors;
  (2) opportunity costs due to lost and missed revenues.
  The cost of poor data quality is strongly context-dependent as opposed to the cost of a data quality program. This makes its evaluation particularly difficult, as the same data value and corresponding level of quality has a different impact depending on the recipient. For example, an active trader receiving obsolete information on a stock may incur considerable economic losses as a consequence of wrong investment decisions. In contrast, a newspaper receiving the same obsolete information to publish monthly trading reports may not experience any economic loss.
-
 
 \section{Literature Review}
 In this section, fives data quality assessment methods are introduced in brief, summarizing their characteristics and steps. These methods are Total Data Quality Management (TDQM), Total Information Quality Management (TIQM), Data Quality Assessment (DQA), Information Quality Measurement(IQM), and Comprehensive methodology for Data Quality management(CDQ). The details comparison will be presented in section Evaluation.
@@ -337,10 +354,6 @@ In applying TDQM, an organization must:
 (c) teach IQ assessment and IQ management to all the IP constituencies; and
 (d) institutionalize continuous IP improvement.
 \end{comment}
-
-
-
-
 
 \begin{figure}
     \centering
