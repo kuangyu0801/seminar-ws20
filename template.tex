@@ -262,7 +262,7 @@ Data integration must face all the types of these listed heterogeneities.
 \subsubsection{Process-Driven Techniques}
 - Process control inserts checks and control procedures in the data production process when: (1) new data are created, (2) data sets are updated, or (3) new data sets are accessed by the process. In this way, a reactive strategy is applied to data modification events, thus avoiding data degradation and error propagation.
 - Process redesign redesigns processes in order to remove the causes of poor quality and introduces new activities that produce data of higher quality.
-
+\begin{comment}
 \subsubsection{Techniques}
  - Column analysis: Number of (unique) values and the number of instances per value as percentage from the total number of instances in that column
  - Cross-domain analysis
@@ -273,10 +273,11 @@ Data integration must face all the types of these listed heterogeneities.
  - Primary key and foreign key analysis (PK/FK analysis) : are good candidates for a PK/FK
  - Schema matching: two attributes are semantically equivalent
  - Semantic profiling
+\end{comment}
 
 \subsection{Data Quality Dimensions}\label{sec:DataQualityDimensions}
 
-To deifne data quality dimension, a data quality is proposed, as shown in Figure \ref{fig:twolayerstandard}. With each dimension, there is underlying data qulity elements and indicators.
+To define data quality dimension, a data quality is proposed, as shown in Figure \ref{fig:twolayerstandard}. With each dimension, there is underlying data qulity elements and indicators.
 In \citet{Cai2005ChallnegesOfDataQuality}, they chose data quality dimensions commonly accepted and widely used as big data quality standards and redefined their basic concepts based on actual business needs.
 Each dimension was divided into many typical elements associated with it, and each element has its own corresponding quality indicators: Accessibility
 , Timeliness
@@ -320,8 +321,8 @@ Figure \ref{fig:twolayerstandard} shows a universal two-layer data quality stand
 
 
 \subsection{Cost}
-The cost of a data quality program can be considered a preventive cost that is incurred by organizations to reduce data errors. This cost category includes the cost of all phases and steps that compose a data quality assessment and improvement process (see Section 2.1).
- The costs of poor quality can be classified as follows [English 1999]:
+The cost of a data quality program can be considered a preventive cost that is incurred by organizations to reduce data errors. This cost category includes the cost of all phases and steps that compose a data quality assessment and improvement process.
+ The costs of poor quality can be classified as:
  (1) process costs, such as the costs associated with the re-execution of the whole process due to data errors;
  (2) opportunity costs due to lost and missed revenues.
  The cost of poor data quality is strongly context-dependent as opposed to the cost of a data quality program. This makes its evaluation particularly difficult, as the same data value and corresponding level of quality has a different impact depending on the recipient. For example, an active trader receiving obsolete information on a stock may incur considerable economic losses as a consequence of wrong investment decisions. In contrast, a newspaper receiving the same obsolete information to publish monthly trading reports may not experience any economic loss.
@@ -469,7 +470,8 @@ CDQ                                                         & +                 
 \end{table}
 
 \subsection{Types of Data}
-
+The supported data types are shown in Table \ref{table:DataTypeComparison}.
+we have imputed implicitly considered when the methodology does not explicitly mention the type of data, but phases and steps can be applied to it. CDQ attempts an extension to semistructured data of steps and techniques origi- nally developed for structured data.
 \begin{table}[]
 \centering
 \begin{tabular}{|c|c|c|}
@@ -481,6 +483,8 @@ DQA                                                               & x          &
 IQM                                                               & x          & x                     \\ \hline
 CDQ                                                               & x          & x                     \\ \hline
 \end{tabular}
+\caption{Data Type Comparison}
+\label{table:DataTypeComparison}
 \end{table}
 
 
@@ -681,10 +685,27 @@ In Batini and Scannapieco [2006], a large-scale experience of the application of
 \end{comment}
 
 \section{Conclusion}
-This section summarizes all the topics in report.
-The conclusions of evaluation of different method are drew.
-From the best suitable methods, new ideas and customization are proposed to be adapted in the context of CI/CD application in software engineering.
-In the end, the future work of data quality assessment for CI/CD application are proposed.
+
+This paper first introduces fundamentals of data quality, pipelines and classification of general assessment method, followed by the evaluation and analysis over five DQ assessment methods in term of different aspects.
+Of all the surveyed methods, CDQ is considered to be the most complete, yet flexible, and simple to apply.
+The completeness is achieved by considering existing techniques and tools and integrating them in a framework that can work in both intra- and inter-organizational contexts, and can be applied to all types of data, structured, semistructured and unstructured.
+The methodology is flexible since it supports the user in the selection of the most suitable techniques and tools within each phase and in any context.
+Experience suggests a “one size fits all” set of metrics is not a solution. The CDQ flexibility poses itself in great advantage over other methods.
+Finally, CDQ is simple since it is organized in phases and each phase is characterized by a specific goal and set of techniques to apply.
+
+The very motivation for this paper is to explore possibility of applying DQ assessment in academic research of software engineering, specifically CI/CD application. CI focuses on automation tools to allow development teams to integrate their efforts, build and test the code, while CD enables the code to be packaged and delivered with a fully automated deployment process. Both of the process are automated and generated logs and reports that are common in the format of semi-structured data, commonly stored in XML or HTML.
+Therefore, the CDQ's capability of extension to other new metrics and flexibility make it the most suitable candidate for future application of DQ assessment in software engineering.
+
+Two open issues are left to be investigated: DQ assessment method customized for specific information system and challenges in big data era.
+From a historical perspective, there exists a correlation between quality dimensions and the evolution of ICT technologies.
+The most critical issues with data quality management were error localization and correction in data sources, and record linkage between new data sources and preexisting data bases.
+The evolution of information systems from monolithic to network-based has caused a growth of the number of data sources in both size and scope and, consequently has significantly increased the complexity of data quality management.
+
+The characteristics of big data come down to the 4Vs: Volume, Velocity, Variety, and Value (Katal, Wazid, & Goudar, 2013). Volume refers to the tremendous volume of the data. Velocity means that data are being formed at an unprecedented speed and must be dealt with in a timely manner. Variety indicates that big data has all kinds of data types, and this diversity divides the data into structured data and unstructured data. These multityped data requires higher data processing capabilities.
+Finally, Value represents low-value density. Value density is inversely proportional to total data size, the greater the big data scale, the less relatively valuable the data. Consequently, the cost of DQ assessment will gain significant importance is inevitable. How to accurately define and estimate the cost of DQ is another topic.
+
+In the end, assessing data quality is an on-going effort that requires awareness of the fundamental principles underlying the development and context of application.
+
 \bibliography{template}
 
 \end{document}
