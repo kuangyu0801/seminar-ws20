@@ -579,32 +579,44 @@ The relationship between organizational units and processes has also been modele
 \end{comment}
 
 \subsection{Data Quality Dimensions}
-Table VIII shows the quality dimensions considered by the methodologies surveyed in this article.
-In Table VIII, a dimension is associated with a methodology, if the methodology provides a corresponding definition.
-For each methodology’s dimensions, we address the corresponding references (see Table III).
-
+Table \ref{table:SummaryDataQualityDimension} shows the quality dimensions considered by the methodologies surveyed in this article.
+In Table \ref{table:SummaryDataQualityDimension}, a dimension is associated with a methodology, if the methodology provides a corresponding definition.
+For each methodology’s dimensions, we address the corresponding references.
 
 \begin{table}[]
 \centering
-\begin{tabular}{|c|l|}
+\begin{tabular}{|l|l|l|l|l|l|}
 \hline
-\begin{tabular}[c]{@{}c@{}}Strategy/Meth. \\ Acronym\end{tabular} & \multicolumn{1}{c|}{Data Quality Dimension}                                                                                                                                                                                                                                                                                                                                                                                                                                                              \\ \hline
-TDQM                                                              & \begin{tabular}[c]{@{}l@{}}Accessibility, Appropriateness, Believability, Completeness, Concise/Consistent \\ representation, Ease of manipulation, Value added, Free of error, Interpretability, \\ Objectivity, Relevance, Reputation, Security, Timeliness, Understandability\end{tabular}                                                                                                                                                                                                            \\ \hline
-TIQM                                                              & \begin{tabular}[c]{@{}l@{}}Inherent dimensions: Definition conformance (consistency), Completeness, \\ Business rules conformance, Accuracy (to surrogate source), Accuracy (to reality), \\ Precision, Nonduplication, Equivalence of redundant data, Concurrency of redundant \\ data, Pragmatic dimensions: accessibility, timeliness, contextual clarity, Derivation\\ integrity, Usability, Rightness (fact completeness), cost.Reputation, Security, Timeliness, \\ Understandability\end{tabular} \\ \hline
-DQA                                                               & \begin{tabular}[c]{@{}l@{}}Accessibility, Appropriate amount of data, Believability, Completeness, Freedom from errors, \\ Consistency, Concise Representation, Relevance, Ease of manipulation, Interpretability, \\ Objectivity, Reputation, Security, Timeliness, Understandability, Value added.\end{tabular}                                                                                                                                                                                        \\ \hline
-IQM                                                               & \begin{tabular}[c]{@{}l@{}}Accessibility, Consistency, Timeliness, Conciseness, Maintainability, Currency, Applicability, \\ Convenience, Speed, Comprehensiveness, Clarity, Accuracy, Traceability, Security, Correctness, \\ Interactivity.\end{tabular}                                                                                                                                                                                                                                               \\ \hline
-CDQ                                                               & \begin{tabular}[c]{@{}l@{}}Schema: Correctness with respect to the model, Correctness with respect to Requirements, \\ Completeness, Pertinence, Readability, Normalization, Data: Syntactic/Semantic Accuracy, \\ Semantic Accuracy, Completeness, Consistency, Currency, Timeliness, Volatility, Completability, \\ Reputation, Accessibility, Cost.\end{tabular}                                                                                                                                      \\ \hline
+\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}Strategy/Meth. \\ Acronym\end{tabular}} & TDQM & TIQM & DQA & IQM & CDQ \\ \hline
+Accessibility                                                                           & +    &      & +   & +   &     \\ \hline
+Completeness                                                                            & +    & +    & +   &     & +   \\ \hline
+Timeliness                                                                              & +    & +    & +   & +   & +   \\ \hline
+Consistency                                                                             & +    & +    & +   & +   & +   \\ \hline
+Security                                                                                & +    & +    & +   & +   &     \\ \hline
+Correctness                                                                             &      &      &     & +   & +   \\ \hline
+Cost                                                                                    &      & +    &     &     & +   \\ \hline
+Reputation                                                                              & +    & +    & +   &     & +   \\ \hline
+Accuracy                                                                                &      & +    &     & +   & +   \\ \hline
+Appropriateness                                                                         & +    &      & +   &     &     \\ \hline
+Believability                                                                           & +    &      & +   &     &     \\ \hline
+Understandability                                                                       & +    & +    & +   &     &     \\ \hline
 \end{tabular}
+\caption{Summary Data Quality Dimension}
+\label{table:SummaryDataQualityDimension}
 \end{table}
+
 
 Notice the large variety of dimensions defined in the methodologies, which confirms the complexity of the data quality concept. This is not surprising, since nowadays a large number of phenomena can be described in terms of data. Multiple classifications of quality dimensions are proposed by the methodologies. TIQM classifies dimensions as inherent and pragmatic.
 CDQ proposes schema and data dimensions.
+Due to different metrics and corresponding definition used in different methodology, here we will not go into the detail of each metrics. In some methodology, even different metrics are used for the same dimension.
 
+\begin{comment}
 Table IX shows the metrics provided for quality dimensions by different methodologies.
 We do not include metrics for semantic accuracy because the methodology addressing it, CDQ, do not provide specific measurement methods.
 In general, multiple metrics are defined for each dimension, and each dimension accordingly has multiple entries in the table.
 Note that subjective metrics such as user surveys have been defined for almost all quality dimensions.
 Different metrics for the same dimension are identified by acronyms, which are used in Table X to associate them with the methodologies in which they are used and/or defined.
+It is worth mentioning that the majority of metrics with only one occurrence in methodologies are in IQM, which analyzes the quality of Web information. The high number of measurement tools in the Web context results in a high number of metrics specific to IQM.
 
 The last column of Table X provides for each dimension and each metric associated with the dimension, (1) the number of methodologies that use the metrics, and (2) the total number of methodologies that mention the corresponding dimension.
 The ratio between these values measures the degree of consensus on dimension metrics among methodologies.
@@ -615,6 +627,7 @@ Such metrics are defined by considering the measurement tools that are available
 For example, using a site analyzer, it is possible to assess dimensions such as accessibility, consistency, timeliness, conciseness, and maintainability.
 Traffic analyzers can be used to assess applicability and convenience, while port scanners are useful to assess security.
 The high number of measurement tools in the Web context results in a high number of metrics specific to IQM.
+\end{comment}
 
 \subsection{Cost}
 The cost dimension is considered only in TIQM and CDQ and exist two views: (1) cost classifications, and (2) criteria provided for cost quantification.
