@@ -330,14 +330,23 @@ The cost of a data quality program can be considered a preventive cost that is i
 \section{Literature Review}
 In this section, fives data quality assessment methods are introduced in brief, summarizing their characteristics and steps. These methods are Total Data Quality Management (TDQM), Total Information Quality Management (TIQM), Data Quality Assessment (DQA), Information Quality Measurement(IQM), and Comprehensive methodology for Data Quality management(CDQ). The details comparison will be presented in section Evaluation.
 
-\subsection{Total Data Quality Management (TDQM)}
+\subsection{Total Data Quality Management (TDQM)}\label{sec:TDQM}
 
 The TDQM methodology was the first general methodology published in the data quality literature [Wang 1998]. TDQM is the outcome of academic research, but has been extensively used as a guide to organizational data reengineering initiatives.
-Given requirements, reengineering must start from modeling operating processes. Consistent with these tenets, TDQM proposes a language for the description of information production (IP) processes, called IP-MAP [Shankaranarayan et al. 2000].
+Given requirements, reengineering must start from modeling operating processes. Consistent with these tenets, TDQM proposes a language for the description of information production (IP) processes, called IP-MAP [Shankaranarayan et al. 2000]. An information production map is a graphical model designed to help analysts to visualize the information production process, identify the ownership of process phases, understand information and organizational boundaries, and estimate the time and quality metrics associated with the current production process.
+The description of processes is a mandatory activity, consistent with the general orientation of process-driven strategies.
 \begin{comment}
 IP-MAP is the only language for information process modeling and represents a de facto standard. Practical experiences with TDQM are reported, for example, in Kovac and Weickert [2002].
 \end{comment}
 IP-MAP has been variously extended, towards UML and also to support organizational design.  A example of IP-MAP is shown in Figure \ref{fig:ExampleIPMAP}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Paper/figures/ExampleIPMAP.png}
+    \caption{Example of an IP-MAP).}
+    \label{fig:ExampleIPMAP}
+ \end{figure}
+
 
 TDQM's goal is to support the entire end-to-end quality improvement process, from requirements analysis to implementation.
 
@@ -356,12 +365,6 @@ In applying TDQM, an organization must:
 (d) institutionalize continuous IP improvement.
 \end{comment}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{Paper/figures/ExampleIPMAP.png}
-    \caption{Example of an IP-MAP).}
-    \label{fig:ExampleIPMAP}
- \end{figure}
 
 
 \begin{figure}
@@ -455,23 +458,9 @@ Finally, the most suitable improvement process is selected by performing a cost-
 \section{Evaluation}
 In this section evaluation in terns of process, techniques, and performances are discussed across these methods.
 
-\begin{table}[]
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-\begin{tabular}[c]{@{}c@{}}Step/Meth\\ Acronym\end{tabular} & \begin{tabular}[c]{@{}c@{}}Data\\ Analysis\end{tabular} & \begin{tabular}[c]{@{}c@{}}DQ\\ Requirement\\ Analysis\end{tabular} & \begin{tabular}[c]{@{}c@{}}Identification of\\ Critical Areas\end{tabular} & \begin{tabular}[c]{@{}c@{}}Process\\ Modeling\end{tabular} & \begin{tabular}[c]{@{}c@{}}Measurement\\ of Quality\end{tabular} & \begin{tabular}[c]{@{}c@{}}Extensible\\  to Other\\ Dimensions\\ and Metrics\end{tabular} \\ \hline
-TDQM                                                        & +                                                       &                                                                     & +                                                                          & +                                                          & +                                                                & Fixed                                                                                     \\ \hline
-TIQM                                                        & +                                                       & +                                                                   & +                                                                          & +                                                          & +                                                                & Fixed                                                                                     \\ \hline
-DQA                                                         & +                                                       &                                                                     & +                                                                          &                                                            & +                                                                & Open                                                                                      \\ \hline
-IQM                                                         & +                                                       &                                                                     &                                                                            &                                                            & +                                                                & Open                                                                                      \\ \hline
-CDQ                                                         & +                                                       & +                                                                   & +                                                                          & +                                                          & +                                                                & Open                                                                                      \\ \hline
-\end{tabular}
-\caption{Methodologies and Assessment Steps}
-\label{table:assessmentstep}
-\end{table}
-
 \subsection{Types of Data}
 The supported data types are shown in Table \ref{table:DataTypeComparison}.
-we have imputed implicitly considered when the methodology does not explicitly mention the type of data, but phases and steps can be applied to it. CDQ attempts an extension to semistructured data of steps and techniques origi- nally developed for structured data.
+It is marked with implicitly considered when the methodology does not explicitly mention the type of data, but phases and steps can be applied to it. CDQ attempts an extension to semistructured data of steps and techniques originally developed for structured data.
 \begin{table}[]
 \centering
 \begin{tabular}{|c|c|c|}
@@ -492,29 +481,30 @@ CDQ                                                               & x          &
 
 \subsubsection{Assessment Phases}
 The most commonly addressed steps of the assessment phase are data analysis and measurement of quality. However, they are performed according to different approaches.
-For example, the measurement of quality step is performed with questionnaires in AIMQ, with a combination of subjective and objective metrics in DQA
 Different measurement approaches meet the specific requirements of different organizational contexts, processes, users or services. Only a few methodologies consider the DQ requirements analysis step, identifying DQ issues and collecting new target quality levels from users. This step is particularly relevant for evaluating and solving conflicts in target DQ levels from different stakeholders.
+The last column of Table \ref{table:AssessmentStepsComparison} specifies whether the methodology allows extensibility to dimensions (and metrics) other than those explicitly dealt with in the methodology.
+CDQ explicitly mentions dimensions, but the approach can be easily generalized to other dimensions.
+
 \begin{table}[]
-\centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\begin{tabular}[c]{@{}c@{}}Step/Meth\\ Acronym\end{tabular} & \begin{tabular}[c]{@{}c@{}}Data\\ Analysis\end{tabular} & \begin{tabular}[c]{@{}c@{}}Assignment of \\ Process \\ Responsibilities\end{tabular} & \begin{tabular}[c]{@{}c@{}}Assignment\\ of Data \\ Responsibilities\end{tabular} & \begin{tabular}[c]{@{}c@{}}Process\\ Modeling\end{tabular} & \begin{tabular}[c]{@{}c@{}}Selection \\ Strategies\\  and Techniques\end{tabular} & \begin{tabular}[c]{@{}c@{}}Identification\\  the Causes\\  of Errors\end{tabular} \\ \hline
-TDQM                                                        & +                                                       & +                                                                                    & +                                                                                & +                                                          & +                                                                                 & +                                                                                 \\ \hline
-TIQM                                                        & +                                                       & +                                                                                    &                                                                                  & +                                                          & +                                                                                 & +                                                                                 \\ \hline
-DQA                                                         & +                                                       &                                                                                      &                                                                                  &                                                            &                                                                                   & +                                                                                 \\ \hline
-IQM                                                         &                                                         &                                                                                      &                                                                                  &                                                            &                                                                                   &                                                                                   \\ \hline
-CDQ                                                         & +                                                       & +                                                                                    & +                                                                                & +                                                          & +                                                                                 & +                                                                                 \\ \hline
+\begin{tabular}[c]{@{}c@{}}Step/Meth\\ Acronym\end{tabular} & \begin{tabular}[c]{@{}c@{}}Data\\ Analysis\end{tabular} & \begin{tabular}[c]{@{}c@{}}DQ\\ Requirement\\ Analysis\end{tabular} & \begin{tabular}[c]{@{}c@{}}Identification of\\ Critical Areas\end{tabular} & \begin{tabular}[c]{@{}c@{}}Process\\ Modeling\end{tabular} & \begin{tabular}[c]{@{}c@{}}Measurement\\ of Quality\end{tabular} & \begin{tabular}[c]{@{}c@{}}Extensible\\  to Other\\ Dimensions\\ and Metrics\end{tabular} \\ \hline
+TDQM                                                        & +                                                       &                                                                     & +                                                                          & +                                                          & +                                                                & Fixed                                                                                     \\ \hline
+TIQM                                                        & +                                                       & +                                                                   & +                                                                          & +                                                          & +                                                                & Fixed                                                                                     \\ \hline
+DQA                                                         & +                                                       &                                                                     & +                                                                          &                                                            & +                                                                & Open                                                                                      \\ \hline
+IQM                                                         & +                                                       &                                                                     &                                                                            &                                                            & +                                                                & Open                                                                                      \\ \hline
+CDQ                                                         & +                                                       & +                                                                   & +                                                                          & +                                                          & +                                                                & Open                                                                                      \\ \hline
 \end{tabular}
+\caption{Assessment Steps Comparison}
+\label{table:AssessmentStepsComparison}
 \end{table}
 
 \subsubsection{Improvement Phases}
+Table \ref{table:ImprovementStepsComparison} compares the steps of improvement phases. Since IQM doesn't have improvement phase, the whole column is left empty.
 The identification of the causes of errors is the most widely addressed improvement step.
 DQA emphasizes the importance of the identification of the causes of errors step, but it does not discuss its execution.
-The last column of Table IV specifies whether the methodology allows extensibility to dimensions (and metrics) other than those explicitly dealt with in the methodology.
-For example, CDQ explicitly mentions dimensions among those that will be described in Section 3.3, but the approach can be easily generalized to other dimensions.
-
 In contrast, the management of the improvement solution step is explicitly performed only by TDQM.
-Other methodologies refer to the broad range of management techniques and best practices available from the change management field [Kettinger and Grover 1995].
+Other methodologies refer to the broad range of management techniques and best practices.
 Furthermore, it is possible to repeat the assessment phase of the methodology in order to evaluate the results of the improvement phase.
 As an example, DQA explicitly recommends the application of previous methodological steps to evaluate the effectiveness of improvement.
 Finally, the relationship among data quality, process, and organization is considered by TIQM, TDQM, and CDQ.
@@ -526,7 +516,7 @@ CDQ discusses a set of matrices to represent the relationship among processes, o
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
-\begin{tabular}[c]{@{}c@{}}Step/Meth\\ Acronym\end{tabular} & TDQM & TIQM & DQA & IQM & CDQ \\ \hline
+\begin{tabular}[c]{@{}c@{}}Step/Meth Acronym\end{tabular} & TDQM & TIQM & DQA & IQM & CDQ \\ \hline
 Evaluation of Costs                                         & +    & +    &     &     & +   \\ \hline
 Assignment of Process Responsibilities                      & +    & +    &     &     & +   \\ \hline
 Assignment of Data Responsibilities                         & +    & +    &     &     & +   \\ \hline
@@ -538,8 +528,8 @@ Process Redesign                                            & +    & +    &     
 Improvement Management                                      & +    &      &     &     &     \\ \hline
 Improvement Monitoring                                      & +    & +    &     &     & +   \\ \hline
 \end{tabular}
-\caption{Methodologies and Improvement Steps}
-\label{table:ImprovementSteps}
+\caption{Improvement Steps Comparison}
+\label{table:ImprovementStepsComparison}
 \end{table}
 
 \begin{table}[]
@@ -551,44 +541,42 @@ TDQM                   &                                                        
 TIQM                   & \begin{tabular}[c]{@{}l@{}}Data cleansing\\ Normalization\\ Error localization and correction\end{tabular}                             & Process Redesign \\ \hline
 CDQ                    & \begin{tabular}[c]{@{}l@{}}Normalization\\ Record Linkage\\ Data and schema integration \\ Error localization and correction\end{tabular} & Process Redesign \\ \hline
 \end{tabular}
-\caption{Methodologies and Types of Strategies}
-\label{table:TypesofStrategies}
+\caption{Strategy Types Comparison}
+\label{table:StrategyTypesComparison}
 \end{table}
 
-
 \subsection{Strategies and Techniques}
-Table VII shows the strategies and techniques adopted by different methodologies. A methodology is associated with a strategy if it provides guidelines to select and design corresponding techniques.
-Notice that the column labelled Process-driven in Table VII provides the same in- formation as columns, Process control and Process redesign of Table VI. The column labelled Data-driven explicitly mentions the data-driven techniques implicitly considered in Tables V and VI.
-Table VII shows that five DQ methodologies adopt mixed strategies, variously combining data-driven and process-driven techniques. The methodology applying the wider range of data- and process-driven techniques is TIQM. Conversely, TDQM provides guidelines to apply process-driven strategies by using the Information Manufacturing Analysis Matrix [Ballou et al. 1998], which suggests when and how to improve data.
-Normalization, record linkage, data and schema integration, represent the data- driven techniques most widely adopted in DQ methodologies, while process redesign, as discussed in previous section, is most relevant in process-driven methodologies. We now discuss specific contributions related to the data- and process-driven techniques considered in Section 2.2.
+Table \ref{table:StrategyTypesComparison} shows the strategies and techniques adopted by different methodologies. A methodology is associated with a strategy if it provides guidelines to select and design corresponding techniques.
+Notice that the column labelled Process-driven in Table \ref{table:StrategyTypesComparison} provides the same information as columns, Process control and Process redesign of Table \ref{table:ImprovementStepsComparison}. The column labelled Data-driven explicitly mentions the data-driven techniques implicitly considered in Tables \ref{table:ImprovementStepsComparison}.
+Table \ref{table:StrategyTypesComparison} shows that two DQ methodologies adopt mixed strategies, variously combining data-driven and process-driven techniques. The methodology applying the wider range of data- and process-driven techniques is TIQM. Conversely, TDQM provides guidelines to apply process-driven strategies by using the Information Manufacturing Analysis Matrix, which suggests when and how to improve data.
+Normalization, record linkage, data and schema integration, represent the data- driven techniques most widely adopted in DQ methodologies, while process redesign, as discussed in previous section, is most relevant in process-driven methodologies. We now discuss specific contributions related to the data- and process-driven techniques considered.
 
 \subsubsection{Data-Driven Techniques}
 Normalization techniques have been proposed in several domains, including census and territorial data domains.
 CDQ provide normalization techniques improving DQ by comparing data with look-up tables and defining a common metaschema.
-Record linkage has been investigated in the database research since the ’50s and has been applied in many contexts such as healthcare, administrative, and census applications.
+Record linkage has been investigated in the database research since the 1950s and has been applied in many contexts such as healthcare, administrative, and census applications.
 In such contexts, it is crucial to produce efficient computer-assisted matching procedures that can reduce the use of clerical resources, and at the same time, minimize matching errors.
 CDQ discusses three types of record linkage techniques:
-
 (1) Probabilistic techniques, based on the broad set of methods developed over the past two centuries within statistics and probability theory, ranging from Bayesian net- works to data mining.
 (2) Empirical techniques that make use of algorithmic techniques such as sorting, tree analysis, neighbor comparison, and pruning.
 (3) Knowledge-based techniques, extracting knowledge from files and applying reasoning strategies.
 Criteria for choosing among these three types of techniques are discussed within the CDQ methodology.
 
-CDQ follows an approach similar to ISTAT, with more emphasis on the autonomy of organizations in the cooperative system.
+CDQ emphasizes on the autonomy of organizations in the cooperative system.
 In fact, the resolution of heterogeneities in the case studies, proposed as best practices, is performed through record linkage on a very thin layer of data, namely the identifiers.
 All other data are reconciled only in case of autonomous decisions of the agencies involved.
 \subsubsection{Process-Driven Techniques}
-Methodologies addressing the process redesign step tend to borrow corresponding techniques from the literature on business process reengineering (BPR) [Muthu et al. 1999; Hammer 1990].
-TDQM represents an exception in this respect, as it proposes an original process redesign control approach that is referred to as an “information manufacturing system for the Information Product” [Ballou et al. 1998].
-This methodology proposes the Information Production Map (IP-MAP) model [Shankaranarayan et al. 2000] that is used to model the information products managed by the manufacturing processes.
-An information production map is a graphical model designed to help analysts to visualize the information production process, identify the ownership of process phases, understand information and organizational boundaries, and estimate the time and quality metrics associated with the current production process.
-The description of processes is a mandatory activity, consistent with the general orientation of process-driven strategies.
+Methodologies addressing the process redesign step tend to borrow corresponding techniques from business process reengineering (BPR).
+TDQM represents an exception in this respect, as it proposes an original process redesign control approach that is referred to as an "information manufacturing system for the Information Product".
+This methodology proposes the Information Production Map (IP-MAP) model, introduced in Section \ref{sec:TDQM}.
 After modelling and assessing the information production process, new process control activities are identified and/or process redesign decisions are taken.
 
 Complex solutions such as IP-MAP cannot always be adopted due to their high costs and, in some cases, the practical unfeasibility of a thorough process modeling step.
 For this reason, other methodologies adopt less formal, but more feasible solutions.
 For example, CDQ is based on a set of matrices that describe the main relationships among data, information flows, processes, and organizational units.
+\begin{comment}
 The relationship between organizational units and processes has also been modeled in extensions of IP-MAP proposed in the literature [Scannapieco et al. 2002].
+\end{comment}
 
 \subsection{Data Quality Dimensions}
 Table VIII shows the quality dimensions considered by the methodologies surveyed in this article.

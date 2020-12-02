@@ -24,11 +24,11 @@ LaTeX-Template for seminar papers
     - 2.3 Phases and Steps
         - 2.3.1 Assessment Steps
         - 2.3.2 Improvement Steps
-    * 2.4 Strategies and Techniques
+    - 2.4 Strategies and Techniques
         - 2.4.1-Strategies (篇幅太多要大修)
-        * 2.4.2-Techniques (加入relational database expample)
+        - 2.4.2-Techniques (加入relational database expample)
     - 2.4 Data Quality Dimensions （這邊篇幅排版要改）
-    * 2.6 Cost
+    - 2.6 Cost
  3. Literature Review
     - 3.1 Total Data Quality Management(TDQM)
     - 3.2 Total Information Quality Management(TIQM)
@@ -36,11 +36,14 @@ LaTeX-Template for seminar papers
     - 3.4 Information Quality Measurement(IQM)
     - 3.5 Comprehensive methodology for Data Quality management(CDQ).
 4. Evaluation
-    * 4.1 Common Phases and Steps
-        * 3.1.1. The Assessment Phase
-        * 3.1.2. The Improvement Phase.
-    - 4.5 Cost
-    - 4.6 Summary of Methodologies
+    - 4.1
+    - 4.2 Common Phases and Steps
+        - 4.2.1. The Assessment Phase
+        - 4.2.2. The Improvement Phase.
+    - 4.3 Strategies and Techniques
+    * 4.4 Data Quality Dimensions
+    * 4.5 Cost
+    * 4.6 Summary of Methodologies
 5. Conclusions
     - 5.1 Application
     - 5.2 Challenges
