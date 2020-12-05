@@ -126,7 +126,7 @@ In second section, literature review of five data quality assessment method, pha
 In the third part, evaluation on these five methods is performed in terms of data quality fundamental attributes of previous section .
 In the end of paper, a conclusion is made based on evaluation result in the context of CI/CD application in software engineering.
 The proposed method, future work and challenges are discussed in brief.
-This paper is requested and written under the subtopic of seminar, Advanced Software Engineering:Non-Functional Aspects in Software Engineering.
+This paper is requested and written under the subtopic of seminar, Advanced Software Engineering: Non-Functional Aspects in Software Engineering.
 
 Main references are base on following paper and journal: \citet{Cai2005ChallnegesOfDataQuality}, \citet{Pipino2002DataQualityAssessment} and \citet{Batini2009MethodologiesForDataQuality} \citet{Wang1996BeyondAccuracy} \citet{Borek2011AClassficationOfDataQualityAssessmentMethods}
    \citet{Cappiello2004DataQualityAssessmentfromTheUse}
@@ -134,13 +134,14 @@ Main references are base on following paper and journal: \citet{Cai2005Challnege
 
 \section{Data Quality Fundamentals}
 In this section, fundamentals of data and classifications of assessment methods are introduced.
-First, in data fundamentals, concepts ans definition of the data type, data quality problem and data quality dimensions are presented. Secondly, in classifications assessment methods, the paper discussed the most common process, pipelines for analysing DQ are introduced.
+First, concepts and definition of the data type, data quality problem and data quality dimensions are presented. Secondly, in classifications assessment methods, the paper discussed the most common process, pipelines for analysing DQ are introduced.
 This topics regarding these methodologies includes steps and phases, strategies and techniques, dimensions, costs.
 
-\subsection{Data Types}
+\subsection{Data Types}\label{sec:DataTypes}
+
 The ultimate goal of a DQ methodology is the analysis of data.
-The real world objects need to be created in a format that could further be stored, retrieved and processed by software programs.
-In the field of data and computer science, data are either implicitly or explicitly distinguished by three types:
+The real world, objects need to be created in a format that could further be stored, retrieved and processed by software programs.
+In the field of data and computer science, data are either implicitly or explicitly distinguished by three types \cite{Batini2009MethodologiesForDataQuality}:
 
 - Structured data, is aggregations or generalizations of items described by elementary attributes defined within a domain.
 Domains represent the range of values that can be assigned to attributes and usually correspond to elementary data types of programming languages, such as numeric values or text strings.
@@ -170,7 +171,7 @@ Some common characteristics are:
  The large majority of research contributions in the data quality literature focuses on structured and semistructured data. For this reason, this report focuses on structured and semistructured data.
 
 \subsection{Data Quality Problems}\label{sec:DataQualityProblems}
-The data quality problem could be classified into four categories depending on two factor: context-independence and role perspective.
+The data quality problem could be classified into four categories depending on two factor: context-independence and role perspective \cite{Borek2011AClassficationOfDataQualityAssessmentMethod}.
  Table \ref{table:DataQualityProblem} provides a brief definition for each DQ problem.
  In the context independent category, spelling errors, missing data, and incorrect values are self-explanatory DQ problems.
  Duplicate data problems occur when rows are duplicated or when schemas contain redundancies.
@@ -199,7 +200,7 @@ The data quality problem could be classified into four categories depending on t
 \end{table}
 
 \subsection{Phases and Steps}
-In the most general case, the sequence of activities of a data quality methodology is composed of three phases:
+In the most general case, the sequence of activities of a data quality methodology is composed of three phases \cite{Batini2009MethodologiesForDataQuality}:
 (1) State reconstruction, which is aimed at collecting contextual information on organizational processes and services, data collections and related management procedures, quality issues and corresponding costs; this phase can be skipped if contextual information is available from previous analyses.
 (2) Assessment, which measures the quality of data collections along relevant quality dimensions; the term measurement is used to address the issue of measuring the value of a set of data quality dimensions.
 \begin{comment}
@@ -316,8 +317,8 @@ Figure \ref{fig:twolayerstandard} shows a universal two-layer data quality stand
     \caption{The hierarchical big data quality assessment framework(partial content).}
     \label{fig:hierachicalframwork}
  \end{figure}
-
- For instance, syntactic accuracy is measured as described in Section 2.3 in the case of structured data. With semistructured data, the distance function should consider a global distance related to the shape of the XML tree in addition to the local distance of fields.
+Under the same dimension and elements, the indicators varies with type of data structure.
+ For instance, syntactic accuracy is measured as described in Section \ref{sec:DataTypes} in the case of structured data. With semistructured data, the distance function should consider a global distance related to the shape of the XML tree in addition to the local distance of fields.
 
 
 \subsection{Cost}
@@ -332,8 +333,8 @@ In this section, fives data quality assessment methods are introduced in brief, 
 
 \subsection{Total Data Quality Management (TDQM)}\label{sec:TDQM}
 
-The TDQM methodology was the first general methodology published in the data quality literature [Wang 1998]. TDQM is the outcome of academic research, but has been extensively used as a guide to organizational data reengineering initiatives.
-Given requirements, reengineering must start from modeling operating processes. Consistent with these tenets, TDQM proposes a language for the description of information production (IP) processes, called IP-MAP [Shankaranarayan et al. 2000]. An information production map is a graphical model designed to help analysts to visualize the information production process, identify the ownership of process phases, understand information and organizational boundaries, and estimate the time and quality metrics associated with the current production process.
+The TDQM methodology was the first general methodology published in the data quality literature \cite{Wang1998TDQM}. TDQM is the outcome of academic research, but has been extensively used as a guide to organizational data reengineering initiatives.
+Given requirements, reengineering must start from modeling operating processes. Consistent with these tenets, TDQM proposes a language for the description of information production (IP) processes, called IP-MAP \cite{Shankaranarayanan2007IPMAPC}. An information production map is a graphical model designed to help analysts to visualize the information production process, identify the ownership of process phases, understand information and organizational boundaries, and estimate the time and quality metrics associated with the current production process.
 The description of processes is a mandatory activity, consistent with the general orientation of process-driven strategies.
 \begin{comment}
 IP-MAP is the only language for information process modeling and represents a de facto standard. Practical experiences with TDQM are reported, for example, in Kovac and Weickert [2002].
@@ -366,7 +367,6 @@ In applying TDQM, an organization must:
 \end{comment}
 
 
-
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Paper/figures/PhasesTDQM.png}
@@ -376,7 +376,7 @@ In applying TDQM, an organization must:
 
 \subsection{Total Information Quality Management (TIQM)}
 
-The TIQM methodology [English 1999] has been designed to support data warehouse projects. The methodology assumes the consolidation of operational data sources into a unique, integrated database, used in all types of aggregations performed to build the data warehouse. This consolidation eliminates errors and heterogeneities of source databases. TIQM focuses on the management activities that are responsible for the integration of operational data sources, by discussing the strategy that has to be followed by the organization in order to make effective technical choices. Cost-benefit analyses are supported from a managerial perspective. The methodology provides a detailed classification of costs and benefits.
+The TIQM methodology \cite{English1999TIQM} has been designed to support data warehouse projects. The methodology assumes the consolidation of operational data sources into a unique, integrated database, used in all types of aggregations performed to build the data warehouse. This consolidation eliminates errors and heterogeneities of source databases. TIQM focuses on the management activities that are responsible for the integration of operational data sources, by discussing the strategy that has to be followed by the organization in order to make effective technical choices. Cost-benefit analyses are supported from a managerial perspective. The methodology provides a detailed classification of costs and benefits.
 
 \begin{figure}
     \centering
@@ -399,12 +399,12 @@ The goal is not only the achievement of higher data quality level, but to undert
     \label{fig:PhasesDQA}
  \end{figure}
 
-The DQA methodology [Pipino et al. 2002] has been designed to provide the general principles guiding the definition of data quality metrics. In the literature, data quality metrics are mostly defined ad hoc to solve specific problems and thus, are dependent on the considered scenario. The DQA methodology is aimed at identifying the general quality measurement principles common to previous research. Figure \ref{fig:PhasesDQA} shows the phases.
+The DQA methodology \cite{Pipino2002DQA} has been designed to provide the general principles guiding the definition of data quality metrics. In the literature, data quality metrics are mostly defined ad hoc to solve specific problems and thus, are dependent on the considered scenario. The DQA methodology is aimed at identifying the general quality measurement principles common to previous research. Figure \ref{fig:PhasesDQA} shows the phases.
 The methodology makes a distinction between subjective and objective quality metrics. Subjective metrics measure the perceptions, needs, and experiences of the stakeholders. Objective metrics are then classified into task-independent and task-dependent. The first assess the quality of data without contextual knowledge of the application, while the second are defined for specific application contexts and include business rules, company and government regulations, and constraints provided by the database administration. Both metrics are divided into three classes: simple ratio, min or max value, and weighed average.
 
 
 \subsection{Information Quality Measurement (IQM)}
-The fundamental objective of the IQM methodology [Eppler and Mu ̈nzenmaier 2002] is to provide an information quality framework tailored to Web data.
+The fundamental objective of the IQM methodology \cite{Eppler2002MeasuringIQ} is to provide an information quality framework tailored to Web data.
 In particular, IQM helps the quality-based selection and personalization of the tools that support Webmasters in creating, managing, and maintaining Web sites.
 \begin{figure}
     \centering
@@ -422,7 +422,7 @@ Some criteria require multiple measurement methods. The IQM methodology coordina
 
 \subsection{Comprehensive methodology for Data Quality management (CDQ)}
 
-The CDQ methodology [Batini and Scannapieco 2006; Batini et al. 2008] is conceived to be at the same time complete, flexible, and simple to apply.
+The CDQ methodology \cite{Batini2006DQConceptsMethodologiesTechniques} \cite{Batini2008ComprehensiveDQ} is conceived to be at the same time complete, flexible, and simple to apply.
 
 \begin{comment}
 Completeness is achieved by considering existing techniques and tools and integrating them in a framework that can work in both intra- and inter-organizational contexts, and can be applied to all types of data, structured, semistructured and unstructured.
@@ -581,7 +581,7 @@ The relationship between organizational units and processes has also been modele
 \subsection{Data Quality Dimensions}
 Table \ref{table:SummaryDataQualityDimension} shows the quality dimensions considered by the methodologies surveyed in this article.
 In Table \ref{table:SummaryDataQualityDimension}, a dimension is associated with a methodology, if the methodology provides a corresponding definition.
-For each methodology’s dimensions, we address the corresponding references.
+The detailed definition might varies under the same dimension. Considering the diversity and understandability of comparison, several unique indicators which are only appeared in one methodology's are not further discussed. There for, for each methodology’s dimensions, we address the corresponding references. It is worth noticing that TDQM incorporate most indicators. However, it doesn't contains cost, which is crucial for large data set and improvement.
 
 \begin{table}[]
 \centering
@@ -702,7 +702,7 @@ From a historical perspective, there exists a correlation between quality dimens
 The most critical issues with data quality management were error localization and correction in data sources, and record linkage between new data sources and preexisting data bases.
 The evolution of information systems from monolithic to network-based has caused a growth of the number of data sources in both size and scope and, consequently has significantly increased the complexity of data quality management.
 
-The characteristics of big data come down to the 4Vs: Volume, Velocity, Variety, and Value (Katal, Wazid, & Goudar, 2013). Volume refers to the tremendous volume of the data. Velocity means that data are being formed at an unprecedented speed and must be dealt with in a timely manner. Variety indicates that big data has all kinds of data types, and this diversity divides the data into structured data and unstructured data. These multityped data requires higher data processing capabilities.
+The characteristics of big data come down to the 4Vs: Volume, Velocity, Variety, and Value \cite{Katal2013BigData}. Volume refers to the tremendous volume of the data. Velocity means that data are being formed at an unprecedented speed and must be dealt with in a timely manner. Variety indicates that big data has all kinds of data types, and this diversity divides the data into structured data and unstructured data. These multityped data requires higher data processing capabilities.
 Finally, Value represents low-value density. Value density is inversely proportional to total data size, the greater the big data scale, the less relatively valuable the data. Consequently, the cost of DQ assessment will gain significant importance is inevitable. How to accurately define and estimate the cost of DQ is another topic.
 
 In the end, assessing data quality is an on-going effort that requires awareness of the fundamental principles underlying the development and context of application.

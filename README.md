@@ -30,11 +30,11 @@ LaTeX-Template for seminar papers
     - 2.4 Data Quality Dimensions （這邊篇幅排版要改）
     - 2.6 Cost
  3. Literature Review
-    - 3.1 Total Data Quality Management(TDQM)
-    - 3.2 Total Information Quality Management(TIQM)
-    - 3.3 Data Quality Assessment(DQA) 
-    - 3.4 Information Quality Measurement(IQM)
-    - 3.5 Comprehensive methodology for Data Quality management(CDQ).
+    + 3.1 Total Data Quality Management(TDQM)
+    + 3.2 Total Information Quality Management(TIQM)
+    + 3.3 Data Quality Assessment(DQA) 
+    + 3.4 Information Quality Measurement(IQM)
+    + 3.5 Comprehensive methodology for Data Quality management(CDQ).
 4. Evaluation
     - 4.1
     - 4.2 Common Phases and Steps
