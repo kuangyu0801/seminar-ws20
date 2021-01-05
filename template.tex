@@ -105,28 +105,20 @@
 \maketitle
 
 \begin{abstract}
-   The paper provides an evaluation of fives modern data quality (DQ) assessment methods. Due to the diversity and complexity of these assessment methods, fundamentals regarding data quality and classification for assessment method are first presented. With the extension of DQ fundamentals, the paper then reviews five data quality assessment methods and evaluates them in terms of their capability of targeted data types, steps, phases, strategies, techniques, targeted data quality dimensions and cost. The goal of this article is to propose a practical methods in combination of existing methods for data quality assessment  in the context of  continuous integration (CI) and  continuous delivery (CD) application in the field of software engineering. The paper concludes with a suitable method proposal based on the evaluation result and discusses future work and challenges.
+   The paper provides an evaluation of five modern data quality (DQ) assessment methods. Due to the diversity and complexity of these assessment methods, fundamentals regarding data quality and classification for assessment method are first presented. With the extension of DQ fundamentals, the paper then reviews five data quality assessment methods and evaluates them in terms of their capability of targeted data types, steps, phases, strategies, techniques, targeted data quality dimensions ,and cost. The goal of this article is to propose a practical methods in combination of existing methods for data quality assessment in the context of  continuous integration (CI) and  continuous delivery (CD) application in the field of software engineering. The paper concludes with a suitable method proposal based on the evaluation result and discusses future work and challenges.
 
 \end{abstract}
 \section{Introduction}
-With the Machine Learning, Deep Learning and Artificial Intelligence on the rise, the demand of data analysis has never been higher.
-Both academy and industry sectors are eager to explore more opportunity by employing these techniques.
-However, another issue quickly arises: How does one acquire high-quality data? Or, more preciosity, how to defines the quality of a set of data?
-There is a famous saying in the field Machine Learning: "Garbage input equals garbage output!".
-That is, only with systematic method to assess data set, are ML application feasible for different domain.
-Traditionally, data labeling and assessment are done in either primitive or laborious manner, which becomes almost impossible in the big data era.
-The goal of this paper is to give an overview of methods to assess data quality and review the most popular data properties that can be analyzed.
-Moreover, this paper reviews several proposed data quality improvement methods after data quality is assessed.
-The application of the assessment methods are also presented.
+With Machine Learning, Deep Learning, and Artificial Intelligence on the rise, the demand for data analysis has never been higher. Both academy and industry sectors are eager to explore more opportunities by employing these techniques. However, another issue quickly arises: How does one acquire high-quality data? Or, more precisely, how to defines the quality of a set of data? There is a famous saying in the field Machine Learning: "Garbage input equals garbage output!". That is, only with a systematic method to assess data set, are ML applications feasible for different domains. Traditionally, data labeling and assessment are done in either primitive or laborious manner, which becomes almost impossible in the big data era. The goal of this paper is to give an overview of methods to assess data quality and review the most popular data properties that can be analyzed. Moreover, this paper reviews several proposed data quality improvement methods after data quality are assessed. The application of the assessment methods is also presented.
 
-The rest of the paper is structured as follows: Data Quality Fundamentals, Literature Review, Evaluation and Conclusion.
+The rest of the paper is structured as follows: Data Quality Fundamentals, Literature Review, Evaluation, and Conclusion.
 For the first section, the overview of data quality and classification of assessment methods are presented,
-which includes data type, data problem, phases and steps, strategies and techniques, dimensions and cost.
-In second section, literature review of five data quality assessment method, phases and concepts are introduced in brief.
-In the third part, evaluation on these five methods is performed in terms of data quality fundamental attributes of previous section .
-In the end of paper, a conclusion is made based on evaluation result in the context of CI/CD application in software engineering.
-The proposed method, future work and challenges are discussed in brief.
-This paper is requested and written under the subtopic of seminar, Advanced Software Engineering: Non-Functional Aspects in Software Engineering.
+which includes data type, data problem, phases and steps, strategies and techniques, dimensions, and cost.
+In the second section, a literature review of five data quality assessment methods, phases, and concepts are introduced in brief.
+In the third part, an evaluation of these five methods is performed in terms of data quality fundamental attributes of the previous section.
+At the end of the paper, a conclusion is made based on evaluation results in the context of CI/CD application in software engineering.
+The proposed method, future work, and challenges are discussed in brief.
+This paper is requested and written under the subtopic of the seminar, Advanced Software Engineering: Non-Functional Aspects in Software Engineering.
 
 Main references are base on following paper and journal: \citet{Cai2005ChallnegesOfDataQuality}, \citet{Pipino2002DataQualityAssessment} and \citet{Batini2009MethodologiesForDataQuality} \citet{Wang1996BeyondAccuracy} \citet{Borek2011AClassficationOfDataQualityAssessmentMethods}
    \citet{Cappiello2004DataQualityAssessmentfromTheUse}
@@ -193,7 +185,7 @@ The data quality problem could be classified into four categories depending on t
 \cline{2-3}
                                                                                      & Data Perspective                                                                                                                                                                                                                                                             & User Perspective                                                                                                                                                                                                                                                                                                                                                                \\ \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Context-\\ independent\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Spelling error\\ Missing data\\ Duplicate data\\ Incorrect value\\ Inconsistent data format Outdated data\\ Incomplete data format\\ Syntax violation\\ Unique value violation Violation of \\ integrity constraints Text formatting\end{tabular} & \begin{tabular}[c]{@{}l@{}}The information is inaccessible\\ The information is insecure\\ The information is hardly retrievable \\ The information is difficult to aggregate\\ Errors in the information transformation\end{tabular}                                                                                                                                           \\ \hline
-\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Context-\\ dependent\end{tabular}}   & \begin{tabular}[c]{@{}l@{}}Violation of domain constraints \\ Violation of organization’s business rules\\ Violation of company and government\\ regulations \\ Violation of constraints provided by\\  the database administrator\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}The information is not based on fact \\ The information is of doubtful credibility\\ The information presents an impartial view\\ The information is irrelevant to the work\\ The information is incomplete\\ The information is compactly represented\\ The information is hard to manipulate \\ The information is hard to understand\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Context-\\ dependent\end{tabular}}   & \begin{tabular}[c]{@{}l@{}}Violation of domain constraints \\ Violation of organization's business rules\\ Violation of company and government\\ regulations \\ Violation of constraints provided by\\  the database administrator\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}The information is not based on fact \\ The information is of doubtful credibility\\ The information presents an impartial view\\ The information is irrelevant to the work\\ The information is incomplete\\ The information is compactly represented\\ The information is hard to manipulate \\ The information is hard to understand\end{tabular} \\ \hline
 \end{tabular}
 \caption{Types of Data Quality Problem}
 \label{table:DataQualityProblem}
@@ -456,7 +448,7 @@ Finally, the most suitable improvement process is selected by performing a cost-
 
 
 \section{Evaluation}
-In this section evaluation in terns of process, techniques, and performances are discussed across these methods.
+In this section evaluation in terms of process, techniques, and performances are discussed across these methods.
 
 \subsection{Types of Data}
 The supported data types are shown in Table \ref{table:DataTypeComparison}.
@@ -687,7 +679,7 @@ In Batini and Scannapieco [2006], a large-scale experience of the application of
 
 \section{Conclusion}
 
-This paper first introduces fundamentals of data quality, pipelines and classification of general assessment method, followed by the evaluation and analysis over five DQ assessment methods in term of different aspects.
+This paper first introduces fundamentals of data quality, pipelines and classification of general assessment method, followed by the evaluation and analysis of five DQ assessment methods in term of different aspects.
 Of all the surveyed methods, CDQ is considered to be the most complete, yet flexible, and simple to apply.
 The completeness is achieved by considering existing techniques and tools and integrating them in a framework that can work in both intra- and inter-organizational contexts, and can be applied to all types of data, structured, semistructured and unstructured.
 The methodology is flexible since it supports the user in the selection of the most suitable techniques and tools within each phase and in any context.
