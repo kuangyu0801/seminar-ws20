@@ -1,3 +1,115 @@
+# 先選TDQM, CDQ這兩個方法
+# 並且查他們的application
+
+
+# TDQM
+- Phase 1: Definition
+    + Input -> Information product
+    + Data Analysis: Definition of the characteristics at two levels: (1) high level: description of functionalities for intormation consumers
+(2) low level description of the basic units and components of the information product and their relationships
+    + DQ Requirements Analysis: Definition of the IQ requirements from the perspective of IP suppliers, manufacturers, consumers and
+managers.
+    + Process Modeling: Definition of the Information Manufacturing System
+    + Output -> Logical and physical design of the Information Product with the necessary quality attributes.
+A quality entity-relationship model that defines the IP and its IQ requirements
+An information manufacturing system that describes how the IP has been produced
+- Phase 2: Measurement
+    + Input -> IQ dimensions
+    + Measurement of quality: Definition of the IQ metrics
+    + Output -> IQ problems
+- Phase 3: Analysis
+    + Input -> 1Q problems
+    + identification of the causes of errors: Determination root causes of discrepancies
+    + Output -> Actions for improving data quality
+- Phase 4: Improvement
+    + Input > IQ metrics
+    + Selection of strategies and techniques: Identification of key areas for improvement
+    + Output > IQ improvement techniques
+
+# TIQM
+
+- Phase 1: Assessment
+    + Input > Information quality criteria and requirements
+    + Data Analysis: Identify information groups and stakeholders
+    + DQ requirements analysis: assess consumer satisfaction
+    + Measurement of quality: Identify data validation sources, extract random samples of data, and measure and interpret data quality
+    + Evaluation of costs: Identify business performance measures, calculate non quality costs, and evaluate benefits
+    + Output > Information quality assessment
+- Phase 2: Improvement
+    + Input > Information quality assessment results
+    + identification of the causes of errors: Analyze data defect types
+    + Design of data improvement solutions: Standardize data, correct, complete, match, transform and consolidate data
+    + Process control
+    + Process redesign
+    + Output > Improvement solutions
+- Phase 3: improvement Management & Monitoring
+    + Input > Improvement directives from general improvement
+    + improvement management:: Discover the organization's level of maturity, Create a vision for information quality improvement, Conduct customer
+satisfaction surveys of the information stakeholders, Select a small and payoff area to conduct a pilot project, Define the
+information value chain, Define information stewardship, Analyze the systematic barriers to DQ and recommend changes
+    + improvement monitoring: Check effectiveness of improvement and establish a regular mechanism of communication and education with managers
+    + Output > Improvement solutions
+# DQA
+
+- Phase 1: Subjective and objective data quality measurement
+    + Input > Database in use
+    + Measurement of quality: subjective and objective assessment
+    + Output > Subjective assessment results, objective assessment results
+- Phase 2: Comparison
+    + Input> Subjective assessment results, objective assessment results
+    + Measurement of quality: Analysis of comparisons
+    + Output > Discrepancies
+- Phase 3:improvement
+    + Input > Discrepancies
+    + Identification of the causes of errors: Determination of root causes of discrepancies
+    + Selection of strategies and techniques: Identification of improvement actions
+    + Output > Actions for improving data quality
+
+# IQM
+
+- Phase 1: Assessment Planning
+    + Input > Information quality criteria, available tools and techniques for the measurement phase
+    + Data analysis: Identification of relevant information quality criteria, analysis and definition of trade-offs and
+interdependencies between criteria, operationalization of the criteria and selection of measurement tools for the required indicators
+    + Output > Information quality audit plan
+- Phase 2: Assessment Configuration
+    + Input > List of indicators associated with information quality criteria
+    + DQ Requirements Analysis: Weighting of the indicators according to strategic priorities and definition of alert
+and target values for every indicator
+    + Output > Measurement method
+- Phase 3: Measurement
+    + Input > Information quality criteria and related indicators
+    + Measurement of Quality: Data gathering, data analysis, and data presentation
+    + Output > Measurement results
+- Phase 4: Follow-up activities
+    + Input > Measurement results
+    + Measurement of quality: Follow-up activities, controlling of activities, and adjustment of measurement
+according to inplementation experiences
+    + Output > Measurement results
+
+# CDQ
+
+- Phase 1: State Reconstruction
+    + Input > Internal DBs and information flows, external sources, Organizational structure and rules, processes
+    + State Reconstruction: Identification of role of organizational units in data usage and information flow,
+identification of role of organizational units in processes, identification of role of external sources in organizational processes, description of processes in terms
+of their macro-processes, services and norms
+    + Output > Description of the organization along its data, information flows, and processes
+- Phase 2: Assessment
+    + Input> Description of the organization along its data, information flows, and processes; DQ dimensions,
+    + Data activities and techniques, budget
+    + Data Analysis
+    + DQ Requirements Analysis
+    + Measurement of quality
+    + Output > DQ values
+- Phase 3: Improvement
+    + Input > DQ values
+    + Identification of the causes of errors
+    + Selection of strategies and techniques
+    + Evaluation of costs
+    + Output > Costs and benefits, Optimal improvement process, measured/improved DBs and information flows,
+Controlled/Reengineered Processes
+
 # Seminar Template
 LaTeX-Template for seminar papers
 // https://www.tablesgenerator.com/

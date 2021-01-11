@@ -109,7 +109,20 @@
 
 \end{abstract}
 \section{Introduction}
-With Machine Learning, Deep Learning, and Artificial Intelligence on the rise, the demand for data analysis has never been higher. Both academy and industry sectors are eager to explore more opportunities by employing these techniques. However, another issue quickly arises: How does one acquire high-quality data? Or, more precisely, how to defines the quality of a set of data? There is a famous saying in the field Machine Learning: "Garbage input equals garbage output!". That is, only with a systematic method to assess data set, are ML applications feasible for different domains. Traditionally, data labeling and assessment are done in either primitive or laborious manner, which becomes almost impossible in the big data era. The goal of this paper is to give an overview of methods to assess data quality and review the most popular data properties that can be analyzed. Moreover, this paper reviews several proposed data quality improvement methods after data quality are assessed. The application of the assessment methods is also presented.
+With Machine Learning, Deep Learning, and Artificial Intelligence on the rise, the demand for data analysis has never been higher.
+Access to a research data set is an important step, but researchers should also be aware of its quality and potential caveats. Traditionally, data labeling and assessment are done in either primitive or laborious manner, which becomes almost impossible in the big data era. A
+This seminar paper discussed key aspects of data quality systematically.
+The goal of this paper is to perform a survey on the following topic for evaluation of assessing data quality:
+\begin{itemize}
+    \item An overview of data quality assessment methods
+    \item Data properties that can be analyzed and cannot be analyzed
+    \item Possible methods for improving the quality of the data
+    \item The current application of the assessment methods to the data set.
+\end{itemize}
+
+\begin{comment}
+Researchers from academic and industry sectors are eager to explore more opportunities by employing these techniques. However, another issue quickly arises: How to one acquire high-quality data? Or, more precisely, how to defines the quality of a set of data? There is a famous saying in the field Machine Learning: "Garbage input equals garbage output!". That is, only with a systematic method to assess data set, are ML applications feasible for different domains. Traditionally, data labeling and assessment are done in either primitive or laborious manner, which becomes almost impossible in the big data era. The goal of this paper is to give an overview of methods to assess data quality and review the most popular data properties that can be analyzed. Moreover, this paper reviews several proposed data quality improvement methods after data quality are assessed. The application of the assessment methods is also presented.
+\end{comment}
 
 The rest of the paper is structured as follows: Data Quality Fundamentals, Literature Review, Evaluation, and Conclusion.
 For the first section, the overview of data quality and classification of assessment methods are presented,
@@ -125,14 +138,14 @@ Main references are base on following paper and journal: \citet{Cai2005Challnege
 
 
 \section{Data Quality Fundamentals}
-In this section, fundamentals of data and classifications of assessment methods are introduced.
-First, concepts and definition of the data type, data quality problem and data quality dimensions are presented. Secondly, in classifications assessment methods, the paper discussed the most common process, pipelines for analysing DQ are introduced.
-This topics regarding these methodologies includes steps and phases, strategies and techniques, dimensions, costs.
+In this section, the fundamentals of data and classifications of assessment methods are introduced.
+First, concepts and definitions of the data type, data quality problem, and data quality dimensions are presented. Secondly, in classifications assessment methods, the paper discussed the most common process, pipelines for analyzing DQ are introduced.
+These topics regarding these methodologies include steps and phases, strategies and techniques, dimensions, costs.
 
 \subsection{Data Types}\label{sec:DataTypes}
 
 The ultimate goal of a DQ methodology is the analysis of data.
-The real world, objects need to be created in a format that could further be stored, retrieved and processed by software programs.
+In the real world, objects need to be created in a format that could further be stored, retrieved, and processed by software programs.
 In the field of data and computer science, data are either implicitly or explicitly distinguished by three types \cite{Batini2009MethodologiesForDataQuality}:
 
 - Structured data, is aggregations or generalizations of items described by elementary attributes defined within a domain.
@@ -142,8 +155,7 @@ Relational tables and statistical data represent the most common type of structu
 - Unstructured data, is a generic sequence of symbols, typically coded in natural language.
 Typical examples of unstructured data are a questionnaire containing free text answering open questions or the body of an e-mail.
 
-- Semistructured data, is data that have a structure which has some degree of flexibility. Semistructured data are also referred to as schemaless or self-describing.
-For example, XML, a the markup language commonly used to represent semistructured data, is semistructured.
+- Semistructured data, is data that have a structure which has some degree of flexibility. Semistructured data are also referred to as schemaless or self-describing. For example, XML is markup language commonly used to represent semistructured data.
 \begin{comment}
 Some common characteristics are:
 (1) data can contain fields not known at design time; for instance, an XML file does not have an associated XML schema file;
@@ -193,12 +205,16 @@ The data quality problem could be classified into four categories depending on t
 
 \subsection{Phases and Steps}
 In the most general case, the sequence of activities of a data quality methodology is composed of three phases \cite{Batini2009MethodologiesForDataQuality}:
-(1) State reconstruction, which is aimed at collecting contextual information on organizational processes and services, data collections and related management procedures, quality issues and corresponding costs; this phase can be skipped if contextual information is available from previous analyses.
-(2) Assessment, which measures the quality of data collections along relevant quality dimensions; the term measurement is used to address the issue of measuring the value of a set of data quality dimensions.
+
+\begin{enumerate}
+    \item \textbf{State Reconstruction}, which is aimed at collecting contextual information on organizational processes and services, data collections and related management procedures, quality issues and corresponding costs; this phase can be skipped if contextual information is available from previous analyses.
+    \item \textbf{Assessment}, which measures the quality of data collections along relevant quality dimensions; the term measurement is used to address the issue of measuring the value of a set of data quality dimensions.
+    \item \textbf{Improvement}, which concerns the selection of the steps, strategies, and techniques for reaching new data quality targets.
+\end{enumerate}
+
 \begin{comment}
 The term assessment is used when such measurements are compared to reference values, in order to enable a diagnosis of quality. The term assessment is adopted in this article, consistent with the majority of methodologies, which stress the importance of the causes of poor data quality.
 \end{comment}
-(3) Improvement concerns the selection of the steps, strategies, and techniques for reaching new data quality targets.
 
 \subsubsection{Assessment Steps}
 includes:
@@ -238,19 +254,25 @@ There are two types of strategies: data-driven and process-driven. Data-driven s
 
 \subsubsection{Data-Driven Techniques}
 includes
-(1) Acquisition of New Data, which improves data by acquiring higher-quality data to replace the values that raise quality problems;
-(2) Standardization (or Normalization), which replaces or complements nonstandard data values with corresponding values that comply with the standard. For example, nicknames are replaced with corresponding names, for example, Bob with Robert, and abbreviations are replaced with corresponding full names, for example, Channel Str. with Channel Street.
-(3) Record Linkage, which identifies that data representations in two (or multiple) tables that might refer to the same real-world object;
-(4) Data and Schema Integration, which define a unified view of the data provided by heterogeneous data sources. Integration has the main purpose of allowing a user to access the data stored by heterogeneous data sources through a unified view of these data. Heterogeneities can be classified into technological heterogeneities, schema heterogeneities,and instance-level heterogeneities.
+\begin{enumerate}
+    \item Acquisition of New Data, which improves data by acquiring higher-quality data to replace the values that raise quality problems.
+    \item Standardization, which replaces or complements nonstandard data values with corresponding values that comply with the standard. For example, nicknames are replaced with corresponding names, for example, Bob with Robert, and abbreviations are replaced with corresponding full names, for example, Channel Str. with Channel Street.
+    \item Record Linkage, which identifies that data representations in two (or multiple) tables that might refer to the same real-world object;
+    \item Data and Schema Integration, which define a unified view of the data provided by heterogeneous data sources. Integration has the main purpose of allowing a user to access the data stored by heterogeneous data sources through a unified view of these data.
+    \item Source Trustworthiness, which selects data sources on the basis of the quality of their data;
+    \item Error Localization and Correction, which identify and eliminate data quality errors by detecting the records that do not satisfy a given set of quality rules. These techniques are mainly in the statistical domain.
+    \item Cost optimization, defines quality improvement actions along a set of dimensions by minimizing costs.
+\end{enumerate}
+
 \begin{comment}
-In distributed, cooperative, and P2P information systems (see Section 2.6), data sources are characterized by various kinds of heterogeneities that can be generally classified into (1) technological heterogeneities, (2) schema heterogeneities, and (3) instance-level heterogeneities.
+ Heterogeneities can be classified into technological heterogeneities, schema heterogeneities,and instance-level heterogeneities.
+In distributed, cooperative, and P2P information systems data sources are characterized by various kinds of heterogeneities that can be generally classified into
+
+(1) technological heterogeneities, (2) schema heterogeneities, and (3) instance-level heterogeneities.
 Technological heterogeneities are due to the use of products by different vendors, employed at various layers of an information and communication infrastructure.
 Schema heterogeneities are primarily caused by the use of (1) different data models, as in the case of a source that adopts the relational data model and a different source that adopts the XML data model, and (2) different representations for the same object, such as two relational sources that represent an object as a table and an attribute. Instance-level heterogeneities are caused by different, conflicting data values provided by distinct sources for the same objects. For instance, this type of heterogeneity can be caused by independent and poorly coordinated processes that feed the different data sources.
 Data integration must face all the types of these listed heterogeneities.
 \end{comment}
-(5) Source Trustworthiness, which selects data sources on the basis of the quality of their data;
-(6) Error Localization and Correction, which identify and eliminate data quality errors by detecting the records that do not satisfy a given set of quality rules. These techniques are mainly in the statistical domain.
-(7) Cost optimization, defines quality improvement actions along a set of dimensions by minimizing costs.
 
 \subsubsection{Process-Driven Techniques}
 - Process control inserts checks and control procedures in the data production process when: (1) new data are created, (2) data sets are updated, or (3) new data sets are accessed by the process. In this way, a reactive strategy is applied to data modification events, thus avoiding data degradation and error propagation.
@@ -272,7 +294,7 @@ Data integration must face all the types of these listed heterogeneities.
 
 To define data quality dimension, a data quality is proposed, as shown in Figure \ref{fig:twolayerstandard}. With each dimension, there is underlying data qulity elements and indicators.
 In \citet{Cai2005ChallnegesOfDataQuality}, they chose data quality dimensions commonly accepted and widely used as big data quality standards and redefined their basic concepts based on actual business needs.
-Each dimension was divided into many typical elements associated with it, and each element has its own corresponding quality indicators: Accessibility
+Each dimension was divided into many typical elements associated with it, and each element has its corresponding quality indicators: Accessibility
 , Timeliness
 , Authorization
 , Credibility
@@ -285,7 +307,7 @@ Each dimension was divided into many typical elements associated with it, and ea
 , Auditability
 , Fitness
 , Readability
-,and Structure.
+, and Structure.
 In this way, hierarchical quality standards for big data were used for evaluation.
 Figure \ref{fig:twolayerstandard} shows a universal two-layer data quality standard. Detailed correspondence dimension, element and indicators are shown in Figure \ref{fig:hierachicalframwork}.
 
@@ -316,17 +338,24 @@ Under the same dimension and elements, the indicators varies with type of data s
 \subsection{Cost}
 The cost of a data quality program can be considered a preventive cost that is incurred by organizations to reduce data errors. This cost category includes the cost of all phases and steps that compose a data quality assessment and improvement process.
  The costs of poor quality can be classified as:
- (1) process costs, such as the costs associated with the re-execution of the whole process due to data errors;
- (2) opportunity costs due to lost and missed revenues.
+\begin{itemize}
+    \item Process Costs, such as the costs associated with the re-execution of the whole process due to data errors;
+    \item Opportunity Costs, which is due to lost and missed revenues.
+\end{itemize}
  The cost of poor data quality is strongly context-dependent as opposed to the cost of a data quality program. This makes its evaluation particularly difficult, as the same data value and corresponding level of quality has a different impact depending on the recipient. For example, an active trader receiving obsolete information on a stock may incur considerable economic losses as a consequence of wrong investment decisions. In contrast, a newspaper receiving the same obsolete information to publish monthly trading reports may not experience any economic loss.
 
 \section{Literature Review}
-In this section, fives data quality assessment methods are introduced in brief, summarizing their characteristics and steps. These methods are Total Data Quality Management (TDQM), Total Information Quality Management (TIQM), Data Quality Assessment (DQA), Information Quality Measurement(IQM), and Comprehensive methodology for Data Quality management(CDQ). The details comparison will be presented in section Evaluation.
+In this section, five data quality assessment methods are introduced in brief, summarizing their characteristics and steps. These methods are Total Data Quality Management (TDQM), Total Information Quality Management (TIQM), Data Quality Assessment (DQA), Information Quality Measurement(IQM), and Comprehensive methodology for Data Quality management(CDQ). The detailed comparison will be presented in section Evaluation.
 
 \subsection{Total Data Quality Management (TDQM)}\label{sec:TDQM}
 
 The TDQM methodology was the first general methodology published in the data quality literature \cite{Wang1998TDQM}. TDQM is the outcome of academic research, but has been extensively used as a guide to organizational data reengineering initiatives.
-Given requirements, reengineering must start from modeling operating processes. Consistent with these tenets, TDQM proposes a language for the description of information production (IP) processes, called IP-MAP \cite{Shankaranarayanan2007IPMAPC}. An information production map is a graphical model designed to help analysts to visualize the information production process, identify the ownership of process phases, understand information and organizational boundaries, and estimate the time and quality metrics associated with the current production process.
+
+
+
+
+
+TDQM proposes a language for the description of information production (IP) processes, called IP-MAP \cite{Shankaranarayanan2007IPMAPC}. An information production map is a graphical model designed to help analysts to visualize the information production process, identify the ownership of process phases, understand information and organizational boundaries, and estimate the time and quality metrics associated with the current production process.
 The description of processes is a mandatory activity, consistent with the general orientation of process-driven strategies.
 \begin{comment}
 IP-MAP is the only language for information process modeling and represents a de facto standard. Practical experiences with TDQM are reported, for example, in Kovac and Weickert [2002].
@@ -361,15 +390,17 @@ In applying TDQM, an organization must:
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{Paper/figures/PhasesTDQM.png}
+    \includegraphics[width=1\textwidth]{Paper/figures/TDQM-2.png}
     \caption{TDQM Phases.}
     \label{fig:PhasesTDQM}
  \end{figure}
 
 \subsection{Total Information Quality Management (TIQM)}
 
-The TIQM methodology \cite{English1999TIQM} has been designed to support data warehouse projects. The methodology assumes the consolidation of operational data sources into a unique, integrated database, used in all types of aggregations performed to build the data warehouse. This consolidation eliminates errors and heterogeneities of source databases. TIQM focuses on the management activities that are responsible for the integration of operational data sources, by discussing the strategy that has to be followed by the organization in order to make effective technical choices. Cost-benefit analyses are supported from a managerial perspective. The methodology provides a detailed classification of costs and benefits.
-
+The TIQM methodology \cite{English1999TIQM} has been designed to support data warehouse projects. The methodology assumes the consolidation of operational data sources into a unique, integrated database, used in all types of aggregations performed to build the data warehouse. This consolidation eliminates errors and heterogeneities of source databases. TIQM focuses on the management activities that are responsible for the integration of operational data sources, by discussing the strategy that has to be followed by the organization to make effective technical choices. Cost-benefit analyses are supported from a managerial perspective. The methodology provides a detailed classification of costs and benefits.
+\begin{enumerate}
+    \item Definition
+\end{enumerate}
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Paper/figures/PhasesTIQM.png}
@@ -378,10 +409,10 @@ The TIQM methodology \cite{English1999TIQM} has been designed to support data wa
  \end{figure}
 
 Figure \ref{fig:PhasesTIQM} shows the phases of the TIQM methodology.
-From the TIQM's managerial perspective, there are three main phases: assessment, improvement, and improvement management and monitoring.
+From the TIQM's managerial perspective, there are three main phases: assessment, improvement, and improvement management, and monitoring.
 One of the valuable contributions of the methodology is the definition of this last phase, which provides guidelines to manage changes in the organization’s structure according to data quality management requirements.
-Furthermore, the economics approach introduces cost benefit evaluation to justify data quality interventions.
-The goal is not only the achievement of higher data quality level, but to undertake improvement actions only if they are feasible; thus only if benefits are greater than costs.
+Furthermore, the economics approach introduces a cost-benefit evaluation to justify data quality interventions.
+The goal is not only the achievement of higher data quality level but to undertake improvement actions only if they are feasible; thus only if benefits are greater than costs.
 
 \subsection{Data Quality Assessment (DQA)}
 \begin{figure}
@@ -412,9 +443,9 @@ The information quality framework is defined as a list of relevant information q
 The framework is the input for an information quality audit that associates the information quality criteria with the methods and tools that will be used in the measurement process.
 Some criteria require multiple measurement methods. The IQM methodology coordinates the application of multiple measurement methods.
 
-\subsection{Comprehensive methodology for Data Quality management (CDQ)}
+\subsection{Comprehensive Data Quality (CDQ)}
 
-The CDQ methodology \cite{Batini2006DQConceptsMethodologiesTechniques} \cite{Batini2008ComprehensiveDQ} is conceived to be at the same time complete, flexible, and simple to apply.
+The CDQ methodology \cite{Batini2006DQConceptsMethodologiesTechniques} \cite{Batini2007ComprehensiveDQ} \cite{Batini2008ComprehensiveDQ} is conceived to be at the same time complete, flexible, and simple to apply.
 
 \begin{comment}
 Completeness is achieved by considering existing techniques and tools and integrating them in a framework that can work in both intra- and inter-organizational contexts, and can be applied to all types of data, structured, semistructured and unstructured.
@@ -429,7 +460,7 @@ The focus is on how to reach total data quality without providing indications as
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{Paper/figures/PhasesCDQ.png}
+    \includegraphics[width=1\textwidth]{Paper/figures/PhasesCDQ-2.png}
     \caption{CDQ Phases.}
     \label{fig:PhasesCDQ}
  \end{figure}
