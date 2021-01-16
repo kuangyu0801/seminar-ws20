@@ -108,14 +108,14 @@
 \maketitle
 
 \begin{abstract}
-   The paper provides an evaluation of data quality (DQ) assessment methods. The research goals of this paper are to investigate the overview of DQ method, properties of data, and DQ improvement methods, and application of assessment methods. Due to the diversity and complexity of the topic, fundamentals of data quality and its problem are introduced first. The overview of assessment methods including phases, strategies, techniques, cost, and classification are then presented. In the third section, a case study on Total Data Quality Management (TDQM) is explained with detail, illustrative example, and related applications. In the last section, a conclusion is drawn and future challenges for the DQ assessment method in the big data era is pointed out.
+The paper provides an evaluation of data quality (DQ) assessment methods. The research goals of this paper are to investigate the overview of the DQ method, properties of data, and DQ improvement methods, and application of assessment methods. Due to the diversity and complexity of the topic, fundamentals of data quality and its problem are introduced first. The overview of assessment methods including phases, strategies, techniques, cost, and classification are then presented. In the third section, a case study on Total Data Quality Management (TDQM) is explained with detail, illustrative example, and related applications. In the last section, a conclusion is drawn and future challenges for the DQ assessment method in the big data era are pointed out.
 
 \end{abstract}
 \section{Introduction}
 With Machine Learning, Deep Learning, and Artificial Intelligence on the rise, the demand for data analysis has never been higher.
-Access to a research data set is an important step, but researchers should also be aware of its quality and potential caveats. Traditionally, data labeling and assessment are done in either primitive or laborious manner, which becomes almost impossible in the big data era. A
+Access to a research data set is an important step, but researchers should also be aware of its quality and potential caveats. Traditionally, data labeling and assessment are done in either primitive or laborious manner, which becomes almost impossible in the big data era.
 This seminar paper discussed key aspects of data quality systematically.
-The goal of this paper is to perform a survey on the following topic for evaluation of assessing data quality:
+The goal of this paper is to survey on the following research topics for evaluation of assessing data quality:
 \begin{enumerate}
     \item An overview of data quality assessment methods
     \item Data properties that can be analyzed and cannot be analyzed
@@ -123,18 +123,14 @@ The goal of this paper is to perform a survey on the following topic for evaluat
     \item The current application of the assessment methods to the data set.
 \end{enumerate}
 
-\begin{comment}
-Researchers from academic and industry sectors are eager to explore more opportunities by employing these techniques. However, another issue quickly arises: How to one acquire high-quality data? Or, more precisely, how to defines the quality of a set of data? There is a famous saying in the field Machine Learning: "Garbage input equals garbage output!". That is, only with a systematic method to assess data set, are ML applications feasible for different domains. Traditionally, data labeling and assessment are done in either primitive or laborious manner, which becomes almost impossible in the big data era. The goal of this paper is to give an overview of methods to assess data quality and review the most popular data properties that can be analyzed. Moreover, this paper reviews several proposed data quality improvement methods after data quality are assessed. The application of the assessment methods is also presented.
-\end{comment}
-
 The paper is structured as follows: Data Quality Fundamentals, Assessment Methodology Overview,  Case Study, and Conclusion.
 To understand the first research topic, data quality assessment methods, the paper first introduced the fundamentals of data quality in the first section. These fundamentals include Data Type, Data Quality Problem, and Data Quality Dimension. With these fundamentals, the reader can have a better understanding of later topics. The overview of the data quality assessment method is introduced in the second section. The pipelines, phases, steps, strategies, techniques, cost, and classification of data quality assessment methods are presented. To address the third and fourth topic,
-a method, called Total Data Quality Management (TDQM) are discussed as a case study of the implementation of the DQ improvement. The presentation of the method yields a clear picture to the reader. Also in the case study section,  an example on the investment bank and three TDQM real-world applications on the existing data set are presented in subsections of the third section. This response to the research topic of the application of the DQ assessment methods.
+a method, called Total Data Quality Management (TDQM) are discussed as a case study of the implementation of the DQ improvement.\cite{Wang1998TDQM} The presentation of the method yields a clear picture to the reader. Also in the case study section,  an example on the investment bank and three TDQM real-world applications on the existing data set are presented in subsections of the third section. This response to the research topic of the application of the DQ assessment methods.
 At the end of the paper, a conclusion is made based on the evaluation of data quality assessment.  The challenges are discussed in brief. This paper is requested and written under the subtopic of the seminar, Advanced Software Engineering: Non-Functional Aspects in Software Engineering.
 
-Main references are base on following paper and journal: \citet{Cai2005ChallnegesOfDataQuality}, \citet{Pipino2002DataQualityAssessment}, \citet{Batini2009MethodologiesForDataQuality}, \citet{Wang1996BeyondAccuracy},  \citet{Borek2011AClassficationOfDataQualityAssessmentMethod}, and
-   \citet{Cappiello2004DataQualityAssessmentfromTheUse}.
-
+For the survey of this seminar, I followed the provided guidelines from "Scientific Working." I first read the literature given by my supervisor.
+The recommended literature was from  \citet{Pipino2002DataQualityAssessment, Batini2009MethodologiesForDataQuality, Cai2005ChallnegesOfDataQuality}. After a preliminary review of the literature, I started to gain insight into the topic. Based on the references in the recommended literature, I searched them mainly on Google Scholar, IEEE Explore, and ACM Digital Library.
+After reading the extra literature, I picked the useful ones that are central to the research topic and started to structure the seminar paper.  After receiving the peer review from my first submission, I carefully reviewed the feedbacks and revised the paper accordingly.
 
 \section{Data Quality Fundamentals}
 In order to understand the data quality assessment method, the fundamentals of data quality are required. The fundamentals include three main subtopics: Data Types, Data Quality Problem, Data Quality Dimensions.  In this section, concepts, definition, and examples are
@@ -164,11 +160,11 @@ Some common characteristics are:
   \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Paper/figures/DataType.png}
-    \caption{Data Type.}
+    \caption{Data Type \cite{Batini2009MethodologiesForDataQuality}}
     \label{fig:datatype}
   \end{figure}
 
- Data quality techniques become increasingly complex as data lose structure. For example, let us consider a registry describing personal information such as Name, Surname, Region, and StateOfBirth. Figure \ref{fig:datatype} shows the representation of Mr. Patrick Metzisi, born in the Masai Mara region in Kenya, by using a structured Figure \ref{fig:datatype}(a), unstructured (Figure \ref{fig:datatype}(b)), and semistructured (Figure \ref{fig:datatype}(c)) type of data.
+ Data quality techniques become increasingly complex as data lose structure. For example, let us consider a registry describing personal information such as Name, Surname, Region, and StateOfBirth. Figure \ref{fig:datatype} shows the representation of Mr. Patrick Metzisi, born in the Masai Mara region in Kenya, by using a structured (Figure \ref{fig:datatype}(a)), unstructured (Figure \ref{fig:datatype}(b)), and semistructured (Figure \ref{fig:datatype}(c)) type of data.
  The same quality dimension will have different metrics according to the type of data. This would be explained in later subsection.
  The large majority of research contributions in the data quality literature focuses on structured and semistructured data. For this reason, this report focuses on structured and semistructured data.
 
@@ -185,7 +181,7 @@ The data quality problem could be classified into four categories depending on t
  For the context dependent category, the problem of violation of domain constraints is when an attribute value must be in a pre-specified context-dependent domain of values.
  Violation of organizational business rules is when any set of values do not adhere to a pre-specified rules assigned by the organization.
  Violation of company and governmental regulations is when any set of values do not adhere to a prespecified rules assigned imposed on the organization by legislating bodies.
- Similarly, violation of constraints provided by the database administrator is when any set of values do not adhere to a pre-specified rules assigned by the database administrator. In \ref{sec:DataQualityDimensions}, the problems are define in different dimensions with specific indicators.
+ Similarly, violation of constraints provided by the database administrator is when any set of values do not adhere to a pre-specified rules assigned by the database administrator. In section \ref{sec:DataQualityDimensions}, the problems are define in different dimensions with specific indicators.
 
  % Please add the following required packages to your document preamble:
 % \usepackage[normalem]{ulem}
@@ -197,7 +193,7 @@ The data quality problem could be classified into four categories depending on t
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Context-\\ independent\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Spelling error\\ Missing data\\ Duplicate data\\ Incorrect value\\ Inconsistent data format Outdated data\\ Incomplete data format\\ Syntax violation\\ Unique value violation Violation of \\ integrity constraints Text formatting\end{tabular} & \begin{tabular}[c]{@{}l@{}}The information is inaccessible\\ The information is insecure\\ The information is hardly retrievable \\ The information is difficult to aggregate\\ Errors in the information transformation\end{tabular}                                                                                                                                           \\ \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Context-\\ dependent\end{tabular}}   & \begin{tabular}[c]{@{}l@{}}Violation of domain constraints \\ Violation of organization's business rules\\ Violation of company and government\\ regulations \\ Violation of constraints provided by\\  the database administrator\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}The information is not based on fact \\ The information is of doubtful credibility\\ The information presents an impartial view\\ The information is irrelevant to the work\\ The information is incomplete\\ The information is compactly represented\\ The information is hard to manipulate \\ The information is hard to understand\end{tabular} \\ \hline
 \end{tabular}
-\caption{Types of Data Quality Problem}
+\caption{Types of Data Quality Problem \cite{Borek2011AClassficationOfDataQualityAssessmentMethod}}
 \label{table:DataQualityProblem}
 \end{table}
 
@@ -205,7 +201,7 @@ The data quality problem could be classified into four categories depending on t
 \subsection{Data Quality Dimensions}\label{sec:DataQualityDimensions}
 
 To define data quality dimension, a data quality is proposed, as shown in Figure \ref{fig:twolayerstandard}. With each dimension, there is underlying data qulity elements and indicators.
-In \citet{Cai2005ChallnegesOfDataQuality}, they chose data quality dimensions commonly accepted and widely used as big data quality standards and redefined their basic concepts based on actual business needs.
+\citet{Cai2005ChallnegesOfDataQuality} choose data quality dimensions commonly accepted and widely used as big data quality standards and redefined their basic concepts based on actual business needs.
 Each dimension was divided into many typical elements associated with it, and each element has its corresponding quality indicators: Accessibility
 , Timeliness
 , Authorization
@@ -226,30 +222,39 @@ Figure \ref{fig:twolayerstandard} shows a universal two-layer data quality stand
   \begin{figure}
     \centering
     \includegraphics[width=0.25\textwidth]{Paper/figures/DataQualityFramework.png}
-    \caption{Data quality framework.}
+    \caption{Data quality framework. \cite{Cai2005ChallnegesOfDataQuality}}
     \label{fig:dataqualityframework}
   \end{figure}
 
   \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Paper/figures/TwoLayerStandard.png}
-    \caption{A universal, two-layer big data quality standard for assessment.}
+    \caption{A universal, two-layer big data quality standard for assessment. \cite{Cai2005ChallnegesOfDataQuality}}
     \label{fig:twolayerstandard}
   \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Paper/figures/HierarchicalFrameWork.png}
-    \caption{The hierarchical big data quality assessment framework(partial content).}
+    \caption{The hierarchical big data quality assessment framework. \cite{Cai2005ChallnegesOfDataQuality}}
     \label{fig:hierachicalframwork}
  \end{figure}
 Under the same dimension and elements, the indicators varies with type of data structure.
  For instance, syntactic accuracy is measured as described in Section \ref{sec:DataTypes} in the case of structured data. With semistructured data, the distance function should consider a global distance related to the shape of the XML tree in addition to the local distance of fields.
 
 \section{Assessment Methodology Overview}
+DQ assessment methodologies can be analyzed and compared through several perspectives.  In this section, the paper introduces the following perspectives:
+\begin{itemize}
+    \item Phases and Steps that compose the methodology
+    \item Strategies and Techniques that are adopted in the methodology for assessing and  improving data quality levels;
+    \item Types of Costs, which are associated with data quality issues
+\end{itemize}
+
+Methodologies differ in how they consider all of these perspectives. Based on these perspectives, the classification of the DQ method proposed by \citet{Batini2009MethodologiesForDataQuality} is presented.
 
 \subsection{Phases and Steps}
-In the most general case, the sequence of activities of a data quality methodology is composed of three phases \cite{Batini2009MethodologiesForDataQuality}:
+
+In the most general case, the sequence of activities of a data quality methodology is composed of three phases \cite{Batini2009MethodologiesForDataQuality}.
 
 \begin{enumerate}
     \item \textbf{State Reconstruction}, which is aimed at collecting contextual information on organizational processes and services, data collections and related management procedures, quality issues and corresponding costs; this phase can be skipped if contextual information is available from previous analyses.
@@ -257,51 +262,51 @@ In the most general case, the sequence of activities of a data quality methodolo
     \item \textbf{Improvement}, which concerns the selection of the steps, strategies, and techniques for reaching new data quality targets.
 \end{enumerate}
 
-For example, a DQ assessment method called, Comprehensive Data Quality management (CDQ),  employed three of the phases in its method, as shown in figure \ref{fig:PhasesCDQ}
+For example, a DQ assessment method called, Comprehensive Data Quality management (CDQ),  employed three of the phases in its method, as shown in Figure \ref{fig:PhasesCDQ}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Paper/figures/PhasesCDQ-2.png}
+    \caption{CDQ Phases \cite{Batini2008ComprehensiveDQ}}
+    \label{fig:PhasesCDQ}
+ \end{figure}
 
 \begin{comment}
 The term assessment is used when such measurements are compared to reference values, in order to enable a diagnosis of quality. The term assessment is adopted in this article, consistent with the majority of methodologies, which stress the importance of the causes of poor data quality.
 \end{comment}
 
-\subsubsection{Assessment Steps}
-includes:
-(1) Data Analysis, which examines data schemas and performs interviews to reach a complete understanding of data and related architectural and management rules;
-(2) DQ Requirements Analysis, which surveys the opinion of data users and administrators to identify quality issues and set new quality targets;
-(3) Identification of Critical Areas, which selects the most relevant databases and data flows to be assessed quantitatively;
-(4) Process Modeling, which provides a model of the processes producing or updating data;
-(5) Measurement of Quality, which selects the quality dimensions affected by the quality issues identified in the DQ requirements analysis step and defines corresponding metrics.
-\begin{comment}
-measurement can be objective when it is based on quantitative metrics, or subjective, when it is based on qualitative evaluations by data administrators and users.
-\end{comment}
+The assessment and improvement phases of the DQ methodologies are organized in the framework of a common set of basic steps. The steps of the assessment phase are:
+\begin{itemize}
+    \item Data Analysis, which examines data schemas and performs interviews to reach a complete understanding of data and related architectural and management rules;
+    \item DQ Requirements Analysis, which surveys the opinion of data users and administrators to identify quality issues and set new quality targets;
+    \item Identification of Critical Areas, which selects the most relevant databases and data flows to be assessed quantitatively;
+    \item Process Modeling, which provides a model of the processes producing or updating data;
+    \item Measurement of Quality, which selects the quality dimensions affected by the quality issues identified in the DQ requirements analysis step and defines corresponding metrics.
+\end{itemize}
+Metadata plays a relevant role in all stages of the assessment phase. Metadata often provide the information necessary to understand data and/or evaluate them.
 
-\subsubsection{Improvement Steps}
-includes:
-(1) Evaluation of Costs, which estimates the direct and indirect costs of data quality;
-(2) Assignment of Process responsibilities, which identifies the process owners and defines their responsibilities on data production and management activities;
-(3) Assignment of Data Responsibilities, which identifies the data owners and defines their data management responsibilities;
-(4) Identification of the Causes of Errors, which identifies the causes of quality problems;
-(5) Selection of Strategies and Techniques, which identifies all the data improvement strategies and corresponding techniques, that comply with contextual knowledge, quality objectives, and budget constraints;
-(6) Design of Data Improvement Solutions;
-(7) Process Control;
-(8) Process Redesign;
-(9) Improvement Management;
-(10) Improvement Monitoring;
-
+The steps of the improvement phase includes:
+\begin{itemize}
+    \item Evaluation of Costs, which estimates the direct and indirect costs of data quality;
+    \item Assignment of Process responsibilities, which identifies the process owners and defines their responsibilities on data production and management activities;
+    \item Assignment of Data Responsibilities, which identifies the data owners and defines their data management responsibilities;
+    \item Identification of the Causes of Errors, which identifies the causes of quality problems;
+    \item Selection of Strategies and Techniques, which identifies all the data improvement strategies and corresponding techniques, that comply with contextual knowledge, quality objectives, and budget constraints;
+\end{itemize}
+    Other common steps are Design of Data Improvement Solutions, Process Control,  Process Redesign, Improvement Management, Improvement Monitoring.
 \begin{comment}
-(6) Design of Data Improvement Solutions, which selects the most effective and efficient strategy and related set of techniques and tools to improve data quality;
-(7) Process Control, which defines check points in the data production processes, to monitor quality during process execution;
-(8) Process Redesign, which defines the process improvement actions that can deliver corresponding DQ improvements;
-(9) Improvement Management, which defines new organizational rules for data quality;
-(10) Improvement Monitoring, which establishes periodic monitoring activities that provide feedback on the results of the improvement process and enables its dynamic tuning.
+    \item Design of Data Improvement Solutions, which selects the most effective and efficient strategy and related set of techniques and tools to improve data quality;
+    \item  Process Control, which defines check points in the data production processes, to monitor quality during process execution;
+    \item Process Redesign, which defines the process improvement actions that can deliver corresponding DQ improvements;
+    \item Improvement Management, which defines new organizational rules for data quality;
+    \item Improvement Monitoring, which establishes periodic monitoring activities that provide feedback on the results of the improvement process and enables its dynamic tuning.
 \end{comment}
-Note that in all the steps of the assessment phase, a relevant role is played by metadata that store complementary information on data for a variety of purposes, including data quality. Metadata often provide the information necessary to understand data and/or evaluate them.
 
 \subsection{Strategies and Techniques}
 There are two types of strategies: data-driven and process-driven. Data-driven strategies improve the quality of data by directly modifying the value of data and Process-driven strategies improve quality by redesigning the processes that create or modify data.
 
-\subsubsection{Data-Driven Techniques}
-includes
-\begin{enumerate}
+The common Data-Driven Techniques includes:
+\begin{itemsize}
     \item Acquisition of New Data, which improves data by acquiring higher-quality data to replace the values that raise quality problems.
     \item Standardization, which replaces or complements nonstandard data values with corresponding values that comply with the standard. For example, nicknames are replaced with corresponding names, for example, Bob with Robert, and abbreviations are replaced with corresponding full names, for example, Channel Str. with Channel Street.
     \item Record Linkage, which identifies that data representations in two (or multiple) tables that might refer to the same real-world object;
@@ -309,37 +314,22 @@ includes
     \item Source Trustworthiness, which selects data sources on the basis of the quality of their data;
     \item Error Localization and Correction, which identify and eliminate data quality errors by detecting the records that do not satisfy a given set of quality rules. These techniques are mainly in the statistical domain.
     \item Cost optimization, defines quality improvement actions along a set of dimensions by minimizing costs.
-\end{enumerate}
+\end{itemsize}
 
-\begin{comment}
- Heterogeneities can be classified into technological heterogeneities, schema heterogeneities,and instance-level heterogeneities.
-In distributed, cooperative, and P2P information systems data sources are characterized by various kinds of heterogeneities that can be generally classified into
+\citet{Borek2011AClassficationOfDataQualityAssessmentMethod} also summarized other data-driven techniques, such as Column analysis, Cross-domain analysis, Data validation, Domain analysis,Lexical analysis
+,Matching algorithms: identify duplicates
+,Primary key and foreign key analysis (PK/FK analysis) : are good candidates for a PK/FK
+,Schema matching: two attributes are semantically equivalent, and Semantic profiling.
 
-(1) technological heterogeneities, (2) schema heterogeneities, and (3) instance-level heterogeneities.
-Technological heterogeneities are due to the use of products by different vendors, employed at various layers of an information and communication infrastructure.
-Schema heterogeneities are primarily caused by the use of (1) different data models, as in the case of a source that adopts the relational data model and a different source that adopts the XML data model, and (2) different representations for the same object, such as two relational sources that represent an object as a table and an attribute. Instance-level heterogeneities are caused by different, conflicting data values provided by distinct sources for the same objects. For instance, this type of heterogeneity can be caused by independent and poorly coordinated processes that feed the different data sources.
-Data integration must face all the types of these listed heterogeneities.
-\end{comment}
-
-\subsubsection{Process-Driven Techniques}
-- Process control inserts checks and control procedures in the data production process when: (1) new data are created, (2) data sets are updated, or (3) new data sets are accessed by the process. In this way, a reactive strategy is applied to data modification events, thus avoiding data degradation and error propagation.
-- Process redesign redesigns processes in order to remove the causes of poor quality and introduces new activities that produce data of higher quality.
-\begin{comment}
-\subsubsection{Techniques}
- - Column analysis: Number of (unique) values and the number of instances per value as percentage from the total number of instances in that column
- - Cross-domain analysis
- - Data validation
- - Domain analysis
- - Lexical analysis
- - Matching algorithms: identify duplicates
- - Primary key and foreign key analysis (PK/FK analysis) : are good candidates for a PK/FK
- - Schema matching: two attributes are semantically equivalent
- - Semantic profiling
-\end{comment}
+The common Process-Driven Techniques includes:
+\begin{itemize}
+    \item Process control inserts checks and control procedures in the data production process when: (1) new data are created, (2) data sets are updated, or (3) new data sets are accessed by the process. In this way, a reactive strategy is applied to data modification events, thus avoiding data degradation and error propagation.
+    \item Process redesign redesigns processes in order to remove the causes of poor quality and introduces new activities that produce data of higher quality.
+\end{itemize}
 
 \subsection{Cost}
-The cost of a data quality program can be considered a preventive cost that is incurred by organizations to reduce data errors. This cost category includes the cost of all phases and steps that compose a data quality assessment and improvement process.
- The costs of poor quality can be classified as:
+The cost of a data quality program can be considered a preventive cost that is incurred by organizations to reduce data errors. This cost category includes the cost of all phases and steps that compose a data quality assessment and improvement process. \cite{Batini2009MethodologiesForDataQuality}
+The costs of poor quality can be classified as:
 \begin{itemize}
     \item Process Costs, such as the costs associated with the re-execution of the whole process due to data errors;
     \item Opportunity Costs, which is due to lost and missed revenues.
@@ -355,27 +345,50 @@ Methodologies can be classified into four categories based on their emphasis on 
     \item Economic methodologies, which focus on the evaluation of costs.
 \end{enumerate}
 
-Figures \ref{fig:classificationMethodologies} show the methods positioned on a two-dimensional coordinated.
+Figures \ref{fig:classificationMethodologies} shows the methods positioned on a two-dimensional coordinated. \cite{Batini2009MethodologiesForDataQuality}. The acronyms, extended names and main references are shown in Table \ref{tab:Methodologies-Acronyms}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\textwidth]{Paper/figures/Method Overview A classification of methodologies.png}
-    \caption{A classification of methodologies.}
+    \includegraphics[width=1\textwidth]{Paper/figures/Method Overview A classification of methodologies.png}
+    \caption{A classification of methodologies \cite{Batini2009MethodologiesForDataQuality}}
     \label{fig:classificationMethodologies}
   \end{figure}
 
-\section{Case Study: Total Data Quality Management (TDQM)}\label{sec:TDQM}
- \cite{Bowo2019CaseStudy}
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
+\hline
+Methodology Acronym & Extended Name & Main Reference \\ \hline
+TDQM & Total Data Quality Management & \citet{Wang1998TDQM} \\ \hline
+DWQ & The Datawarehouse Quality Methodology & \citet{1999DQW} \\ \hline
+TIQM & Total Information Quality Management & \citet{English1999TIQM} \\ \hline
+AIMQ & A methodology for information quality assessment & \citet{2002AIMQ} \\ \hline
+CIHI & Canadian Institute for Health Information methodology & \citet{2002CIHI} \\ \hline
+DQA & Data Quality Assessment & \citet{Pipino2002DQA} \\ \hline
+IQM & Information Quality Measurement & \citet{Eppler2002MeasuringIQ} \\ \hline
+ISTAT & ISTAT methodology & \citet{2002ISTAT} \\ \hline
+AMEQ & \begin{tabular}[c]{@{}l@{}}Activity-based Measuring and Evaluating \\ of product information Quality (AMEQ) methodology\end{tabular} & \citet{2006AMEQ} \\ \hline
+COLDQ & Loshin Methodology (Cost-effect Of Low Data Quality) & \citet{2004COLDQ} \\ \hline
+DaQuinCIS & Data Quality in Cooperative Information Systems & \citet{Scannapieco2002} \\ \hline
+QAFD & Methodology for the Quality Assessment of Financial Data & \citet{2006QAFD} \\ \hline
+CDQ & Comprehensive methodology for Data Quality management & \citet{Batini2008ComprehensiveDQ} \\ \hline
+\end{tabular}
+\caption{Methodologies Acronyms in Figure \ref{fig:classificationMethodologies} \cite{Batini2009MethodologiesForDataQuality}}
+\label{tab:Methodologies-Acronyms}
+\end{table}
+
+
+\section{Case Study: Total Data Quality Management}\label{sec:TDQM}
+
 
 This section introduces the TDQM methodology and its applications.  The reason TDQM is chosen as a case study is that TDQM is a complete and general-purpose methodology. It also suggests a complete set of relevant dimensions and improvement methods that can be applied in different contexts.
 The TDQM methodology was the first general methodology published in the data quality literature. \cite{Wang1998TDQM}
 TDQM's goal is to support the entire end-to-end quality improvement process, from requirements analysis to implementation.
-TDQM is based on the principles of Total Quality Management (TQM). \cite{OAKLAND1999TQM}  In the original paper, the word Information is used instead of Data. For convenience, these two words will be used interchangeably. TDQM proposes a language for the description of information production (IP) processes.  It identifies four roles for the IP process:
+TDQM is based on the principles of Total Quality Management (TQM). \cite{OAKLAND1999TQM}  In the original paper, the word Information is used instead of Data. For convenience, these two words will be used interchangeably. TDQM proposes a language for the description of \emph{Information Production} (IP) processes.  It identifies four roles for the IP process:
 \begin{itemize}
-    \item information suppliers, which create or collect data for the IP,
-    \item information manufacturers, which design, develop, or maintain data and related system infrastructure,
-    \item information consumers, which use data in their work,
-    \item information process managers, which are responsible for managing the entire information production process throughout the information life cycle.
+    \item \emph{Information Suppliers}, which create or collect data for the IP,
+    \item \emph{Information Manufacturers}, which design, develop, or maintain data and related system infrastructure,
+    \item \emph{Information Consumers}, which use data in their work,
+    \item \emph{Information Process Managers}, which are responsible for managing the entire information production process throughout the information life cycle.
 The roles are responsible for the different phases of the quality improvement process.
 \end{itemize}
 \subsection{Data Types and Quality Dimensions}
@@ -391,7 +404,7 @@ Accessibility IQ    & Access, Security                                          
 Contextual IQ       & \begin{tabular}[c]{@{}c@{}}Relevancy, Value-Added, Timeliness,\\ Completeness, Amount of data\end{tabular}                           \\ \hline
 Representational IQ & \begin{tabular}[c]{@{}c@{}}Interpretability, Ease of understanding, Concise\\ representation, Consistent representation\end{tabular} \\ \hline
 \end{tabular}
-\caption{Information quality categories and dimensions}
+\caption{Information quality categories and dimensions \cite{Wang1998TDQM}}
 \label{table:TDQMIQcatergories}
 \end{table}
 
@@ -400,41 +413,41 @@ Representational IQ & \begin{tabular}[c]{@{}c@{}}Interpretability, Ease of under
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{Paper/figures/TDQM-2.png}
-    \caption{TDQM Phases.}
+    \caption{TDQM Phases \cite{Wang1998TDQM}}
     \label{fig:PhasesTDQM}
  \end{figure}
 
-The TDQM has four cycles: defining, measuring, analyzing,
-and improving IQ. A schematic of the TDQM methodology is shown in Figure \ref{fig:PhasesTDQM}. The tasks embedded in the methodology are performed iteratively to ensure high-quality IP. The Definition, Measurement, and  Analysis cycle are considered as the assessment phase introduced in the section.  The last cycle is the improvement phase.
+The TDQM has four cycles: Define, Measure, Analyze,
+and Improve. A schematic of the TDQM methodology is shown in Figure \ref{fig:PhasesTDQM}. The tasks embedded in the methodology are performed iteratively to ensure high-quality IP. The Define, Measure, and Analyze cycle are considered as the assessment phase introduced in the section.  The last cycle is the improvement phase.
 
 \begin{enumerate}
-    \item Definition: Data analysis, DQ requirements analysis, process modeling are performed in this phase. The input of this phase is IP. The output consists of three-part:
+    \item Define: Data analysis, DQ requirements analysis, process modeling are performed in this phase. The input of this phase is IP. The output consists of three-part:
     \begin{itemize}
         \item The logical and physical design of the Information Product with the necessary quality attributes
         \item A quality entity-relationship model that defines the IP and its IQ requirements
         \item An information manufacturing system that describes how the IP has been produced
     \end{itemize}
-    Define IP Characteristics is a  data analysis task. It defines characteristics at two levels: (1) high level: description of functionalities for information consumers
+    Define IP Characteristics is a data analysis task. It defines characteristics at two levels: (1) high level: description of functionalities for information consumers
 (2) low-level description of the basic units and components of the information product and their relationships
-Define IQ Requirements is a DQ requirements analysis. It defines the IQ requirements from the perspective of four roles of IP:  suppliers, manufacturers, consumers, and managers.
+Define IQ Requirements is a DQ requirements analysis. It defines the IQ requirements from the perspective of four roles of IP: suppliers, manufacturers, consumers, and managers.
 Define Information Manufacturing System is a process modeling task.
 TDQM uses an information production map, IP-MAP, a graphical model designed to help them to visualize the information production process.
-    \item  Measurement: The input of this phase is IQ dimensions from the definition phase. The output is IQ problems. The main tasks are Definition of the IQ metrics and measurement of IP
-    \item Analysis: The Inputs are IQ problems. Outputs are actions for improving data quality. The main task is to Analyze IP. The purpose is to identify the causes of errors and discrepancies.
-    \item Improvement: Inputs are  IQ metrics. Outputs are IQ improvement techniques. The main task is to Improve IP. It identifies key areas for improvement and selects suitable strategies, and techniques.
+    \item  Measure: The input of this phase is IQ dimensions from the definition phase. The output is IQ problems. The main tasks are Definition of the IQ metrics and measurement of IP
+    \item Analyze: The Inputs are IQ problems. Outputs are actions for improving data quality. The main task is to Analyze IP. The purpose is to identify the causes of errors and discrepancies.
+    \item Improve: Inputs are  IQ metrics. Outputs are IQ improvement techniques. The main task is to Improve IP. It identifies key areas for improvement and selects suitable strategies, and techniques.
 \end{enumerate}
 \subsection{Strategies and Techniques}
 TDQM focus on process-driven strategies and techniques. TDQM provides guidelines to apply process-driven strategies by using the Information Manufacturing Analysis Matrix\cite{Ballou1998ModelingInformation}, which suggests when and how to improve data. The description of processes is a mandatory activity, consistent with the general orientation of process-driven strategies. After modeling and assessing the information production process, new process control activities are identified, and/or process redesign decisions are taken.  Complex solutions such as IP-MAP cannot always be adopted due to their high costs and, in some cases, the practical unfeasibility of a thorough process modeling step. For this reason, other methodologies adopt less formal, but more feasible solutions.
 
 \subsection{Example}
 
-In the paper, the business needs for private client services in an investment bank is used as an illustrative example. The schema of the company’s client account database is shown in Figure \ref{fig:AccountSchema}.
+In the paper, the business needs for private client services in an investment bank is used as an illustrative example. The schema of the company's client account database is shown in Figure \ref{fig:AccountSchema}.
 In the Define phase, four roles are first identified. A broker who creates accounts and executes transactions has to collect from
 clients the necessary information for opening accounts and executing these transactions.
 The broker is a supplier. An information-systems professional who designs, develops, produces, or maintains the system is a manufacturer. A financial controller or a client representative who uses this system is a consumer. The manager who is responsible for the collection, manufacturing, and delivery of customer account data is an IP manager. After Define IP Characteristics, components of the database and their relationships are defined.
 In the client account database, a client is identified by an
 account number. Company stocks are identified by the
-companies’ stock ticker symbols. When a client makes
+companies' stock ticker symbols. When a client makes
 a trade (buy/sell), the date, quantity of shares, and trade
 price is stored as a record of the transaction. An entity-relationship(ER) diagram is shown in Figure \ref{fig:Quality Entity-Relationship Diagram}. In Define IQ Requirements, a software tool is used for the survey to collect data from a manufacturer and a consumer.
 
@@ -448,26 +461,23 @@ timeliness on share price indicates the trader is concerned with how old the dat
 (of the data), and the credibility of the research report is
 redefined by analyst name.
 After Define Information Manufacturing System, Figure \ref{fig:InformationManufacturingSystem} illustrates an
-information manufacturing system that has five data units (DU1–DU5) supplied by three vendors
-(VB1–VB3). Three data units (DU6, DU8, DU10) are
+information manufacturing system that has five data units ($DU_{1}$ to $DU_{5}$) supplied by three vendors
+($VB_{1}$ to $VB_{3}$). Three data units ($DU_{6}$, $DU_{8}$ to $DU_{10}$) are
 formed by having been passed through one of the three
-data quality blocks (QB1–QB3). For example, DU6 represents the impact of QB1 on DU2. The system has three consumers
-(CB1–CB3). Each consumer receives some subset of the IP.
-
+data quality blocks ($QB_{1}$ to $QB_{3}$). For example, $DU_{6}$ represents the impact of $QB_{1}$ on $DU_{2}$. The system has three consumers
+($CB_{1}$ to $CB_{3}$). Each consumer receives some subset of the IP.
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{Paper/figures/TDQM A client account schema.png}
-    \caption{A client account schema}
+    \includegraphics[width=0.5\textwidth]{Paper/figures/TDQM A client account schema.png}
+    \caption{A client account schema \cite{Wang1998TDQM}}
     \label{fig:AccountSchema}
  \end{figure}
-
-
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Paper/figures/TDQM A quality entity-relationship diagram.png}
-    \caption{A Quality Entity-Relationship Diagram}
+    \caption{A Quality Entity-Relationship Diagram \cite{Wang1998TDQM}}
     \label{fig:Quality Entity-Relationship Diagram}
  \end{figure}
 
@@ -475,7 +485,7 @@ data quality blocks (QB1–QB3). For example, DU6 represents the impact of QB1 o
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Paper/figures/TDQM IQ added to the ER diagram.png}
-    \caption{IQ added to the ER diagram}
+    \caption{IQ added to the ER diagram \cite{Wang1998TDQM}}
     \label{fig:IQ added to the ER diagram}
  \end{figure}
 
@@ -483,7 +493,7 @@ data quality blocks (QB1–QB3). For example, DU6 represents the impact of QB1 o
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Paper/figures/TDQM_information_manufacturing_system.png}
-    \caption{A Information Manufacturing System}
+    \caption{A Information Manufacturing System \cite{Wang1998TDQM}}
     \label{fig:InformationManufacturingSystem}
  \end{figure}
 
@@ -504,52 +514,32 @@ integrity (consistency)
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Paper/figures/TDQM The Information Manufacturing Analysis Matrix for the illustrative.png}
-    \caption{The Information Manufacturing Analysis Matrix for the illustrative}
+    \caption{The Information Manufacturing Analysis Matrix for the illustrative (partial view) \cite{Ballou1998ModelingInformation}}
     \label{fig:Information Manufacturing Analysis Matrix}
  \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Paper/figures/TDQM Descriptive inputs required for the primitive data units.png}
-    \caption{Descriptive inputs required for the primitive data units}
+    \caption{Descriptive inputs required for the primitive data units \cite{Ballou1998ModelingInformation}}
     \label{fig:Descriptive inputs required for the primitive data units}
  \end{figure}
 
-In Improve Phase, the Information Manufacturing Analysis Matrix [3] is developed and shown in Figure /ref{fig:Information Manufacturing Analysis Matrix}. Figure \ref{fig:Information Manufacturing Analysis Matrix} presents the descriptive inputs required to compute the timeliness, quality, cost, and value characteristics of information products to be delivered to an array of customers. Figure \ref{fig:Information Manufacturing Analysis Matrix} identifies the seven descriptive inputs required for each of the five primary data units. For example, DU2 is obtained from the first vendor at a cost of 10, is of intermediate quality, and is already 2-time units old when it enters the system at the beginning of the information manufacturing process. It is highly volatile with a shelf file of only 30-time units and a second-degree timeliness function. Based on the descriptive inputs from Figure /ref{fig:Information Manufacturing Analysis Matrix}, an Information Manufacturing Analysis Matrix for this system is developed and shown in Figure \ref{fig:Descriptive inputs required for the primitive data units}.
+In Improve Phase, the Information Manufacturing Analysis Matrix [3] is developed and shown in Figure /ref{fig:Information Manufacturing Analysis Matrix}. Figure \ref{fig:Information Manufacturing Analysis Matrix} presents the descriptive inputs required to compute the timeliness, quality, cost, and value characteristics of information products to be delivered to an array of customers. Figure \ref{fig:Information Manufacturing Analysis Matrix} identifies the seven descriptive inputs required for each of the five primary data units. For example, $DU_{2}$ is obtained from the first vendor at a cost of 10, is of intermediate quality, and is already 2-time units old when it enters the system at the beginning of the information manufacturing process. It is highly volatile with a shelf file of only 30-time units and a second-degree timeliness function. Based on the descriptive inputs from Figure /ref{fig:Information Manufacturing Analysis Matrix}, an Information Manufacturing Analysis Matrix for this system is developed and shown in Figure \ref{fig:Descriptive inputs required for the primitive data units}.
  IP team can use the matrix to identify key areas for improvement, such as aligning information flow and work flow with the corresponding information manufacturing system and realigning the key characteristics of the IP with business needs.
 
 \subsection{Application}
-TDQM has been applied to several areas. Early TDQM versions are reported in several U.S.A. Department of Defence (DoD) documents (see US Department of Defense [1994]). the methodology has been the basis for a law enforcement tool [Sessions 2007]. Other applications of TDQM performed at the DoD Medical Command for Military Treatment Facilities (MTF) are reported in Wang [1998] and Corey et al. [1996]. A claimed advantage of TDQM is that based on target payoffs, critical DQ issues, and the corresponding types of data, one can effectively evaluate how representative and comprehensive the DQ metrics are and whether this is the right set of metrics. This is the reason for its extensive application in different contexts, such as insurance companies, as described in \cite{Nadkarni2006} and  \cite{Patrick2005}.
+TDQM has been applied to several areas. Early TDQM versions are reported in several U.S.A. Department of Defence (DoD) documents \cite{DoD1994}. the methodology has been the basis for a law enforcement tool \citep{Sessions2007EmployingTT}. Other applications of TDQM performed at the DoD Medical Command for Military Treatment Facilities (MTF) are reported in \citet{Wang1998TDQM} and \citet{COREY1996}. A claimed advantage of TDQM is that based on target payoffs, critical DQ issues, and the corresponding types of data, one can effectively evaluate how representative and comprehensive the DQ metrics are and whether this is the right set of metrics. This is the reason for its extensive application in different contexts, such as insurance companies, as described in \citet{Nadkarni2006} and  \citet{Patrick2005}.
 
-Recent use of TDQM is found in [PAPER]. PT JAS is a non-bank financial institution engaged in sharia guarantee. The company's main business is managing risk. By using TDQM, companies can find out in advance the condition of the quality of company data and immediately formulate strategies and steps to improve and develop the quality of the data they have, so that data can be a useful and valuable asset. The company focus on aspects of confidentiality, integrity, and availability. With TDQM, the defined dimensions and measure result are as following:
+Recent use of TDQM is found in \citet{Bowo2019CaseStudy}. PT JAS is a non-bank financial institution engaged in sharia guarantee. The company's main business is managing risk. By using TDQM, companies can find out in advance the condition of the quality of company data and immediately formulate strategies and steps to improve and develop the quality of the data they have, so that data can be a useful and valuable asset. The company focus on aspects of confidentiality, integrity, and availability. With TDQM, the defined dimensions and measure result are as following:
 \begin{itemize}
-    \item Completeness: 66 fields found with a percentage of 99\% data completeness and 5 fields with a percentage of 27\% \~ 33\% meet the criteria
+    \item Completeness: 66 fields found with a percentage of 99\% data completeness and 5 fields with a percentage of from 27\% to 33\% meet the criteria
     \item Validity: 2 out of 9 fields of data did not meet the criteria with 0.59\% (v5) and 3.39\% (v6) error rate
     \item Accuracy: 4 out of 9 fields did not meet the criteria with  1.25\% (acc3), 3.08\% (acc5), 1.83\% (acc6), and 2.24\% (acc9)
 
 \end{itemize}
 TDQM provides a common framework for facilitating understanding in data improvement approach through data quality management .
-Nowadays, there are also many contributions extending TDQM, by improving IP-MAP [Scannapieco et al. 2005; Shankaranarayanan and Wang 2007] or by proposing a TDQM based Capability Maturity Model [Baskarada et al. 2006].
-
-
-
-
-The CDQ methodology \cite{Batini2006DQConceptsMethodologiesTechniques} \cite{Batini2007ComprehensiveDQ} \cite{Batini2008ComprehensiveDQ} is conceived to be at the same time complete, flexible, and simple to apply.
-
-The CDQ provides support to select the optimal quality improvement process that maximizes benefits within given budget limits and emphasizes the initial requirements elicitation phase.
-The focus is on how to reach total data quality without providing indications as to how to use contextual knowledge. A goal of CDQ is instead to obtain a quantitative assessment of the extent to which business processes are affected by bad information.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{Paper/figures/PhasesCDQ-2.png}
-    \caption{CDQ Phases.}
-    \label{fig:PhasesCDQ}
- \end{figure}
-
-
-
-
-
+Nowadays, there are also many contributions extending TDQM, by improving IP-MAP \cite{Scannapieco2002, Shankaranarayanan2007IPMAPC} or by proposing a TDQM based Capability Maturity Model \citep{Baskarada2006}.
 
 \section{Conclusion}
 This paper first introduces the fundamentals of data type, DQ problems, and dimensions.  Thus answers the research topic of data properties that can be analyzed and cannot be analyzed.
@@ -557,7 +547,7 @@ This paper first introduces the fundamentals of data type, DQ problems, and dime
 In the second section, the overview of DQ assessment methods is presented. The pipelines, phases, steps, strategy, techniques, cost, and classification of general assessment methods are presented. This part answers the research topic. Moreover, for the research topic of improving DQ, two improvement strategies, data-driven, and process-driven are presented along with corresponding techniques.
 In the third section, a particular DQ assessment method, TDQM, is brought out for a case study, The case study gives a concrete picture of how a DQ assessment is designed, implemented, and executed. In subsections of the third section, an example on the investment bank and three real-world applications of TDQM on the existing data set are presented. This response to the research topic of application of the DQ assessment methods. With all research topics covered, a complete evaluation of the DQ assessment method is performed. The readers should obtain a fundamental understanding of DQ assessment methods.
 
-Challenges exist for data assessment in the Big Data Era. \cite{Katal2013BigData} The characteristics of big data come down to the 4Vs: Volume, Velocity, Variety, and Value. Volume refers to the tremendous volume of the data. Velocity means that data are being formed at an unprecedented speed and must be dealt with promptly.   The growth of the data sources in both size and scope consequently has significantly increased the complexity of data quality management.
+Challenges exist for data assessment in the Big Data era. \cite{Katal2013BigData} The characteristics of big data come down to the 4Vs: Volume, Velocity, Variety, and Value. Volume refers to the tremendous volume of the data. Velocity means that data are being formed at an unprecedented speed and must be dealt with promptly.   The growth of the data sources in both size and scope consequently has significantly increased the complexity of data quality management.
 Variety indicates that big data has all kinds of data types, and this diversity divides the data into structured data and unstructured data. These multitype data requires higher data processing capabilities.
 Finally, Value represents low-value density. Value density is inversely proportional to total data size, the greater the big data scale, the less relatively valuable the data. Consequently, the cost of DQ assessment will gain significant importance is inevitable. How to accurately define and estimate the cost of DQ is another topic.
 
